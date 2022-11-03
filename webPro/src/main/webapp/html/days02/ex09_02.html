@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>절대주소 (URL, URI) ,상대주소 </h3>
+
+    <xmp>
+
+        -URL : uniform resource locator 의 약어.
+        -네트워크 상에서 자원이 어디있는지를 알려주기 위한 규약
+        -웹 페이지를 찾기 위한 주소
+        -표현방법 (RFC 1738에서 정의)
+            통신규약
+        -scheme://<user>:<password>@<host>:<port>/<url-path>
+        예) http://<host>:<port>/        <path>     ?<searchpart>
+            http://www.naver.com[:80]  /webPro/html/days02/ex09.htl
+        scheme      <host>            <path> ? searchpart 쿼리스트링(queryString) %fragment
+        https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=kenik
+        - URL/URI 구분
+
+        URI가 URL 의 상위 개념이고,
+        URI = scheme ":" hier-part [ "?" query ] /  [ "#" fragment ] 까지 줄수있다.. 
+        URL은 fragment 를 줄 수 없다. 
+
+        URL은 ASCII 문자셋만 사용가능 (인코딩 ASCII)
+        한글 문자 -> 변환 %16진수값 변환되어져 URL 사용
+        공백      -> + 기호 또는 %16진수값(%20) a12한글x
+
+        https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=a1+2%ED%95%9C%EA%B8%80x
+
+    </xmp>
+    
+    <!-- 코딩하는 위치 : ex09_02.html-->
+    <a href="http://127.0.0.1:5500/webPro/src/main/webapp/html/days01/ex01.html">http://127.0.0.1:5500/webPro/src/main/webapp/html/days01/ex01.html</a>
+    <!-- 이클립스로 할때는 localhost로 바꿔야함.
+        <a href="http://localhost/webPro/src/main/webapp/html/days01/ex01.html">http://localhost/webPro/src/main/webapp/html/days01/ex01.html</a> -->
+
+        <br>
+
+        <!-- 상대주소 -> days02.ex01 뿌려짐 -> 이동하기전에 보고있는 페이지 경로가 기준이됨
+기준 주소 : http://localhost/webPro/src/main/webapp/html/days02/ex09_02.html 
+->       : http://localhost/webPro/src/main/webapp/html/days02 + 파일명만 바뀌어 뿌려짐. 
+-->
+        <a href="ex01.html">ex01.html A</a>
+        <br>
+        <a href="/ex01.html">/ex01.html B</a>
+
+<!--
+    A 와 B 는 완전히 다른코딩
+    A의 주소 :http://localhost/webPro/src/main/webapp/html/days02/ex01.html
+    B의 주소 :http://localhost/ex01.html
+    http://localhost/ 까지 상위로 올라와서 ex01.html 값을 찾는것.
+-->
+        <br>
+        <a href="/webPro/html/days01/ex01.html">ex01.html C</a>
+    <!-- 
+    C 는 B 와 같이 http://localhost/ 까지를 나타내는것
+    -->
+        <br>
+        <!-- http://localhost/webPro/html/days02 -->
+        <!-- http://localhost/webPro/html/ex01.html -->
+        <a href="../ex01.html">ex01.html</a>
+
+        <br>
+        <!-- http://localhost/webPro/ex01.html -->
+        <a href="../../ex01.html">ex01.html</a>
+
+        <br>
+        <!-- 
+            현재 디렉토리 = .
+            상위 디렉토리 = ..
+        -->
+        <!-- http://localhost/webPro/html/days02/ex01.html -->
+        <a href="./ex01.html">ex01.html</a>
+</body>
+</html>
