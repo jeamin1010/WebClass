@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SS17 2022. 11. 4. 오후 3:45:05</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+</head>
+<body>
+<h3>html - table 태그</h3>
+<pre>
+1.데이터(행,열) 출력
+2. 예)  dept 테이블 <br>
+	deptno 	dname 		loc		
+		10   ACCOUNTING   NEW YORK   <br>
+		20   RESEARCH   DALLAS<br>
+		30   SALES   CHICAGO<br>
+		40   OPERATIONS   BOSTON<br>
+3. 행 행 행	tr = [t]able [r]ow : 
+	열(컬럼)	A [cell] within a table	
+	열
+	
+	td 태그 : 텍스트 ,이미지, 목록, 링크 , 자식테이블 등 모든 html 요소를 포함할 수 있다.
+</pre>
+
+<table>
+<!-- <tr*5 -->
+<!-- table>tr*5>td*3 -->
+
+<!-- <table border="1" width="400" > -->
+<table border="1" style="width: 400px" >
+	<tr>
+	<!-- 테이블의 머리글이 되는셀 = th = tablehead  -->
+		<th>deptno</th>
+		<th>dname</th>
+		<th>loc</th>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>ACCOUNTING</td>
+		<td>NEW YORK</td>
+	</tr>
+	<tr>
+		<td>20</td>
+		<td>RESEARCH</td>
+		<td>DALLAS</td>
+	</tr>
+	<tr>
+		<td>30</td>
+		<td>SALES</td>
+		<td>CHICAGO</td>
+	</tr>
+	<tr>
+		<td>40</td>
+		<td>OPERATIONS</td>
+		<td>BOSTON</td>
+	</tr>
+</table>
+
+</body>
+</html>

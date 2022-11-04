@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--   -->
+<h3> html - picture 태그</h3>
+
+
+<pre>
+1. 여러개의 source 태그를 설정 할 수 있다.
+	알맞은 다른 이미지를 선택할 수 있게 하는 태그
+2. 반응형 웹을 만들때 사용
+3. img 태그는 가장 마지막에 지정한다.
+</pre>
+
+
+<picture>
+<source srcset ="../images/img_pink_flowers.jpg" media="(min-width:650px)">
+<source srcset ="../images/img_white_flowers.jpg" media="(min-width:450px)">
+<img src= "../images/img_orange_flowers.jpg" alt="">
+</picture>
+
+</body>
+</html>
