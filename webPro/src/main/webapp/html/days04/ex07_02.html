@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+    <title>Document</title>
+
+    <style>
+        span{
+            border: 1px solid gray;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>ex07_02.html</h3>
+    <script>
+
+        function spanHide() {
+
+            document.getElementById("team01").style.display="none";
+            }
+            function spanShow() {
+            document.getElementById("team01").style.display="inline-block";
+            }
+    </script>
+
+    <button onclick="spanHide();">숨기기(hide)</button>
+    <button onclick="spanShow();">보이기(show)</button>
+    <br><br>
+    <div id="team01">
+        <span id="sp01">김가율</span><br>
+        <span id="sp02">조민경</span><br>
+        <span id="sp03">임희진</span><br>
+        <span id="sp04">이재민</span><br>
+        <span id="sp05">엄태혁</span><br>
+        <span id="sp06">황수빈</span><br>
+        <span id="sp07">박혜은</span><br>
+    </div>
+
+</body>
+</html>

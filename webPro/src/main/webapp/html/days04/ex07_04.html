@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SS17 2022. 11. 7. 오후 2:12:51</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  span{
+     border: 1px solid gray;
+     width:200px;
+     display:  inline-block; 
+     text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h3>ex07_04.html</h3>
+ 
+ <!-- ex07_03.html의 js 코딩을        jquery 코딩으로 수정
+         jQuery 는 js 라이브러리이다. 
+         
+         1) 라이브러리 추가
+            https://jquery.com/
+  --> 
+
+<button id="btnHide" >숨기기(hide)</button>
+<button id="btnShow">보이기(show)</button>
+
+<br>
+<br> 
+ 
+	<span id="sp01" >김가율</span><br> 
+	<span id="sp02">조민경</span><br> 
+	<span id="sp03">임희진</span><br> 
+	<span id="sp04">이재민</span><br> 
+	<span id="sp05">엄태혁</span><br> 
+	<span id="sp06">황수빈</span><br> 
+	<span id="sp07">박혜은</span><br> 
+ 
+
+<script> 
+    // 기억)  script 태그는 항상     /body 위에 코딩.
+    // js 숨기기 버튼 얻어올때는     document.getElementById("btnHide")
+    // $ == jQuery
+    $("#btnHide").click(  function (){   // 익명 함수
+    	// window.alert("클릭 이벤트 확인!!!");
+       /*
+    	 var spans = document.getElementsByTagName("span");	    
+	   	 for (var i = 0; i < spans.length; i++) {		
+	   		   spans[i].style.display = "none";
+	   	  } // for
+   	   */
+   	   
+   	   // jquery 함수 : css(속성명, 속성값);
+   	   $("span").css("display", "none");
+    } );
+    
+    $("#btnShow").click(  function (){   // 익명 함수 
+   	   $("span").css("display", "inline-block");
+    } );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

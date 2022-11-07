@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SS17 2022. 11. 7. 오후 3:33:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <pre>
+        7.에밋은 css selector 와 유사한 구문을 사용한다. 
+    </pre>
+
+    <!--div-->
+    <div>
+
+    </div>
+    <!--중첩 연산자
+    1.> 자손(자식)
+    2.+ 형제 자매(동일한 수준의 요소)
+    3.^ 상위수준(등반)
+    4.()
+    -->
+    
+    <!-- div>ul -->
+    <div>
+        <ul></ul>
+    </div>
+
+    <!-- div>ul>li -->
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- + -->
+    <!-- div+ul -->
+    <div></div>
+    <ul></ul>
+
+    <!-- div+ul+ol -->
+    <div></div>
+    <ul></ul>
+    <ol></ol>
+
+    <!-- div+ul+p+bq -->
+    <div></div>
+    <ul></ul>
+    <p></p>
+    <blockquote>긴 인용문</blockquote>
+
+    <!-- div>p+p -->
+    <div>
+        <p></p>
+        <p></p>
+    </div>
+
+    <!-- div>p^p -->
+    <div>
+        <p></p>
+    </div>
+    <p></p>
+
+    <!-- div>p>ul^^p -->
+    <div>
+        <p>
+            <ul></ul>
+        </p>
+    </div>
+    <p></p>
+
+    <!-- div+div>p>span+em^bq -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+        <blockquote></blockquote>
+    </div>
+
+<!-- div>ul>li*5(횟수) -->
+<div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<!-- ul>li*5{item-$} -->
+<ul>
+    <li>item-1</li>
+    <li>item-2</li>
+    <li>item-3</li>
+    <li>item-4</li>
+    <li>item-5</li>
+</ul>
+
+<!-- ul>li*5{item-$$$} -->
+<ul>
+    <li>item-001</li>
+    <li>item-002</li>
+    <li>item-003</li>
+    <li>item-004</li>
+    <li>item-005</li>
+</ul>
+
+</body>
+
+<script>
+</script>
+</html>

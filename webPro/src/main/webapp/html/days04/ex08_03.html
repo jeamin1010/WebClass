@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        속성연산자 : 요소의 속성을 수정(추가)하는데 사용하는 연산자. 
+    </pre>
+
+    <!-- div -->
+    <div id="box" class="ss17 ss16 ss15"></div>
+    <!--요소[속성명=속성값][속성명=속성값]-->
+    <!-- div[id=box][class='ss17 ss16 ss15'] -->
+    <div id="box" class="ss17 ss16 ss15"></div>
+    <!-- div#boc.ss17 -->
+    <!-- div#아이디명.클래스명 -->
+    <!-- div#boc.ss17.ss16.ss15 -->
+    <div id="boc" class="ss17 ss16 ss15"></div>
+
+    <!-- 요소명X #box-->
+    <div id="box"></div>
+
+    <!-- 요소명X .ss17-->
+    <div class="ss17"></div>
+
+    <a href="http://www.sist.co.kr" class="16" target="_blank">쌍용교육센터</a><br>
+    <!-- a[href="http://www.sist.co.kr"].16[target='_blank']>{쌍용교육센터}^br -->
+    <a href="http://www.sist.co.kr" class="16" target="_blank">쌍용교육센터</a><br>
+
+    <!--번호 매기기-->
+    <!-- ul>li.item$*5>{item-$$$} -->
+    <ul>
+        <li class="item1">item-001</li>
+        <li class="item2">item-002</li>
+        <li class="item3">item-003</li>
+        <li class="item4">item-004</li>
+        <li class="item5">item-005</li>
+    </ul>
+    <!--역순으로 번호를 매기고싶다면 $뒤에 @-를 붙이면된다.-->
+    <!-- ul>li.item$@*5>{item-$$$@-} -->
+    <ul>
+        <li class="item1">item-005</li>
+        <li class="item2">item-004</li>
+        <li class="item3">item-003</li>
+        <li class="item4">item-002</li>
+        <li class="item5">item-001</li>
+    </ul>
+    
+    <!-- 번호 매기기 1부터~ X 11부터 하고싶다면?-->
+    <!-- ul>li*5{item$@11} -->
+    <ul>
+        <li>item11</li>
+        <li>item12</li>
+        <li>item13</li>
+        <li>item14</li>
+        <li>item15</li>
+    </ul>
+    <!-- ul>li*5{item$@-11} 역순 -->
+    <ul>
+        <li>item15</li>
+        <li>item14</li>
+        <li>item13</li>
+        <li>item12</li>
+        <li>item11</li>
+    </ul>
+
+    <!-- {텍스트} -->
+    <!-- a>{click}+b{here} -->
+    <!-- a{click}>b{here} -->
+    <a href="">click<b>here</b></a>
+    <a href="">click<b>here</b></a>
+
+
+
+    <!-- p>{Click} -->
+    <!-- p{Click} -->
+    <!-- p{Click}>a{here}+{tocontinue} -->
+    <p>Click<a href="">here</a>tocontinue</p>
+
+    <!-- (header>ul.nav>li*5)+footer -->
+    <header>
+        <ul class="nav">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </header>
+    <footer></footer>
+    <!-- p>lorem -->
+    <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit minus obcaecati voluptates itaque ullam voluptate esse, voluptatem neque accusantium voluptatibus saepe consequatur aut unde odit veritatis accusamus et dolorem ratione.</p> -->
+    
+    
+    <!-- ul>li*10>lorem1 한 단어 -->
+    <ul>
+        <li>Lorem.</li>
+        <li>Architecto.</li>
+        <li>Fugit?</li>
+        <li>Libero?</li>
+        <li>Asperiores?</li>
+        <li>Enim!</li>
+        <li>Ullam?</li>
+        <li>Expedita!</li>
+        <li>Ratione.</li>
+        <li>Sit.</li>
+    </ul>
+
+    <!--ul>li*10>lorem2-- 두 단어-->
+    <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Praesentium, placeat.</li>
+        <li>Eveniet, reiciendis.</li>
+        <li>Dolores, esse?</li>
+        <li>Cumque, earum.</li>
+        <li>Culpa, ex!</li>
+        <li>Mollitia, quas!</li>
+        <li>Consectetur, soluta!</li>
+        <li>Vel, quasi?</li>
+        <li>Architecto, eveniet!</li>
+    </ul>
+
+</body>
+</html>
