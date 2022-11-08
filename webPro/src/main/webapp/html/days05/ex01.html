@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SS17 2022. 11. 8. 오전 8:08:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   /* 12:01 수업 시작 */
+   *{
+      box-sizing: border-box;    /* css 수업 */
+   }
+   
+   body{
+      font-family: Arial, Helvetica, sans-serif;
+   }
+   
+   div#header{
+     background-color: #666;
+     color:white;
+     padding: 30px;
+     text-align: center;
+     font-size: 35px;
+   }
+   div#footer{
+     background-color: #777;
+     color:white;
+     padding: 15px;
+     text-align: center;
+     font-size: 25px;
+   }
+</style>
+<style>
+  div#nav{
+    background-color: #ccc;
+    width: 30%;
+    height: 300px;
+    padding: 20px;
+    
+    float: left;
+  }
+  
+  div#nav ul{
+    /*  background-color: red; */
+     list-style-type: none;
+     padding: 0;
+     /* margin: 0; */
+  }
+  
+  div#article{
+      background-color: #f1f1f1;
+      min-height: 300px;
+       width: 70%;
+       padding:20px;
+       
+       float: left;
+  }
+</style>
+<style>
+  /* <div style="clear: left;"></div> */
+  div#section::after{
+     content: "";
+     display: table;
+     clear: both;
+  }
+</style>
+</head>
+<body>
+ 
+<h2>div(배치, layout) + css  ex01.html</h2> 
+
+ <!-- header>h2>{Cites - 시멘틱 태그( sematic elements )} -->
+ <div id="header">
+ 	<h2>Cites - sematic elements</h2>
+ </div>
+ <!-- section>(nav>ul>li*3>a[href='#'])+(article>(h2>{London}^p*2>lorem)*3) -->
+ <div id="section">
+ 	<div id="nav">
+ 		<ul>
+ 			<li><a href="#">London</a></li>
+ 			<li><a href="#">Paris</a></li>
+ 			<li><a href="#">Seoul</a></li>
+ 		</ul>
+ 	</div>
+    <div id="article">
+ 		<h2>London</h2>
+ 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ratione dolorem fuga ipsa odio voluptate in quas cumque error at rem iure doloribus accusamus vel assumenda! Impedit quidem aliquam maiores?</p>
+ 		<p>Necessitatibus minima rerum dolorum hic adipisci perspiciatis nostrum molestiae amet accusamus quia beatae repellendus cum aliquam sapiente excepturi odio iste ipsum dolorem tempora blanditiis. Quo minus suscipit id cum totam.</p>
+ 		<h2>Paris</h2>
+ 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium eligendi repellendus nam aperiam placeat explicabo tempore quasi nulla atque delectus eius laudantium est officia amet at doloremque enim nisi blanditiis.</p>
+ 		<p>Harum ea est dolore animi officia quisquam cumque in. Beatae voluptatum inventore tempora ratione minus explicabo tenetur dicta recusandae earum libero aut ab quibusdam tempore? Debitis itaque nulla voluptates delectus.</p>
+ 		<h2>Seoul</h2>
+ 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam laudantium non expedita omnis facilis quod explicabo tempora tempore pariatur sapiente velit est laborum dolorum ad quae aperiam quia cumque quidem.</p>
+ 		<p>Natus quisquam neque ipsum dolores quidem. Ad distinctio commodi voluptatum eveniet nobis at reiciendis aperiam veritatis itaque cumque facilis cum incidunt explicabo iure illum. Eligendi ullam aperiam excepturi nisi quos.</p>
+ 	</div>
+ </div>
+ <!-- footer>h2{Footer} -->
+ 
+ <!-- float:left  -->
+ <!-- 
+ <div style="clear: left;"></div>
+  -->
+  
+ <div id="footer">
+ 	<h2>Footer</h2>
+ </div>
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

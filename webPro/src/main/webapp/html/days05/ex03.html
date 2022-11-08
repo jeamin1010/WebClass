@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body onload="show()" style="margin:0;padding:0">
+    <div id="clock" align=center style="margin:0;padding:1px;font-size:9pt;width:9em;color:00f;background-color:cfc;"></div>
+
+    <h3>ex03.html - iframe 태그</h3>
+    <pre>
+        1. inline           + frame     = iframe
+            일렬로 늘어선       읜도우,창
+            직렬의
+        2. 인라인프레임은 현재 html 문서 내에 또 다른 문서를 포함하는데 사용. 
+        3. 하나의 웹 페이지 [내부] 에서 또 다른 웹 페이지를 표시하는데 사용하는 태그. 
+                            왜 ?
+        예) 현재 날짜/시간 정보를 모든 days 페이지 우측 상단에 뿌리고싶다면. 
+        4.500 페이지 이상의 웹 페이지.. 작성 - 수정/삭제(유지보수) 어려움
+    </pre>
+
+    <script language="Javascript">
+        <!-- 감춤
+        function show(){
+        var now=new Date();
+        var dy=now.getDate();
+        var mt=now.getMonth()+1;
+        var hr=now.getHours();
+        var mn=now.getMinutes();
+        var sc=now.getSeconds();
+        var ampm="<sup>오전</sup>";
+        if (hr>=12) ampm="<sub>오후</sub>";
+        if (hr>12) hr=hr-12;
+        if (hr==0) hr=12;
+        //  if (hr<=9) hr="0"+hr;
+        if (mn<=9) mn="0"+mn;
+        if (sc<=9) sc="0"+sc;
+        clock.innerHTML=" <b>"+mt+"</b>/<b>"+dy+"</b> "+ampm+" "+hr+":"+mn+":" +sc;
+        setTimeout("show()",1000);
+        }
+        // 감춤 끝  -->
+        </script>
+
+</body>
+</html>
