@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오전 11:49:18</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex04.html</h3>
+ <!-- autocomplete="on"   사용자 이전에 입력한 값을 기본으로 자동 완성 속성  -->
+ 
+<form action="ex04_ok.jsp" method="get"  autocomplete="off">
+ 
+   <!-- 12:05 수업 시작~! -->
+   
+   <!-- 브라우저 지원하는 색상  -->
+  <!-- 선택한 색상의 배경색으로 지정 - 사용자 반응 처리 js,jquery -->
+   <input type="color"  id="bgcolor"><br>
+   
+   생년월일 : <input type="date" id="birth"><br>
+   
+   <button type="button"  onclick="birth_test();">생일확인</button>
+   <script>
+       // var i = 1;
+       function birth_test(){
+    	   //  console.log( "test " + i++ );
+    	   // input입력태그들의 값은 value 속성 읽/쓰  ( 기억 )
+    	   // js
+    	   // var birth = document.getElementById("birth").value;
+    	   // console.log( "생일 : " +  birth    );
+    	   
+    	   // jquery 
+    	   // jquery method - val()
+    	   var birth = $("#birth").val();
+    	   console.log( "jquery 생일 : " +  birth    );
+       }
+   </script>
+   <br>
+   <input type="datetime-local"><br>
+   <input type="datetime"><br>
+   
+   <br><br>
+   설문(투표) 기간 :  <!--  시작 ~ 종료 -->
+   <input type="date"   min="2022-11-05" max="2022-11-12">
+   <br>
+   <!-- 년도와 월만 선택 가능  -->
+   month : <input type="month">
+   <br>
+   <!-- ***** type="hidden" 입력값을 숨김-->
+   
+   <!-- 서브밋 기능이 있다. -->
+   image : <input type="image" src="../images/favicon.ico">
+   <!-- <a><img></a> -->
+   <br>
+   
+   <!-- js .전공자  -->
+   <!-- on input  이벤트는 슬라이더 변경(움직임)할때 마다 일어나는 이벤트 -->
+   <!-- on change  이벤트는  value 속성값이 변경될 때 일어나는 이벤트 -->
+   range : <input type="range" min="0"   max="100"  value="0" 
+oninput="volumn_change(  this )">
+   <input  id="volumnValue"  value="0"  
+     style="text-align: center">
+   <script>
+       function volumn_change(  rangeobject ){
+    	   document.getElementById("volumnValue").value =  rangeobject.value;
+       }
+   </script>  
+     
+   <br> 
+   search : <input type="search">
+   <br>
+   <!-- 000-0000-0000  전화번호 형식 -->
+   tel : <input type="tel"  pattern="[0-9]{3}-\d{4}-\d{4}">
+   <br>
+   text : <input type="text"  pattern="[0-9]{3}-\d{4}-\d{4}">
+   <br>
+   <!-- 년, 46번째 주 -->
+   week : <input type="week">
+   <br>
+   time : <input type="time">
+   <br>
+   
+   
+   
+   
+   <!-- 서브밋 기능 X, 일반 버튼 인데  js, jquery 사용해서 서브밋 구현 -->
+   <input type="button"  value="제출">
+ 
+</form>
+ 
+<form action=""></form>
+<form action=""></form>
+<form action=""></form>
+<form action=""></form>
+<form action=""></form>
+
+  <script>
+      // jquery  코딩.     
+      /*
+      $("input[type='button'][value='제출']").click(function() {
+      	alert("test-3");
+      });
+      */
+      
+      /*
+      // jquery selector      :button == input[type='button'],    button
+      $(":button").click(function() {    	  
+    	  // 입력값에 대한 유효성 검사를 한 후에 .. 
+    	  
+      	 $("form")[0].submit();
+      });
+      */
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

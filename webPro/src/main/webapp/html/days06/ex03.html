@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오전 11:19:18</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex03.html</h3>
+
+<form action="" method="post" enctype="multipart/form-data">
+  <!-- 남자/여자  두 가지 값 중에  반드시  하나만 선택할 때 : 라디오 버튼 -->
+  <!-- 체크박스  : 여러 가지 중에 0, 여러 개를 선택할 때-->
+  
+  <!-- 그룹 묶어주는 처리 속성 : name -->
+  성별 : 
+  <input type="radio"  name="gender" value="m"  checked="checked">남자
+  <input type="radio"  name="gender"  value="w">여자
+  <br>
+  좋아하는 과목 선택 ? 
+  <br>
+  <input type="checkbox" name="fsubject" value="kor">국어
+  <input type="checkbox" name="fsubject" value="eng">영어
+  <input type="checkbox" name="fsubject" value="mat">수학
+  <input type="checkbox" name="fsubject" value="pe">체육
+
+  <br>
+  게시글 제목 : <input type="text"  name="title" size="50"  style="border:1px solid gray;width:300px"><br>
+  <!-- 한줄 X, 여러 줄  -->
+  게시글 내용 :  <textarea rows="10" cols="50"></textarea> <br>
+  <br>
+  <!-- ( 기억 ) 첨부파일 있는 경우에는 form 태그의 method="post" 라야 된다.  -->
+  <!-- 개발자 직접 서버 첨부(전송)된 파일을  저장 또는 파일업로드 라이브러리 사용 -->
+  첨부파일 : <input type="file" name="attachFile"><br>
+  첨부파일 : <input type="file" name="attachFile"><br>
+  첨부파일 : <input type="file" name="attachFile"><br>
+  첨부파일 : <input type="file" name="attachFile"><br>
+  <br>
+  멀티 첨부 파일 : <input type="file" name="attachFile"  multiple="multiple"><br>
+  <input type="submit">
+</form>
+
+</body>
+</html>

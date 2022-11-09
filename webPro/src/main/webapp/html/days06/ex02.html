@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오전 9:26:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex02.html</h3>
+<!-- 11:02 수업 시작~   html 입력(form)양식 JSP -->
+
+<!--요청URL ?name=값&파라미터명=값&.. 쿼리스트링 -->
+<!--             ASCII -->
+<form action="ex02_ok.jsp" method="get">
+
+ <label for="name">이름 </label> <input type="text" id="name" name="name"  autofocus="autofocus" value="홍길동"><br>
+ <label for="age">나이 </label> <input type="text" id="age" name="age" value="20"><br>
+
+ <input type="submit">
+ <input type="reset">
+
+</form>
+
+
+<!-- 
+ ex02.html
+ form action="url"            -> 요청 ->                   ex02_ok.jsp     
+ name                                  ?name=&age             서버처리
+ age                                      요청파라미터               <%= name%>
+ 서브밋                               <-응답-
+
+ -->
+
+</body>
+</html>

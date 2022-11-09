@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오후 2:31:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex07_02.html</h3>
+<!-- 비명지르다 -->
+<img  id="scream" alt="scream" src="../images/img_the_scream.jpg">
+
+<p><button onclick="scream_drawing();">캔버스</button></p>
+
+<canvas id="myCanvas" width="240" height="300"  style="border:1px solid #000"></canvas>
+
+<script>
+   function scream_drawing(){
+	   var c = document.getElementById("myCanvas");
+	   var ctx =  c.getContext("2d");
+	   
+	   var screamimage =  document.getElementById("scream");
+	   ctx.drawImage(screamimage, 10, 10);
+   }
+</script>
+</body>
+</html>
+
+
+
+
+

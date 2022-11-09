@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오후 2:50:33</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex09.html - 멀티미디어</h3>
+
+<pre>
+    1. 웹 상에서 멀티미디어는 사운드, 음악, 비디오, 영화 및 애니메이션.
+    3:03 수업 시작~
+    
+     2. 일반적인 비디오 형식 :  .mpg,  .mpeg, .avi, .wmv, .mov, .swf, .webm. .mp4 등등
+       (    html 표준 :   mp4. ogg. webm 만 지원한다....   )
+            YouTube 에서는 mp4 형식을 권장한다. 
+     3. 일반적인 오디오 형식 : .wav, .ogg, .mp3, .wma 등등
+      (    html 표준 :   mp3, .ogg, .wav  만 지원한다....   )
+</pre>
+
+
+<h3>비디오</h3>
+<xmp>
+1.  html 태그     <video>  태그를 사용. - 웹 페이지에 비디오를 표시.
+2. width, height 속성을 하지 않으면 동영상이 로드 되는 동안 페이지가 깜빡일 수 있다. 
+3.  controls 속성 추가 ( 재생, 일시정지, 볼륨, 등등 비디오 컨트롤 하는 속성)
+</xmp>
+
+<video src="movie.mp4"  width="320" height="240" controls="controls"></video>
+
+<!-- source 자식 태그 : 브라우저 선택 -->
+<!-- autoplay 자동실행,  muted 조용한, 낮은 == 묵음 -->
+<video  width="320" height="240" autoplay="autoplay" muted="muted">
+  <source src="movie.mp4"  type="video/mp4">
+  <source src="movie.ogg"  type="video/ogg">
+  현재 브라우저는 지원하지 않습니다.
+</video>
+
+
+
+</body>
+</html>
+
+

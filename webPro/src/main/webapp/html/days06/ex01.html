@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오전 8:48:02</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  *{
+     box-sizing: border-box;
+  }
+  
+  html{
+    font-family:"Lucida Sans", sans-serif;
+  }
+  
+  /* .클래스명 */
+  /* #아이디명 */
+  .header{
+    background-color: #9933cc;
+    color:white;
+    padding: 15px;
+  }
+  .footer{
+     background-color: #0099cc;
+    color:#ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .row::after{
+     content: "";
+     display: table;
+     clear: both;
+  }
+  
+  /*
+  css selector  60가지
+  [속성=속성값]{
+  }
+  */
+  [class*="col-"]{
+     float:right;
+     padding: 15px;
+  }
+</style>
+<style>
+  /* css selector   >   공백 */
+  .menu > ul{         /*  직계자식 O, 후손 X */
+     list-style-type: none;
+     padding: 0;
+     margin:  0;
+  }
+  .menu li{             /*  직계자식 O, 후손 O */
+     background-color: #33b5e5;
+     margin-bottom: 7px;
+     padding: 8px;
+     color: white;
+     /* 박스 그림자 효과 */
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .menu li:hover{
+    background-color: #0099cc;
+  }
+  
+  .aside{
+     background-color: #33b5e5;
+     text-align:center;
+     font-size:14px;
+     padding: 15px;
+     color: white;
+     /* 박스 그림자 효과 */
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+</style>
+<style>
+  /* mobile phone */
+   [class*="col-"]{
+      width: 100%;
+   } 
+      
+   /* tablets */
+   @media only screen and ( min-width:600px ){
+        .col-s-3 {width: 25%;}
+        .col-s-9 {width: 75%;}
+        .col-s-12 {width: 100%;}
+   }
+   
+     /* desktop */
+   @media only screen and ( min-width:768px ){
+        .col-3 {width: 25%;}
+        .col-6 {width: 50%;}
+   } 
+
+</style>
+</head>
+<body>
+  <!-- 문제 1번 풀이 -->
+	<div class="header">
+		<h1>Chania</h1>
+	</div>
+	<div class="row">
+		<div class="col-3 col-s-3 menu">
+			<ul>
+				<li>The Flight</li>
+				<li>The City</li>
+				<li>The Island</li>
+				<li>The Food</li>
+			</ul>
+		</div>
+		<div class="col-6 col-s-9">
+			<h1>The City</h1>
+			<p>Chania is the capital of the Chania region on the island of
+				Crete. The city can be divided in two parts, the old town and the
+				modern city.</p>
+		</div>
+		<div class="col-3 col-s-12">
+		   <div class="aside">
+		      <h2>What?</h2>
+		      <p>Chania is a city on the island of Crete.</p>
+		      <h2>Where?</h2>
+		      <p>Crete is a Greek island in the Mediterranean Sea.</p>
+		      <h2>How?</h2>
+		      <p>You can reach Chania airport from all over Europe.</p>
+		   </div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Resize the browser window to see how the content respond to the
+			resizing.</p>
+	</div>
+
+</body>
+</html>
+
+
+
+
+

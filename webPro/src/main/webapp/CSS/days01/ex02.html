@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오후 4:15:43</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="ex02_style.css">
+<style>
+   /* 
+   body{
+     background-color: red;
+   }
+   */
+   
+   /* 1. selector : 태그명 */
+   h1{
+      color: blue;
+   }
+   
+   /* 2. 그룹화 선택자 */
+   h1, h2, h3, h4, h5, h6{
+      margin: 0;
+      padding: 0;
+   }   
+</style>
+<style>
+   *{
+      font-family: arial, verdana;
+      color:black;
+   }
+   
+   p{
+      color:red;
+      border:1px solid gray;
+   }
+   
+   /* 3.  .클래스명 선택자 */
+   .second{
+      background-color: #e5e5e5;
+      text-align: center;
+   }
+   
+   .important{
+     /* 텍스트 대문자로 변환 */
+      text-transform: uppercase;
+   }
+   
+   /* important 클래스 가진 요소 && div */
+   div.important{
+      /* <b></b>  bold 굵게 */
+      /* 100 ~[400]~900 */
+      font-weight: bold;
+   }
+   
+   /* <p class="second important">
+   p.second.important{
+   
+   }
+   */
+   
+   p{
+      color:green;
+      
+   }
+</style>
+</head>
+<body>
+
+<h3>ex02.html - internal css 적용방법 예</h3>
+
+<!-- h$*6>{Hello World} -->
+<!-- internal css < inline css 우선 순위가 높다. -->
+<h1 style="color:yellow;">Hello World</h1>
+<h2 class="second">Hello World</h2>
+<h3>Hello World</h3>
+<h4 class="important">Hello World</h4>
+<h5>Hello World</h5>
+<h6>Hello World</h6>
+
+<p>
+  <h1>Lorem ipsum dolor.</h1>
+</p>
+
+
+<!-- p*5>lorem7 -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+<p class="second">Alias dolor provident rerum nisi? A quidem.</p>
+<p class="important">Possimus rerum eveniet molestias maxime consectetur aliquam!</p>
+<p>Eum tempore cupiditate id nam placeat aliquam!</p>
+<p>Animi iste non quaerat reiciendis similique consequuntur.</p>
+
+
+<!-- div*5>lorem5 -->
+<div>Lorem ipsum dolor sit amet.</div>
+<div class="second important">Eaque reiciendis veniam odio harum.</div>
+<div>Reprehenderit ducimus deserunt ad laudantium.</div>
+<div>Culpa libero qui eum quae.</div>
+<div>Ex commodi aspernatur eligendi soluta.</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 9. 오후 12:55:54</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex05.html -  form 속성 ->  input  form속성</h3>
+
+<!-- 모든 입력 태그의 유효성 검사 무효화 novalidate="novalidate"-->
+<form action="ex05_01.jsp"  id="form2"  novalidate="novalidate">
+     <label for="name">이름 </label> <input type="text" id="name" name="name"  autofocus="autofocus" value="홍길동"  required="required"><br>
+     <label for="age">나이 </label>  <input type="text" id="age" name="age" value="20"><br> 
+     <!-- formnovalidate="formnovalidate" 서브밋 될 때 유효성 검사 X -->
+     <input type="submit" formtarget="_blank"  formnovalidate="formnovalidate">
+</form>
+
+
+ <!-- enctype="multipart/form-data" -->
+ 
+<form action="ex05_01.jsp"  id="form1" method="post" >
+     <label for="name">이름 </label> <input type="text" id="name" name="name"  autofocus="autofocus" value="홍길동"><br>
+     <input type="submit"  formmethod="get">
+     <!-- formaction="ex05_02.jsp"속성 -->
+     <input type="submit"  formaction="ex05_02.jsp"  formenctype="multipart/form-data"> 
+     <br>
+     첨부파일  <Input type="file">
+     
+</form>
+<!-- 
+http://localhost/webPro/html/days06/ex05_01.jsp
+?
+name=%ED%99%8D%EA%B8%B8%EB%8F%99
+ -->
+ <!-- 
+ http://localhost/webPro/html/days06/ex05_01.jsp
+ ?
+ name=%ED%99%8D%EA%B8%B8%EB%8F%99
+ & 
+ age=20
+  -->
+ <label for="age">나이 </label> 
+ <!-- form="form1" 속성 추가-->
+ <input type="text" id="age" name="age" value="20"  form="form1"><br> 
+
+
+</body>
+</html>
