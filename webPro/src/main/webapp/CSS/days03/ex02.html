@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 14. 오전 9:33:29</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex02.html</h3>
+
+<button id="btnExec" style="width: 150px;">버튼 실행</button>
+<!--  실행버튼을 누르면 10개의 버튼을 생성해서 p 태그의 자식을 추가하는 코딩 -->
+
+<p id="demo"></p>
+
+</body>
+<script>
+		//document.querySelector("#btnExec")
+		document.querySelector("#btnExec").onclick = function(){
+			var pEle = document.querySelector("#demo");
+			
+			// for 누르면 누를때마다 10개씩늘어남.... <p> </p>
+			// button*10,br*10 모든 자식 요소 제거
+			pEle.innerText="";
+			// 위 코딩을 사용하면 버튼 누르면 "" 공백으로 제거 - > for문돌아 10개 버튼 생성
+			//alert("잠시멈춤"); // 잠시 멈춤 alert 사용으로 확인가능
+			
+			//버튼 * 10 => p 추가
+			for(var i =1; i<=10;i++){
+				var btn = document.createElement("button");
+				
+				//버튼의 너비 : 150px 주고싶다면?
+				// js? style="width: 150px;
+				//btn.setAttribute(name,value);
+				//value = btn.getAttribute(name);
+				
+				// js 코딩 -> f12 눌러서 디버깅 확인
+				//btn.setAttribute("style","width: 150px");
+				
+				//btn.setAttribute("width","150px"); -> XXXX - 버튼 태그에 width 속성이 없기때문에 사용 불가
+				//btn.style.width = "150px";
+				
+				
+				btn.innerText = "버튼 -"+i ;
+				btn.onclick = function(){
+					//***** js[클로저] *****
+					// *****alert("버튼" +i+"클릭"); *****
+					
+					//js 에서 이벤트가 발생하면 모든 이벤트 정보를 저장하는 객체 : event 객체
+					alert(event.srcElement.innerText);
+				};
+				pEle.appendChild(btn);
+				//<button> 인라인 모드이기때문에 옆으로 나감
+				// 아래로 내리고싶다면?
+				pEle.appendChild(document.createElement("br"));
+			};
+		}
+
+</script>
+<script>
+// 위의 코딩을 jquery 로 수정
+</script>
+</html>

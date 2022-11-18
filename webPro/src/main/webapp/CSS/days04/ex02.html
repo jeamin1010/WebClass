@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 15. 오전 10:20:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+p{
+	border: 3px solid #4caf50;
+	padding: 5px;
+	/* vertical-align: top; */
+	/* overflow: auto; */
+}
+
+/* .clearfix{
+	overflow: auto;
+} */
+
+/* p::after{ */
+.clearfix::after{
+	content:"";
+	clear: both;
+	display: table;
+}
+
+p img{
+	width: 170px;
+	float: right;
+}
+
+</style>
+<style>
+.clearfix div{
+	padding: 15px;
+	border: 1px solid;
+	
+	float: left; 
+}
+</style>
+
+</head>
+<body>
+<h3>ex02.html - css float</h3>
+<pre>
+	[float 속성]
+	-사전적의미 : 둥둥 떠다니다.
+	-요소가 떠다니는 방법을 지정하는 속성
+	-콘텐츠를 배치하고 형식을 지정하는데 사용
+	-이미지 컨테이너의 텍스트 왼/오른쪽 배치(떠 있게 한다.)
+	
+	-속성값 : left , right
+</pre>
+<p class="clearfix">
+<img src="../images/pineapple.jpg" alt="" />
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quam vel dolorem molestiae corporis repellendus suscipit esse sit! Neque rem fuga aliquam impedit ducimus porro nam ea pariatur repellat qui.
+</p>
+
+<!-- div[class='box$']*3>{box $} -->
+<div class="clearfix">
+<div class="box1">box 1</div>
+<div class="box2">box 2</div>
+<div class="box3" style="float: right;">box 3</div>
+</div>
+<hr>
+<pre>
+	[clear 속성]
+	-float 요소 옆에 있는 요소에 어떤 일이 발생해야 하는 지 지정하는 속성.
+	-none(기본값)
+	-left : 왼쪽 float 속성 요소의 아래로 출력.
+	-right : 오른쪽 float 요소의 아래로 출력
+	-both : 왼+오 float 요소의 아래로 출력
+	-inherit : 상속
+</pre>
+</body>
+<script>
+</script>
+</html>

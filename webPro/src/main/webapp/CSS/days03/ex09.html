@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 14. 오후 4:51:37</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#mySidenav a{
+	background-color: #111;
+	color: white;
+	padding: 13px;
+	text-decoration: none;
+	font-size: 20px;
+	border-radius: 0 5px 5px 0;
+	
+	position: absolute;  /* 부모요소 body */
+	width: 100px;
+	left: -85px;
+	text-align: center;
+	
+	/* 전환 : 다른상태, 조건으로 변경(이행)되는것 
+		left 값이 -84 -> 0 전환
+	*/
+	transition:0.5s ease;
+}
+
+#mySidenav a:hover{
+	left: 0;
+}
+
+#home{top:20px;}
+#services{top:80px;}
+#clients{top:140px;}
+#contact{top:200px;}
+
+#content{
+margin: 120px;
+}
+</style>
+</head>
+<body>
+<h3 style="text-align: center;">ex09.html</h3>
+<div id="mySidenav" class="sidenav">  
+  <a href="#" id="home">Home <i class="fa fa-fw fa-home"></i></a>
+  <a href="#" id="services">Service<i class="fa fa-fw fa-wrench"></i></a>
+  <a href="#" id="clients">Clients<i class="fa fa-fw fa-user"></i></a>
+  <a href="#" id="contact">Contact<i class="fa fa-fw fa-envelope"></i></a>
+</div>
+<div id="content">
+   <h2>Lorem ipsum dolor sit amet.</h2>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam beatae!</p>
+</div>
+</body>
+<script>
+</script>
+</html>

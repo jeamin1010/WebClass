@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+
+#mydiv p > a{		/* 100점 + 1점 + 1점 = 102점 */
+
+   color:orange;
+}
+
+p>a.button{		/* 1점 + 1점 + 10점 = 12점 */
+   color:blue;
+}
+
+
+a{			/* 1점 */
+   color:yellow;
+}
+
+p > a{	/* 태그명 + 태그명 2점  */
+
+   color:green;
+   
+}
+</style>
+
+<style>
+a{
+   color:red !important;
+}
+</style>
+</head>
+<body>
+
+<pre>
+	동일한 요소(a)를 css선택자로 사용할 때 우선순위
+	[특이성 수준을 나타내는 점수]
+	1. inline css 적용방법(1000점) > Internal,External css 적용방법
+	2. 
+				*(모든것들)		:0점
+				태그명,의사요소 	: 1점
+				클래스명,의사클래스명,속성 선택자 : 10점
+				아이디 속성 		: 100점
+				
+				예)
+				
+				#navbar p#demo{}  	100점 + 1점 + 100점 = 201점의 우선순위
+				#demo 						100점
+				
+	3. 예외
+		!important 규칙
+		해당 요소의 특정 속성에 대한 모든 이전 스타일을 [재정의]한다.
+				
+</pre>
+
+<p>
+   <a href="#" class="button">button 1</a>
+</p>
+
+<div id="mydiv">
+   <p>
+      <a href="#" class="button">button 2</a>
+   </p>
+   
+   <p>
+      <a href="#" class="button" style="color:black">button 3</a>
+   </p>
+</div>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 14. 오후 2:42:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+.box{
+	border:1px solid gray;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+
+
+</style>
+
+<style>
+div:nth-of-type(1) {
+	background-color: red;
+	position: static; /* 디폴트 static */
+}
+div:nth-of-type(2) {
+	background-color: green;
+	position: relative; 
+	left: 30px;
+	top: 30px;
+}
+div:nth-of-type(3) {
+	background-color: blue;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+
+div:last-of-type {
+	background-color: yellow;
+	position: absolute; /* 가장 가까운 부모(조상)을 기준으로 배치함 */
+	left: 30px;
+	top: 30px;
+	z-index: -1;
+}
+</style>
+</head>
+<body>
+<h3>ex08_02</h3>
+</body>
+<script>
+	//js로 div 요소 5개를 동적 추가
+	for (var i = 1; i <=5; i++) {
+		var div = document.createElement("div");
+		div.innerText = "Box - "+i;
+		/*
+		div.style.border = "1px solid gray";
+		div.style.width = "100px";
+		div.style.height = "100px";
+		//div.style.text-align = "center"; js에서 - 가있을경우 - 지우고 그 다음문자 대문자로 변경
+		div.style.textAlign = "center";
+		*/
+		/* <style> .box클래스명 </style> -> js 클래스명 설정 */
+		//div.className="box";
+		div.classList.add("box");
+		document.body.appendChild(div);
+	}
+	
+	//jquery로 p 요소 50개 동적 추가
+	
+	for (var i = 1; i <=50; i++) {
+		//$("body").append($("<p></p>").text("."));
+		$("body").append($("<p>.</p>"));
+	}
+
+</script>
+</html>

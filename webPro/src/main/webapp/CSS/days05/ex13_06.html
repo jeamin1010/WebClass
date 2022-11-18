@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 16. 오후 3:49:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+div{
+	border: 10px dotted black;
+	padding: 35px;
+	background: yellow url("../images/img_flwr.gif") no-repeat; 
+}
+#demo1{
+	background-origin: padding-box; 
+	/* padding-box= 기본값  */
+	background-clip: padding-box;
+}
+#demo2{
+	background-origin: border-box; 
+	background-clip: border-box;
+}
+#demo3{
+	background-origin: content-box; 
+	background-clip: content-box;
+}
+</style>
+</head>
+<body>
+<h3>ex13_06.html : background-origin 속성</h3>
+<h3>ex13_06.html : background-clip 속성</h3>
+
+<pre>
+								background-clip 속성
+	background-clip : [배경색이 그려질 위치]를 지정하는 속성
+			padding-box(기본값)
+			border-box
+			content-box
+</pre>
+
+
+<pre>
+								background-origin 속성
+	1)background-position 속성 : 배경이미지의 위치를 지정하는 속성
+	예) left top, 10px 150px , 50% 50% 등등
+	
+	2)background-origin 속성 : 배경 이미지의 위치를 지정하는 속성
+			1)과 차이점? 
+			border-box 						테두리 왼쪽 상단
+			,padding-box(기본값) 			패딩 왼쪽 상단
+			,content-box 						콘텐츠 왼쪽 상단
+			속성값을 사용.
+</pre>
+
+<!-- (#demo$>h1>lorem5^p>lorem15)*3 -->
+<div id="demo1">
+	<h1>Lorem ipsum dolor sit amet.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam assumenda optio accusamus iure magni id!</p>
+</div>
+<div id="demo2">
+	<h1>Lorem ipsum dolor sit amet.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam assumenda optio accusamus iure magni id!</p>
+</div>
+<div id="demo3">
+	<h1>Lorem ipsum dolor sit amet.</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam assumenda optio accusamus iure magni id!</p>
+</div>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 10. 오전 10:56:20</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+  body{
+     padding: 0;
+     margin: 0;
+  }
+  
+  div{
+     border: 1px solid black;
+     
+     /*
+     margin-top: 25px;
+     margin-right: 50px;
+     margin-bottom: 75px;
+     margin-left: 100px;
+     */
+     
+     /* 약식 속성  top right bottom left 순서   시계방향 */
+     /* margin:25px 50px 75px 100px; */
+     
+     /* 
+     margin:25px 25px 25px 25px;
+     margin:25px;
+      */
+
+      /* 
+                 t/b      l/r
+      margin:25px 100px;
+       */
+       
+       /* 가운데 정렬 */
+       /* margin: 0     auto; */
+       
+  /*                 top    l/r       bottom */
+    /*    margin:25px 75px  100px; */
+    
+    /*
+          [ 여백 축소된 경우 ]
+    (주의)   bottom 여백 75px
+              top        여백 25px
+              100px X           -> 75px 
+     */
+  }
+</style>
+
+</head>
+<body>
+
+<h3>ex06.html - 여백( margin )</h3>
+<!-- 11:07 수업 시작~ -->
+<pre>
+   1. 테두리 외부 - 마진(여백)  
+      테두리 내부 - 패딩
+   2. margin 속성
+       margin-top
+       margin-right
+       margin-bottom
+       margin-left
+       margin
+   3. 여백 속성값 
+        1) auto - 브라우저가 여백을 자동 계산
+        2) 길이 단위 - px, pt, cm 등등
+        3) % - 요소를 포함하는 부모요소의 너비의  %
+        4) 상속 -  부모 요소 ( 여백) -> 자식 요소 (여백)       
+</pre>
+
+<!-- div*3>lorem -->
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus doloribus itaque illo debitis accusantium quos amet adipisci recusandae odit harum velit pariatur nemo natus labore suscipit architecto ipsa vero quaerat.</div>
+<div>Sapiente numquam dolore ad aut! Perspiciatis culpa eos dicta neque molestias ullam nemo sunt pariatur quae ad optio molestiae asperiores vero quidem obcaecati quis accusantium ipsam aliquam voluptatum dolore recusandae.</div>
+<div>Nam accusantium itaque iure nisi corporis. Doloribus molestias natus voluptatum consectetur temporibus iste dolores ab ullam odit dolor maiores voluptates tempora pariatur sapiente quae tenetur excepturi esse voluptatibus facere eius!</div>
+test
+</body>
+</html>

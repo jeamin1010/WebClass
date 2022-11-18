@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 10. 오전 10:12:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+body {
+	/* 6. 배경 약식 속성  color image repeat attachment  position */
+	/* background: red  url('../images/img_tree.png')  no-repeat fixed right top ; */
+	background:  url('../images/img_tree.png')  no-repeat fixed right top ;
+	
+	/* 
+	background-color: red;
+	background: red;
+	 */
+}
+</style>
+ 
+<style>
+   #top{
+     /* 
+      border-width:1px;
+      border-style: solid;
+      border-color: gray;
+       */
+       
+       /* 테두리 약식 속성 */
+       border:1px solid gray;
+       width: 25px;
+       height: 25px;
+       
+       position: fixed;
+       right:5px;
+       bottom: 5px;
+  }
+  
+  /* :의사클래스  - 특정상태 */
+  #top:hover{
+    background-color: black;
+    color:yellow;
+    font-weight: bold;
+    cursor: pointer;    /* 손가락 모양 */
+  }
+</style>
+
+</head>
+<body>
+
+	<h3>ex04_03.html</h3>
+
+	<!-- #top>{top}+(h3>{css 배경 이미지})+lorem+p*50>{.} -->
+	<div id="top"  onclick="top_click();">top</div>
+	<h3>css 배경 이미지</h3>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel inventore
+	vitae molestias tenetur quam minus perferendis ea ratione perspiciatis
+	aut. At delectus cumque voluptatem dolorum iste error quasi quia
+	doloremque.
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+
+
+<script>
+   function top_click(){
+	   // alert("이벤트 확인!!!@")
+	   // 크로스 브라우징
+	   document.body.scrollTop = 0;
+	   document.documentElement.scrollTop = 0;
+   }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

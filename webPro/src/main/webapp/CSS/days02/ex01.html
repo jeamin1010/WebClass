@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 10. 오전 4:57:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+    p#p1.second{
+    }
+    
+    p#p1{
+        color:black;
+    }
+
+    p{
+       border:1px solid gray;
+       color:blue;
+    }
+    
+    .second{
+        color:red;
+    }
+    
+    #p1{
+        background-color: green;
+        color:yellow;
+    }
+    
+    div:hover{
+         background-color: yellow;
+         color:red;
+    }
+    
+</style>
+</head>
+<body>
+<!--
+   미출석 : 허정연 
+ -->
+ 
+ <pre>
+    1. CSS 선택자(selector)
+       1) 단순 선택자 - 태그명 < 클래스명  < ID명(숫자로 시작 X)
+                               선택자 점수 높으면 우선 순위가 높다. ( 점수 계산 ) 
+       2) 결합자 선택자 - div p,  div > p,       div + p,           div ~ p
+                                     후손      직계자식     형제레벨			div 와 같은 단계의 모든 p
+                                   특정 관계를 가진 요소    
+       3) 유사 클래스 선택자 - 특정 상태를 기반으로 요소 선택
+                                     p:hover{}
+                                     :의사 클래스
+       4) 유사 요소 선택자  - 요소의 지정된 부분에 스타일을 지정하는 데 사용. 
+                                     ::의사요소
+                                     요소의 내용  앞 , 뒤에 내용 삽입
+                                     <div id="section">
+                                        float:left
+                                        <div></div>
+                                        <div></div>
+                                     </div>                                     
+                                     #section::after{
+                                        content:"";
+                                        clear:both;
+                                        display:table;
+                                        
+                                     }
+                                     <!-- <div style="clear: both"></div> -->
+                                     <div id="footer"></div>
+       5) 속성 선택자  - [속성=속성값]
+                                [type='button']             ->           :button(jquery selector)
+                                [class*='col-']
+                                [class|='col-']
+                                [class^='col-']
+                                [class$='col-']
+                                [class~='col-']
+       
+    2. CSS 적용하는 방법
+       1) 내부(Internal) css 적용방법 - 해당 페이지
+       2) 인라인( Inline)css 적용방법 - 해당 요소
+            내,외 css 적용방법 + 인라인 ( 장점 X )
+       3) 외부( External)   css 적용방법 - 웹 사이트 전체( 여러 페이지 )
+              ㄱ.  외부파일명.css
+               ㄴ. <link href="~.css" rel="stylesheets">
+               ㄴ. <link href="~.css" rel="stylesheets">
+               ㄴ. <link href="~.css" rel="stylesheets">
+               
+    3. 참고  
+        속성값과 단위 사이에 공백 추가 X
+        font-size :   20 px        
+ </pre>
+ 
+  <p id="p1" class="second">Lorem.</p>
+  <p class="second" style="">Tempora.</p>
+  <p>Aut.</p>
+  
+  <div>Lorem.</div>
+  <div class="second">Corrupti!</div>
+  <div>Aut.</div>
+ 
+</body>
+</html>	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

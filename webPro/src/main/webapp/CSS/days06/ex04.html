@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오전 11:44:51</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+div {
+	width: 300px;
+	height: 100px;
+	background-color: yellow;
+	border: 1px solid black;
+}
+
+div#demo{
+	/* 3d 변환 */
+	/* transform:rotateX(45deg); */
+	/* transform:rotateX(90deg); */
+	/* transform:rotateX(180deg);  */
+	
+	 /* transform:rotateY(45deg); */
+	 
+	  /* transform:rotateZ(45deg); */
+}
+</style>
+</head>
+<body>
+<h3>ex04.html - 3D 변환(x,y,z) - 수정</h3>
+<pre>
+	1. 요소이동
+		transform:translateX(),
+		transform:translateY(),
+		transform:translateZ(),
+		transform:translate3d(x,y,z)
+	2. 요소회전
+		transform:rotateX(),
+		transform:rotateY(),
+		transform:rotateZ(),
+		transform:rotate3d(x,y,z)
+	3. 요소 비율 조정
+		transform:scaleX(),
+		transform:scaleY(),
+		transform:scaleZ(),
+		transform:scale3d(x,y,z)
+	4. 요소 기울기 X
+	
+	5.transform:matrix3d(...)
+</pre>
+<button>회전시작</button>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<div>Lorem ipsum dolor sit amet.</div>
+<div id="demo">Lorem ipsum dolor sit amet.</div>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<script>
+	// 웹 페이지 요청하면 바로 작동하도록 
+var angle = 1; 
+var timer;
+document.querySelector("button:first-of-type").onclick=function(){
+	timer=setInterval(function(){
+		var target = document.getElementById("demo");
+		/* target.style.transform="roatateX("+angle+"deg)"; */
+		/* target.style.transform="roatateY("+angle+"deg)"; */
+		target.style.transform="roatateZ("+angle+"deg)";
+		angle++;// js ++,-- 증감연산자 
+		
+	},10);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오후 2:05:12</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+div{
+	background-color: red;
+	width: 100px;
+	margin-bottom: 3px;
+	
+	transition:width 2s;
+}
+div:hover {
+	width: 100%;
+}
+
+/* 속도 곡선 각각 지정 */
+div:nth-last-of-type(1) {transition-timing-function:ease;}
+div:nth-last-of-type(2) {transition-timing-function:linear;}
+div:nth-last-of-type(3) {transition-timing-function:ease-in;}
+div:nth-last-of-type(4) {transition-timing-function:ease-out;}
+div:nth-last-of-type(5) {transition-timing-function:ease-int-out;}
+
+</style>
+</head>
+<body>
+<h3>ex05_02.html</h3>
+<div>ease(deafult)</div>
+<div>linear</div>
+<div>ease-in</div>
+<div>ease-out</div>
+<div>ease-int-out</div>
+<script>
+</script>
+</body>
+</html>

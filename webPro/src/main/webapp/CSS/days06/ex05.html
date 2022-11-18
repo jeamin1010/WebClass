@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오후 12:38:26</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+div{
+	background-color: red;
+	width: 100px;
+	height: 100px;
+	
+/* 
+	ease 효과 : 시작(천천히) -> 빨리지고 -> 종료(천천히) 
+	transition : width 2s ease, height 2s ease; */
+	transition : 2s ease;
+*/
+	
+	transition-delay:1s
+	transition-property:width;/* 전환속성 */
+	transition-duration:2s;/* 전환기간 */
+	transition-timing-function:ease;/* 전환속도곡선 */
+	
+	/*
+		전환속도 곡선 : ease 효과
+		1. ease : 천천히 -> 빨리 -> 천천히(기본값)
+		2. linear: 등속
+		3. ease-in : 느린시작
+		4. ease-out : 느린종료
+		5. ease-in-out :천천히 시작/ 천천히 종료
+		:
+		: 
+*/
+
+
+}
+
+div:hover {
+	width: 300px;
+	height: 200px;
+}
+</style>
+</head>
+<body>
+<h3>ex05.html - 전환(transition)</h3>
+<pre>
+	[전환(transition)]
+	1)지정된 기간동안 속성 값을 원할하게 변경하는것.
+			width:0px 		-> :hover 		-> width:180px
+			예) transition : width 0.5s ease;
+	2)transition 약식
+			-transition-delay 속성 					:X
+			-transition-duration 속성 				:0.5s
+			-transition-property 속성 			:width
+			-transition-time-function 속성 	:ease
+	
+	3) 전환 효과를 만들려면 2가지 설정.
+			(1) 효과를 추가하려는 css 속성
+			(2) 효과 지속 시간
+				지속시간을 지정하지않으면 기본값은 0으로 적용된다.
+			
+</pre>
+
+<div></div>
+<script>
+</script>
+</body>
+</html>

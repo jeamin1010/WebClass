@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오후 3:12:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+body{
+	text-align: center;
+}
+.tooltip{
+	position: relative;
+	/* span tag 를 absolute 로 잡기위해 relative 선언 */
+	border-bottom: 1px dotted black; 
+	display: inline-block;
+	/* div태그는 블락이지만 너비를 내용물만큼만 잡기 위해 inline-block 사용 */
+}
+
+.tooltip .tooltiptext{
+
+	position: absolute;
+/* 	right: 150%;
+	top: 50%; */
+/* 	bottom:100%; */
+	/*변환(transform) 이동 , 회전 , 크기비율조정 ,기울기  */
+	
+	left:110%;
+	top: -50%;
+
+	
+	background-color:black;
+	color:white;
+	width: 120px;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0 ;
+	
+	/* visibility: hidden; */
+}
+
+.tooltip .tooltiptext::after{ 
+	/* 컨텐트가 뿌려진 뒤에..  */
+	content:"";
+	border-style: solid;
+	border-width: 5px;
+	/* border-color: black transparent transparent transparent; */
+	
+	border-color: transparent black transparent transparent;
+	top:50%;
+	right:100%;
+
+	
+	position: absolute;
+	transform:translateY(-50%);
+}
+
+.tooltip:hover .tooltiptext{
+	visibility: visible;
+}
+</style>
+</head>
+<body>
+<h3>ex07.html -css 툴팁(tooltip)</h3>
+
+<pre>
+	[css 툴팁(tooltip)]
+	요소 위에 마우스 포인터를 이동할 때 
+	그 요소의 추가정보를 풍선도움말로 나타내는 것.
+	
+	==드롭다운 메뉴
+</pre>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<!-- .tooltip>span.tooltiptext -->
+<div class="tooltip">Hover over me
+		<span class="tooltiptext">Tooltip Text Sample</span>
+</div>
+
+<script>
+</script>
+</body>
+</html>

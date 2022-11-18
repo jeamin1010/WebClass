@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 15. 오후 12:03:41</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+span.a {
+	/* display:inline */
+	display: inline;
+	border: 1px solid blue;
+	background-color: yellow;
+	padding: 5px; /* 패딩 적용 O */
+	/* 너비,높이 설정 X 안먹음 */
+	width: 150px;
+	height: 100px;
+}
+
+span.b {
+	/* display:block */
+	display: block;
+	border: 1px solid blue;
+	background-color: yellow;
+	padding: 5px; /* 패딩 적용 O */
+	/* 너비,높이 설정  */
+	width: 150px;
+	height: 100px;
+}
+
+span.c {
+	/* display:inline-block */
+	display: inline-block;
+	border: 1px solid blue;
+	background-color: yellow;
+	padding: 5px; /* 패딩 적용 O */
+	/* 너비,높이 설정  */
+	width: 150px;
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<h3>ex04_02.html - 인라인블록(inline-block)</h3>
+	<pre>
+	[display 속성]
+	1.inline모드 - 너비/높이 설정할 수 없다.
+	2.block모드 - 너비/높이 설정 O , 자동 개행(줄바꿈) O
+		ㄴ	문제점) 	블럭쌓이듯이 문단이 끊어짐..
+	3.inline-block - 너비/높이 설정 O , 자동 개행(줄바꿈) X
+		ㄴ					top/bottom 여백/패딩은 적용됨.
+</pre>
+	<h3>display:inline</h3>
+	<div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat
+		debitis dolorum <span class="a">tenetur</span> <span class="a">quia</span>
+		fugit ut aspernatur nemo esse a ratione excepturi adipisci itaque non
+		molestias repudiandae saepe quasi voluptas optio!
+	</div>
+
+	<h3>display:block</h3>
+	<div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat
+		debitis dolorum <span class="b">tenetur</span> <span class="b">quia</span>
+		fugit ut aspernatur nemo esse a ratione excepturi adipisci itaque non
+		molestias repudiandae saepe quasi voluptas optio!
+	</div>
+
+	<h3>display:inline-block</h3>
+	<div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat
+		debitis dolorum <span class="c">tenetur</span> <span class="c">quia</span>
+		fugit ut aspernatur nemo esse a ratione excepturi adipisci itaque non
+		molestias repudiandae saepe quasi voluptas optio!
+	</div>
+
+	<script>
+		
+	</script>
+</body>
+</html>

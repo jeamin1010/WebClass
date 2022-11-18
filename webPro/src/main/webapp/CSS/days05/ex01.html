@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 16. 오전 9:42:08</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+ <style>
+   button{
+     background-color:red;
+   }
+ </style> 
+</head>
+<body>
+   
+
+  <button>마우스 롤오버효과</button>
+  <button>마우스 롤오버효과</button>
+  <button>마우스 롤오버효과</button>
+
+<script>
+/* 	
+	//1 js로 보든 btn 얻어옴
+	var btns = document.getElementsByTagName("button");
+	alert(btns.length); 
+	var btns = document.querySelectorAll("button");
+	//alert(btns.length);
+	
+	
+	//2 . 마우스를 올릴  때 배경색 - 파랑으로 변경
+	for(var i =0 ; i<btns.length;i++){
+		btns[i].onmouseover = function(){
+			
+			//console.log("btn 이벤트 발생");
+			event.srcElement.style.backgroundColor = "blue";
+		}
+		btns[i].onmouseout = function(){
+			this.style.backgroundColor ="red";
+		}
+	}
+	*/
+</script>
+
+
+	
+<script>
+	
+//위 js 코딩을 jquery로 수정
+
+	$("button").hover(function(){
+		$(this).css("background-color","blue");
+	},
+	function(){ 
+		$(this).css("background-color","red");
+	}
+	);
+</script>
+</body>
+</html>

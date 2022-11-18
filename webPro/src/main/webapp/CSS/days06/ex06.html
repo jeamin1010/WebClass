@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오후 2:19:19</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+div{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	
+	animation-name:sample;
+	animation-duration:4s; /* 애니메이션을 완료하는데 걸리는 시간 설정 */
+	animation-timing-function:linear;
+	
+	/* 애니메이션이 재생되지않을때 (시적전 , 종료후) 요소의 스타일 지정 
+		:forwards - 마지막 키 프레임의 스타일 유지
+		:backwards - 첫 번째 키프레임의 스타일 유지
+		:both,none
+	*/
+	animation-fill-mode: backwards;
+	/* animation-delay:2s;  */ /* 2초 후에 재생 ../ -2 ? = 2초 후 부터 시작 */
+	/* animation-iteration-count:3; */ /* 반복 횟수 */
+	animation-iteration-count:infinite;
+	
+	/* 	
+	애니메이션 방향 animation-direction
+	:noraml(기본값)
+	:reverse(역방향)
+	:alternate(앞-> 뒤 -> 앞)
+	:alternate-reverse
+	 */
+	animation-direction:normal;
+	
+	/* div 요소를 이동 */
+	position: relative;
+	
+}
+
+@keyframes sample{
+/*    시작할 때
+   from{
+      background-color:red;
+   }
+   
+   끝날 때
+   to{
+      background-color:yellow;
+   } */
+      0%{background-color: red; left: 0; top: 0;}
+      25%{background-color: green; left: 200px; top: 0;}
+      50%{background-color: blue; left: 200px; top: 200px;}
+      75%{background-color: yellow; left: 0; top: 200px;}
+      100%{background-color: red; left: 0; top: 0;}
+
+}
+
+</style>
+</head>
+<body>
+<h3>ex06.html - css 애니메이션</h3>
+<pre>
+	-js 또는 Flash 를 사용하지 않고 , html 요소의 애니메이션을 처리
+	-애니메이션 ? 한 스타일에서 다른 스타일로 점차적으로 변환되는것.
+	-css 속성
+	@keyframe
+	animation-name
+	animation-duration
+	animation-iteration-count
+	animation-direction
+	animation-timing-function
+	animation-fill-mode
+	animation 약식 속성.
+	
+	keyframe(키 프레임)? 특정 시간에 가지는 요소의 스타일
+	
+	keyframe(키 프레임) + .... 여러개 선언 ..
+</pre>
+
+<div></div>
+
+<script>
+</script>
+</body>
+</html>

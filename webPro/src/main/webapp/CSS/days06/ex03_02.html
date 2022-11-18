@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오전 11:32:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+div{
+	width: 300px;
+	height: 100px;
+	background-color: yellow;
+	border: 1px solid black;	
+/* 	
+	1 2 0.5 배
+	transform:scaleX(1.5);
+	transform:scaleY(1.5);
+	
+	transform:scale(2,0.5);
+	 */
+	
+	/* 지정된 각도만큼 X 축을 따라 요소를 기울인다. */
+	/* transform:skewX(30deg); */
+	/* transform:skewX(90deg); */
+	
+	/* transform:skewY(40deg); */
+	
+/* 	 transform:skew(20deg,10deg);
+	 transform:skew(20deg); == skew(20deg,0) */
+	 
+	 /* matrix == 행렬 */
+	 /* transform:matrix(scaleX,skewY,skewX,scaleY,translateX,translateY); 순서로 약식 가능 */
+		transform:matrix(1,-0.3,0,1,0,0);
+}
+</style>
+</head>
+<body>
+<h3>ex03_02 - 비율조정 ,기울기</h3>
+
+<pre>
+	css 2D 변환 - 요소를 이동, 회전, 비율조정, 기울기
+	transform 속성
+	
+	1) translate() 이동
+	2) rotate() 회전
+	3) scaleX() /scaleY() /scale() 비율조정
+	4) skewX() /skewY() / skew() 기울기
+	5) matrix() 약식
+</pre>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+ Est exercitationem labore ipsa laboriosam rerum doloremque.</div>
+
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+1. 아래 코딩을 한 줄씩 설명을 하세요.
+  
+<style>
+  .sticky{/* sticky 클래스 요소의 위치를 top:0에 고정하고 너비는 100%으로 지정 */
+    position: fixed; 
+    top:0; 
+    width: 100%; 
+}
+</style>
+<script> // 
+  var navbar = document.getElementById("navbar");  //id로 navbar를 가지는 요소 가져오기
+  console.log( navbar.offsetTop );  // id가 navbar인 요소의 y축 위치값 출력하기
+  var nbOtop = navbar.offsetTop;   // id가 navbar인 요소의 y축 위치값 출력하기         
+  window.onscroll = function {  //스크롤 이벤트 등록하기            
+	  if (  window.pageYOffset  >= nbOtop ) { //만약 페이지의 스크롤 높이가 #navbar인 요소의 y축 위치값 보다 크다면
+		navbar.classList.add("sticky"); // sticky 클래스 추가    
+	} else { // 아니면
+		navbar.classList.remove("sticky");  // sticky 클래스 제거   
+	}
+  };  
+  
+  2. 아래 코딩을 설명하고 틀린 곳은 고치세요.
+  <script>
+  function openNav(){    
+      
+	  document.getElementById("mySidenav").style.width = 250px; 
+	  document.getElementById("main").style.margin-left = 250px; 
+	  document.body.style.background-color = "rgba(0,0,0,   0.4)";
+  }
+   
+  $("#mySidenav .closebtn").click( function (event){ 
+	   $("#mySidenav").css("width", "0");  
+	   $(this).parents("div")  .css("width", "0");   
+	  $("body").css("background-color", "white");
+  } );
+</script>
+
+openNav()는 내브바가 열려있을 때는 id가 mySidenav인 요소의 너비를 250px로 지정하고 왼쪽 마진을 주면서 배경색을 바꾸는 함수이고, 닫기 버튼을 누르면 
+id가 mySidenav인 요소와 그 부모 요소의 너비를 0으로 만들고 body의 배경색을 바꾼다.
+3. 이미지 스프라이트( image sprites )의 개념과 아래 코딩에 대해서 설명하세요 . 
+      
+    li#prev:hover{
+    background: url('../images/img_navsprites_hover.gif') -47px   -45px;
+   }
+--여러 개의 이미지를 하나의 이미지로 합쳐서 관리하는 이미지를 
+이미지 스프라이트라고 한다.
+img_navsprites_hover.gif 이미지를 저 위치만큼 나타나게하라.
+ 
+4.  css 속성 선택자 설명
+  ㄱ. a[title]   속성 title을 가진 모든 a 태그                    
+  ㄴ. a[title='flower']  title이 'flower'인 a태그
+  ㄷ. a[title*='flower']  title에 'flower'을 포함하는 a태그
+  ㄹ. a[title^='flower']   title이 'flower'로 시작하는 a태그
+  ㅁ. a[title$='flower']   title이 'flower'로 끝나는 a태그
+  ㅂ. a[title~='flower']   title이 'flower'이거나 공백으로 구분해서 'flower'을 한개 또는 여러개 가지는 a태그
+        
+  
+5-1. 특이성 수준을 나타내는 점수( [    ] )를 적으세요
+  1.  인라인 css 적용 :   [ 1000   ] 점  ( 인라인 스타일 적용 방식이 항상 가장 우선순위가 높다. )
+     <h1  style="color:red" ></h1>
+  2.  id 속성             :   [ 100   ] 점
+  3. 태그명, 의사요소                          :  [  1  ]점
+  4. 클래스명, 의사클래스, 속성 선택자 :  [   10 ]점
+  5. *               :   [  0  ]점        
+    
+5-2.   css 코딩의 특이성 수준을 점수로 나타내세요 
+
+<style>
+   a{    }     // 1점
+   p>a{   }    // 2점
+  div > p > a {  }   // 3점
+  #mydiv p a {  }   // 102점
+   div.#mydiv p a {   }   // 113점
+  a{     color:yellow !important;   }   // 가장 큼
+</style>
+
+
+6.   막대그래프를 그리는 ㄱ, ㄴ 부분의 css 코딩을 하세요.
+<style>
+.bar-container{
+   width: 100%;
+      background-color: #f2f2f2; 
+  }
+  .bar-1 {
+ width: 30%; 
+ height: 20px;
+background-color: yellow; 
+  }
+</style> 
+
+   	<div class="bar-container">   
+   		<div class="bar-1"></div>
+   	</div> 
+   	
+7.    js 코딩( ㄱ, ㄴ, ㄷ, ㄹ)을 설명하세요. 
+<span  onclick="chip_close()">&times;</span> 
+<script>
+   function chip_close(spn){
+	   
+	   ㄱ. this.style.display = "none"; 		this의 display 속성을 none으로
+    
+	   ㄴ. spn.style.display = "none";                     매개변수 spn의 display 속성을 none으로
+	   <span class="closebtn" onclick="chip_close(this)">&times;</span>
+	   
+	   ㄷ. event.srcElement.style.display = "none";     이벤트를 발생시킨 객체의 display 속성을 none으로
+	   
+    	ㄹ. event.srcElement.parentElement.style.display = "none";
+    	     parentElement 부모요소			이벤트 발생시킨 객체의 부모요소의 display 속성을 none으로?
+	   
+   }
+     
+</script>
+
+8-1. css 코딩을 설명하세요  
+
+#demo{  
+   background: url('../images/img_flwr.gif')  no-repeat right bottom 배경이미지를 반복하지 않고, 오른쪽 아래에 위치
+                     ,  url('../images/paper.gif')  repeat  left top; 배경이미지를 반복하고, 왼쪽 위에 위치
+   }
+   
+8-2.  css 코딩을 설명하세요  
+   
+#demo1{
+     background-size:  100px 80px;   배경 사이즈가 높이가 100px, 너비가 80px
+  }   
+   
+  
+  
+  
+  

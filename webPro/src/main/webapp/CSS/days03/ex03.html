@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 14. 오전 11:09:55</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+*{
+	box-sizing: border-box;
+
+}
+.pagination{
+	background-color: red;
+	width: 50%;
+	margin: 0 auto; /* 0 = top/bottom  , auto = left/right   => 가운데정렬 */
+	overflow: auto;
+}
+
+.pagination a{
+	color: black;
+	text-decoration: none;
+/* 	padding: 5px; */
+	float: left;/* float 띄우고 나서 -> overflow hidden/auto   */
+	width: 8.3%;
+	text-align: center;
+}
+
+.pagination a:hover {
+	background-color: #ddd;
+}
+
+.pagination a.active {
+	background-color: dodgerblue;
+	color: white;
+}
+
+</style>
+
+</head>
+<body>
+<h3>ex03.html - css 페이징처리</h3>
+<!-- .pagination>a[href=#]*10>{$} -->
+	<div class="pagination">
+		<a href="#">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<a href="#">5</a>
+		<a href="#">6</a>
+		<a href="#" class="active">7</a>
+		<a href="#">8</a>
+		<a href="#">9</a>
+		<a href="#">10</a>
+		<a href="#">&gt;</a>
+		<a href="#">&raquo;</a>
+	</div>
+</body>
+<script>
+	$(".pagination a").click(function(event){
+		$(".pagination a").not(this).removeClass("active"); 
+		$(this).addClass("active"); // ajax 사용해서 db 정보 뿌리는 작업
+	});
+</script>
+</html>

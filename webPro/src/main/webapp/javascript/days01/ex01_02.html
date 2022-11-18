@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오후 4:35:10</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body onload="init();" onunload="">
+<h3>ex01_02.html</h3>
+메세지 입력 : 
+<!-- autofocus="autofocus" 속성이 없었다면? -->
+<!-- value="안녕"~~~ -->
+<input type="text" id="txtMsg" name="txtMsg" >
+<br>
+<button onclick="clickme();">Click Me!</button>
+<p id="demo"></p>
+<script>
+var txtbox = document.getElementById("txtMsg");
+
+function init() {
+	//alert("init()...") 초기화 작업...
+	// js 로 포커스 처리 .. body 의 onload 에서 초기화 작업할때 올라감.
+/* 	document.getElementById("txtMsg").focus();
+	document.getElementById("txtMsg").value="Hello World" */
+	
+	//var txtbox = document.getElementById("txtMsg"); -> 전역변수로 위치 이동
+	txtbox.focus();
+	txtbox.value = "Hello World!!";
+}
+
+function clickme() {
+	var msg = txtbox.value;
+	//console.log(msg);
+		//DOM 메서드
+	//document.getElementById(id);
+	//document.getElementsByName(name);
+	//var h3 = document.getElementsByClassName(name) -> h3는 클래스, name,id 없음..
+	var h3list = document.getElementsByTagName("h3"); // getElementsByTagName 태그이름으로 추출
+	// h3.value =msg;		<h3> value 속성 X
+	h3list[0].innerText = msg;
+}
+
+</script>
+</body>
+</html>

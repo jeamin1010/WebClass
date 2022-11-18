@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 14. 오전 11:51:06</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+caption{
+	font-weight: bold;
+	text-transform: uppercase;
+	caption-side: bottom;
+}
+th,td{
+	border-bottom: 1px dotted red;
+}
+th{
+	width: 100px; /* 얘는 부모 table에 100% 선언되어있기때문에 적용되지않음 = 의미없음 */
+	height: 70px;
+}
+td{
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+tr:nth-child(even){
+background-color: #f2f2f2;
+}
+
+/* not() jquery method */
+/* style 에서 not 은 css의 선택자(selector)이다. */
+tr:hover:not(:first-child){
+	background-color: #4caf50;
+}
+</style>
+</head>
+<body>
+<h3>ex05.html - css 테이블</h3>
+<!-- table>caption+tr*3>td*4>{$} -->
+<table>
+	<caption>table sample</caption>
+	<tr>
+		<th>컬럼명1</th>
+		<th>컬럼명2</th>
+		<th>컬럼명3</th>
+		<th>컬럼명4</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+		<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+		<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+	</tr>
+</table>
+
+</body>
+<script>
+</script>
+</html>

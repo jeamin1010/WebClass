@@ -1,0 +1,254 @@
+
+2.  버튼 3개 선언 후 클릭 이벤트 처리해서 경고창을 띄우세요.. 
+  ㄱ. onclick 속성
+<button class="btn" onclick="btn_alert()">버튼1</button>
+<button class="btn" onclick="btn_alert()">버튼1</button>
+<button class="btn" onclick="btn_alert()">버튼1</button>
+
+<script>
+function btn_alert(){
+	alert("클릭됨!")
+}
+</script>
+
+
+  ㄴ. js 동적으로 이벤트 등록
+<button class="btn" >버튼1</button>
+<button class="btn" >버튼2</button>
+<button class="btn" >버튼3</button>
+
+<script>
+var btn = document.querySelectorAll(".btn");
+for(var i = 0; i<3;i++){
+	btn[i].onclick=function(){
+		alert("버튼 클릭 됨!!!");
+	}
+}
+</script>
+
+
+  ㄷ. jquery 사용
+
+<button class="btn">버튼1</button>
+<button class="btn">버튼2</button>
+<button class="btn">버튼3</button>
+
+<script>
+$(".btn").click(function() {
+	alert("버튼 클릭 됨!!!");
+})
+</script>
+    
+3. 위의 버튼이 클릭되면 class 속성을 active 로 설정 후 임의의 스타일 지정
+<style>
+
+.active{
+	background-color:ted;
+	color:white;
+}
+</style>
+</head>
+<body>
+
+	<button class="btn">버튼1</button>
+	<button class="btn">버튼2</button>
+	<button class="btn">버튼3</button>
+
+	<script>
+		$(".btn").click(function() {
+			$(this).addClass("active");
+		})
+	</script>
+</body>
+
+
+4.   document.querySelectorAll("button")
+      document.querySelector("button") 
+    위의 두 함수와 코딩에 대해서 설명하세요.
+
+querySelectorAll은 모든 button태그를 가져오고, querySelector는 맨 처음 버튼 태그 하나만을 가져온다.    
+
+        
+5. tr:hover:not(:first-child){
+     background-color: #4caf50;
+  }
+  코딩에 대해서 설명하세요.  
+
+tr중 첫번째가 아닌 경우에만 마우스를 올렸을 때 배경색을 #4caf50으로 바꾸겠다.
+
+
+6. display="none"          
+    visibility="hidden"     
+   위의 두 속성의 차이점을 설명하세요.
+
+display="none"은 자리 차지를 하지 않으면서 안보이고, visibility="hidden"은 자리 차지를 하면서 안보인다.
+
+7. jquery  메서드 설명
+  ㄱ. css() : style 등록
+  ㄴ. show() : display:block과 동일
+  ㄷ. hide() : display:none과 동일
+  ㄹ. toggle() : 클릭할때마다 보였다 안보였다 하게하는 이벤트.
+  ㅁ. slideToggle() : 시간을 지정하면 해당 시간동안 천천히 보이기/안보이기를 진행하는 이벤트.
+  ㅂ. addClass() : 요소에 클래스 추가.
+  ㅅ. removeClass() : 요소에 있는 클래스 삭제.
+  
+8.  position(위치) 속성에 대해 설명하세요.
+  ㄱ. static : 정적. 디폴트값.
+  ㄴ. relative : 내 원래 위치를 기준으로 상대적으로 움직임.
+  ㄷ. fixed : 고정.
+  ㄹ. absolute : 절대적 위치. relative/absolute를 가진 가장 가까운 요소가 부모가 된다.
+	부모를 기준으로 위치가 정해진다.
+  ㅁ. sticky : 고정해둔 자리에서 스크롤 해도 계속 위치를 유지함. l/r/t/b 중 하나는 꼭 필요.
+  
+9-1. [ DOM ]을  사용해서 (js를 사용) <button> 요소를 10개 동적으로 생성하고
+      버튼을 클릭하면 숨기도록 코딩하세요..
+
+<script>
+for(var i = 1; i <= 10;i++){
+	var btn = document.createElement("button");
+	btn.innerText="button"+i;
+	btn.onclick=function(){
+		this.style.display="none";
+	}
+	document.body.appendChild(btn);
+}
+</script>
+  
+        
+9-2. 위의 문제8번을 jquery로 코딩해 보세요...
+
+<script>
+for(var i = 1; i <= 10;i++){
+	var btn = $("<button>button"+i+"</button>");
+	btn.innerText="button"+i;
+	btn.click(function(){
+		$(this).css("display", "none");
+	})
+	$("body").append(btn);
+}
+</script>
+
+10-1. 아래 코딩에 대해서 각 라인 별로 주석을 달아서 설명하세요 
+
+<div class="topnav">
+   <a href="#"></a>
+   <a href="#"></a>
+   <a href="#"  class="active"></a>
+   <a href="#"></a>
+</div>
+
+
+<script>   
+                                                                      
+  var links = document.querySelectorAll(    "div.topnav a"    );  //class가 topnav인 div안에 있는 모든 a링크들을 가져와서 links에 저장
+  links.length = 4
+  for (var i = 0; i < links.length; i++) { //4번만 돌기
+	   links[i].onclick = function (){ //a태그들에 onclick 설정
+		   for (var i = 0; i < links.length; i++) { //for문을 돌면서 모든 a태그들로부터 active클래스 제거
+			  links[i].classList.remove("active");
+		  }  
+		   this.classList.add("active"); //현재 클릭한 a태그만 active클래스 추가
+	   };
+  }
+</script>
+
+10-2. 위의 10-1번 문제를 jquery로 코딩하세요. 
+
+11. 아래 js코딩에 대해서 각 라인 별로 주석을 달아서 설명하세요
+
+1 2 3 4 5 6 [7] 8 9 >  >>
+
+<style>
+   .active{
+      back
+      col
+   }
+</style>
+
+<div class="pagination">
+   <a>1</a>
+   <a  class="active">[2]</a>
+   :
+</div> 
+ 
+<script>
+
+
+    $(".pagination a").click(function(event) { // a요소 클릭되면 발생하는 이벤트
+    	$(".pagination a").not(this).removeClass("active"); // 현재 선택된 요소를 제외한 a요소들은 active 속성 제거
+    	$(this).addClass("active");// active속성 추가
+    });
+</script>
+
+12.  아래  css코딩을 설명하세요.
+  #mySidenav a{
+    transition:0.5s ease;
+  }
+        
+    <button>버튼 1</button>
+    
+    <style>
+	  button{
+	    width:100px;
+	    border:1px solid gray;
+	    
+	    transition:0.5s ease;
+	  }
+	  
+	  button:hover{ 
+	    width:200px; 
+	    
+	  }
+	</style>
+        
+버튼에 마우스를 올리면 버튼의 크기가 0.5s초에 걸쳐서 200px로 천천히 커짐 
+
+1 "문제01_결과.png"   css 적용하세요 .
+    - 수업 자료 참조하지 말고 html, css, 등 모든 코딩을 해 보세요~
+    - 마지막에 문제 푸세요~        
+        
+                <style>
+*{
+box-sizing: border-box;
+  margin: 0;
+    padding: 0;
+}
+
+ .icon-bar{
+   background-color: #555;
+   width:100px;
+ 
+   
+   
+ }
+ .icon-bar a{
+   display: block;   
+    font-size: 35px;
+   text-align: center;
+    padding: 15px;
+   color:white;
+  }
+.icon-bar a:hover{
+  background-color: #000;
+}
+
+.icon-bar a.active{
+  background-color: green;
+}
+
+</style>
+        <div class="icon-bar">
+	<a href="#" class="active"><i class="fa fa-home"></i></a>
+	<a href="#"><i class="fa fa-search"></i></a>
+	<a href="#"><i class="fa fa-envelope"></i></a>
+	<a href="#"><i class="fa fa-globe"></i></a>
+	<a href="#"><i class="fa fa-trash"></i></a>
+</div>
+        
+        
+        
+        
+        
+        
+        
+        

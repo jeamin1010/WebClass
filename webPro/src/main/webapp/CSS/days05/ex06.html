@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 16. 오전 11:46:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+input[type=text]{
+/* input[type]{ */
+/* input { */
+	width: 200px;
+	border: 1px solid red;
+}
+</style>
+
+<style>
+/* a[title='flower']{ */
+/* title 이 flower */
+
+/* a[title^='flower']{  */
+/* ^= 이란뜻은? where title LIKE ('flower%') == flower 로 시작하는 단어  */
+
+/* a[title$='flower']{ */
+/* $= 이란뜻은? where title LIKE ('%flower') == flower 로 끝나는 단어  */
+
+/* a[title*='flower']{ */
+/* *= 이란뜻은? where title LIKE ('%flower%') == flower포함하는 단어  */
+
+/* a[title~='flower']{ */
+/* 단어가 플라워인놈  */
+
+/* a[title|='flower']{ */
+/* 얘는 쓸일없음 */
+
+a[title*='flower']{
+	color: red;
+	background-color: yellow;
+}
+
+</style>
+</head>
+<body>
+<h3>ex06.html- css 속성 selector</h3>
+<pre>
+	[css 속성선택자]
+	1. [속성명] -> 속성 값은 상관없이 속성명만 있으면
+	2. [속성명 = 속성값] -> 속성명 = 속성값 이 있으면
+	3. [속성명^=속성값] -> 
+	4. [속성명$=속성값]
+	5. [속성명*=속성값]
+	6. [속성명~=속성값]
+	7. [속성명|=속성값]
+</pre>
+
+<!-- a[href=#][title]*5 -->
+
+<a href="#" title="klemtis flower">naver</a>
+<a href="#" title="flower">daum</a>
+<a href="#" title="kbsflower">sist</a>
+<a href="#" title="kbs-flower">taeyo</a>
+<a href="#" title="flowers">admin</a>
+<hr>
+
+<input>
+<br>
+<input>
+<br>
+<input type="text" />
+<br>
+<input type="text" />
+<br>
+<input type="text" />
+<br>
+<input type="submit" />
+<br>
+<input type="reset" />
+<br>
+
+<script>
+</script>
+</body>
+</html>

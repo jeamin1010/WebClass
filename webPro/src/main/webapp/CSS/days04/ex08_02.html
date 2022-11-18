@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-cion" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+
+body{
+	counter-reset:section;
+}
+
+div::before{
+	counter-increment:section;
+	content:counter(section);
+	
+	background-color: black;
+	color:white;
+	padding: 1px 10px;
+	margin-right:16px;
+	border-radius:50%;
+}
+
+</style>
+</head>
+<body>
+
+
+<h3>ex08_02.html - ::의사요소 예제</h3>
+
+<pre>
+1. css counter : css 자동번호매기기
+	1) section 카운터 변수 선언 == 카운터 생성 또는 재설정 + 초기화(0)
+		counter-reset:section;
+	2) 카운터 변수 1씩 증가
+		counter-increment:section;
+	3) 생성된 카운터 삽입.
+		내용 : counter() / counters() 요소에 카운트 추가
+		content:counter(section);
+</pre>
+
+<div>Java</div>
+<div>Jsp</div>
+<div>Oracle</div>
+<div>JDBC</div>
+<div>html5</div>
+<div>css3</div>
+
+<script>
+
+</script>
+</body>
+</html>

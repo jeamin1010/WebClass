@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 10. 오후 2:10:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   /* 
+   a{}
+   a:hover{}         :의사클래스
+   */
+   
+   /* 링크태그 4가지 상태  (주의: 순서 지켜서 코딩.)  */
+   a:link{     /* 방문지 않은 상태의 링크 */
+     color:black;
+     text-decoration: none;
+   }
+   a:visited{   /* 방문한 상태의  링크 */
+      color:green;
+   }
+   a:hover{   /* 마우스 링크에 올린 상태 */
+      color:hotpink;
+      /* text-decoration: underline overline line-through; */
+      
+      /* text-transform: uppercase;  대문자 변환*/
+      /* text-transform: lowercase;  소문자 변환*/      
+      text-transform: capitalize;  /*  각 단어의 첫 글자를 대문자로 변환 */
+   }
+   a:active{     /* 링크를 클리하는 순간의 상태 */
+   }
+</style>
+</head>
+<body>
+<h3>ex11_02.html - css 텍스트 장식 : text-decoration </h3>
+<h3>ex11_02.html - css 텍스트 변환 :text-transform </h3>
+
+<!-- a[href=#]*3>lorem1 -->
+<a href="#">lorem.</a><br>
+<a href="#">itaque.</a><br>
+<a href="#">illo.</a><br>
+
+<h3  style="letter-spacing: 10px">텍스트 간의 간격</h3>
+<pre>
+  1. text-indent 속성  : 첫 번째 라인에 들여쓰기
+  2. letter-spacing 속성 : 문자와 문자 사이의 간격
+  3. line-height 속성      : 라인과 라인 사이의 간격
+  4. word-spacing 속성  : 단어와 단어 사이의 간격
+  5. white-spacing (공백)속성           - ex11_03.html
+  6. word-break 속성               - ex11_04.html
+  7. word-wrap 속성
+</pre>
+<!-- p*3>lorem7 -->
+<p style="text-indent: 50px;line-height: 0.5">
+Lorem ipsum dolor sit amet, consectetur 
+adipisicing elit. Consectetur odio dolores quidem ullam accusamus
+ cum ab temporibus assumenda fugiat adipisci. Quos consectetur 
+ molestias dignissimos officiis exercitationem recusandae temporibus 
+ ratione aperiam.
+ </p>
+<p style="word-spacing: 10px">Tenetur commodi quam doloribus maiores beatae animi!</p>
+<p>Ab culpa provident aut voluptatibus debitis fugit.</p>
+
+<script>
+</script>
+</body>
+</html>

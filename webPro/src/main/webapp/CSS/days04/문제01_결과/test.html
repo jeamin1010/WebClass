@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 15. 오전 9:17:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+	
+	<div id="imgbox1" class="imgbox">
+		Box1
+		<img src="../images/img_5terre.jpg" alt="" />
+		<button onclick="remove();">Remove</button>
+	</div>
+	<div id="imgbox2" class="imgbox">
+		Box2
+		<img src="../images/img_5terre.jpg" alt="" />
+		<button onclick="hide('imgbox2');">Hide</button>
+	</div>
+	<div id="imgbox3" class="imgbox">
+		Box3
+		<img src="../images/img_5terre.jpg" alt="" />
+		<button onclick="resetAll();">ResetAll</button>
+	</div>
+<hr>
+
+</body>
+<script>
+function remove() {
+	var sw = false;
+
+	document.querySelector("#imgbox1").style.display = sw?"none":"block";
+	sw= !sw;
+}
+
+
+$("#imgbox2 button").click(function() {
+
+	$("#imgbox2").css("visibility","hidden");
+});
+
+$("p.flip").click(function(){
+	$("#panel").slideToggle();
+});
+
+</script>
+</html>

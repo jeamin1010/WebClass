@@ -1,0 +1,139 @@
+
+1. 아래 코딩을 한 줄씩 설명을 하세요.
+  
+<style>
+  .sticky{
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+</style>
+
+상단 0에 위치고정 크기 100%
+
+<script> // 
+  var navbar = document.getElementById("navbar");  
+id로부터 요소를 얻어옴 저장할 변수명 = navbar
+  console.log( navbar.offsetTop );
+  navbar의 세로값을 로그로 찍음/ 숫자로 리턴
+  var nbOtop = navbar.offsetTop;   
+  window.onscroll = function (){	              
+	  if (  window.pageYOffset  >= nbOtop ) {
+	만약 윈도우 페이지의 Y좌표가 nbOtop 보다 크다면
+		navbar.classList.add("sticky");             
+	navbar 클래스에 sticky 추가
+	} else {
+		navbar.classList.remove("sticky");      
+	아닐때 제거
+	}
+  };  
+  
+  2. 아래 코딩을 설명하고 틀린 곳은 고치세요.
+  <script>
+  function openNav(){    
+      
+	  document.getElementById("mySidenav").style.width = "250"; // 큰따옴표
+mySidenav
+	  document.getElementById("main").style.margin-left = "250"; // 큰따옴표
+	  document.body.style.background-color = "rgba(0,0,0,   0.4)";
+  }
+   
+  $("#mySidenav .closebtn").click( function (event){ 
+	   $("#mySidenav").css("width", "0");  
+	   $(this).parents("div")  .css("width", "0");   
+	  $("body").css("background-color", "white");
+  } );
+</script>
+
+3. 이미지 스프라이트( image sprites )의 개념과 아래 코딩에 대해서 설명하세요 . 
+      
+    li#prev:hover{
+    background: url('../images/img_navsprites_hover.gif') -47px   -45px;
+   }
+이미지스프라이트 = 이미지들을 모아둔것
+  
+4.  css 속성 선택자 설명
+  ㄱ. a[title]                       
+  ㄴ. a[title='flower']         
+  ㄷ. a[title*='flower']      
+  ㄹ. a[title^='flower']       
+  ㅁ. a[title$='flower']        
+  ㅂ. a[title~='flower']     
+        
+  
+5-1. 특이성 수준을 나타내는 점수( [    ] )를 적으세요
+  1.  인라인 css 적용 :   [  1000  ] 점  ( 인라인 스타일 적용 방식이 항상 가장 우선순위가 높다. )
+     <h1  style="color:red" ></h1>
+  2.  id 속성             :   [  100  ] 점
+  3. 태그명, 의사요소                          :  [  1  ]점
+  4. 클래스명, 의사클래스, 속성 선택자 :  [  10  ]점
+  5. *               :   [  0  ]점        
+    
+5-2.   css 코딩의 특이성 수준을 점수로 나타내세요 
+
+<style>
+   a{  1  } 
+   p>a{ 2  } 
+  div > p > a { 3 } 
+  #mydiv p a { 102 } 
+   div.#mydiv p a {   } 
+  a{     color:yellow !important;   } 이전모든 스타일 재정의
+</style>
+
+6.   막대그래프를 그리는 ㄱ, ㄴ 부분의 css 코딩을 하세요.
+<style>
+.bar-container{
+   [ ㄱ. css 코딩하세요  ] 
+background-color : fff;
+width:100%;
+text_align : center;
+  }
+  .bar-1 {
+background-color : red;
+height : 18px;
+width : 20%;
+  }
+</style> 
+
+   	<div class="bar-container">   
+   		<div class="bar-1"></div>
+   	</div> 
+   	
+7.    js 코딩( ㄱ, ㄴ, ㄷ, ㄹ)을 설명하세요. 
+<span  onclick="chip_close()">&times;</span> 
+<script>
+   function chip_close(spn){
+	   
+	   ㄱ. this.style.display = "none"; 
+    
+	   ㄴ. spn.style.display = "none";                  
+	   <span class="closebtn" onclick="chip_close(this)">&times;</span>
+	   
+	   ㄷ. event.srcElement.style.display = "none";     
+	   
+    	ㄹ. event.srcElement.parentElement.style.display = "none";
+    	     parentElement 부모요소
+	   
+   }
+     
+</script>
+
+8-1. css 코딩을 설명하세요  
+
+#demo{  
+   background: url('../images/img_flwr.gif')  no-repeat right bottom 
+                     ,  url('../images/paper.gif')  repeat  left top;
+   }
+('../images/img_flwr.gif')  반복없이 우측 아래 위치 , ('../images/paper.gif')   반복 왼쪽상단부터
+   
+8-2.  css 코딩을 설명하세요  
+   
+#demo1{
+     background-size:  100px 80px;   
+  }   
+배경이미지 크기를 너비100px 높이80px 로 그리고 남는 부분은 비움
+   
+  
+  
+  
+  

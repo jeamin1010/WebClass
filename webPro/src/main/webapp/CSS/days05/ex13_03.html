@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 16. 오후 3:30:03</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+div{
+	width: 150px;
+	height: 150px;
+	border: 1px solid ;
+	
+	background: url("../images/img_flwr.gif") no-repeat;
+}
+
+#div2{
+	background-size: contain;
+}
+
+#div3{
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+<h3>ex13_02 : background-size : contain or cover</h3>
+<pre>
+	-contian : 배경 이미지를 최대한 크게 조정한다.(단 , 너비와 높이 모두 콘텐츠 영역에 맞아야함.)
+	-cover 	: 콘텐츠 영역이 완전히 배경 이미지에 포함되도록 처리한다.
+						배경 이미지의 일부는 배경 위치 지정 영역에서 보이지 않을 수도 있다.
+</pre>
+
+<img alt="../images/img_flwr.gif" src="../images/img_flwr.gif">
+<!-- h3+#div1>p>lorem5 -->
+<h3>contain , cover X</h3>
+<div id="div1">
+	<p>Lorem ipsum dolor sit amet.</p>
+</div>
+<h3>contain</h3>
+<div id="div2">
+	<p>Error praesentium excepturi recusandae commodi.</p>
+</div>
+<h3>cover</h3>
+<div id="div3">
+	<p>Suscipit harum eum quod consectetur.</p>
+</div>
+
+<script>
+</script>
+</body>
+</html>

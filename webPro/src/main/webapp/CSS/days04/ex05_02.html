@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 15. 오후 12:53:05</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+.center{
+	width: 50%;
+	border: 3px solid green;
+	margin: 0 auto;
+	text-align: center;
+	/* height: 200px; */
+	
+	/* 첫 번째 방법 : padding 속성 사용 :top/bottom 높이 X */
+	/* padding : 70px 0 70px 0; */
+	/* padding: 70px 0 ; */
+	
+	/* 두 번째 방법 : 팁(트릭)? 높이 속성과 line-height 속성값을 동일하게 설정하면 수직으로 가운데정렬.. */
+/* 	height: 200px;
+	line-height: 200px; */
+	
+	/* 세 번째 방법 : transform 속성 */
+	height: 200px;
+	position: relative;/* 기준이 되는 가장 가까운 부모요소를 만들기 위한 relative 선언 */
+}
+.center p{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border: 1px solid red;
+	
+	/* 현재 원점 좌표 -> 너비의 반(왼)/ 높이의 반(위) 변형(이동) */
+	transform:translate(-50%,-50%);
+		/*-ms- 익스플로러 사용시 접두로 붙여야함*/
+	-ms-transform:translate(-50%,-50%);
+}
+
+</style>
+</head>
+<body>
+<h3>ex05_02.html - 레이아웃(배치) : 수평정렬, [수직정렬]</h3>
+
+<!-- .center>p>{Hello World} -->
+<div class="center">
+	<p>Hello World</p>
+</div>
+<script>
+</script>
+</body>
+</html>

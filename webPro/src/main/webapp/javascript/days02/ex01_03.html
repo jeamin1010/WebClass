@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 18. 오전 11:35:58</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex01_03.html - [js] html 속성 변경</h3>
+<!-- 문 2 풀이 -->
+<pre>
+	Turn on 버튼을 누르면 전구에 불을 켜도록 할 예정
+	img 요소의 scr 속성을 ../images/pic_bulboff.gif -> ../images/pic_bulbon.gif 변경
+</pre>
+<button>Turn on</button>
+<button disabled="disabled">Turn off</button>
+
+<br>
+<img alt="" src="../images/pic_bulboff.gif" id="bulb">
+<!-- js -->
+<script>
+	//turn on
+	document.querySelector("button:nth-of-type(1)").onclick=function(){
+		//alert("aa");
+		// js 변수 선언 키워드 : var , let
+		let bulb = document.getElementById("bulb");
+		bulb.src ="../images/pic_bulbon.gif";
+		bulb.alt="bulbon";
+		
+		document.querySelector("button:first-of-type()").disabled=true;
+		document.querySelector("button:last-of-type()").disabled=false;
+	}
+	
+	//turn off
+	document.querySelector("button:last-of-type()").onclick=function(){
+		//alert("bb");
+		let bulb = document.getElementById("bulb");
+		bulb.src ="../images/pic_bulbon.gif";
+		//bulb.alt="bulbon";
+		bulb.setAttribute("alt","bulboff");
+		document.querySelector("button:first-of-type()").disabled=false;
+		document.querySelector("button:last-of-type()").disabled=true;
+	}
+</script>
+
+<!-- jquery -->
+<script>
+	
+</script>
+</body>
+</html>

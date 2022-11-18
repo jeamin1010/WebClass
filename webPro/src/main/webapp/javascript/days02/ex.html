@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 18. 오전 9:13:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+
+
+</style>
+</head>
+<body>
+<input type="text" id="textMsg">
+<br>
+<button>확인</button>
+<p id="demo"></p>
+
+<script>
+var txtbox = document.getElementById("txtMsg");
+function init() {
+
+	txtbox.focus();
+	txtbox.value = "Test!!";
+}
+function clickme() {
+	var msg = txtbox.value;
+	var plist = document.getElementsById("demo");
+	plist[0].innerText = msg;
+}
+
+</script>
+</body>
+</html>

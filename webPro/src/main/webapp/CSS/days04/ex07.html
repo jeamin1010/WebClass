@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-cion" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+
+/* :link, :visited, :hover, :active */
+
+a:link{}
+
+a:visited{}
+
+a:hover{}
+
+a:active{}
+
+</style>
+<style>
+input[type=text]{
+	border:1px solid gray;
+	width:500px;
+}
+input[type=text]:focus{
+	background-color: red;
+}
+</style>
+<style>
+div{
+	/* border:1px solid gray; */
+}
+
+div>p{
+	display:none;
+	background-color: yellow;
+	padding:20px;
+}
+
+div:hover>p{
+	display:block;
+	color:red;
+}
+</style>
+<style>
+/* :first-letter 의사클래스 : 첫문자만 해당 */
+p.intro:first-letter{
+	color:blue;
+	font-size:xx-large;
+}
+/* ::의사요소 : 해당 요소(태그)의 지정된 부분에만 스타일 지정. */
+p.intro::first-line{
+	color:green;
+	font-size:large;
+}
+</style>
+<style>
+
+/* :first-child : 첫번째 자식요소만 스타일지정. */
+p.intro>i:first-child{
+	background-color: yellow;
+	color:red;
+}
+</style>
+
+</head>
+<body>
+
+
+<h3>ex07.html - :의사클래스 & ::의사요소</h3>
+
+<pre>
+	[:의사클래스]
+1. 요소의 특수한 상태를 정의할 때 사용한다.
+1) :link, :visited, :hover, :active
+2) :focus
+3) :first-child
+4) :first-letter
+5) :not(selector)
+
+:checked, :empty, :first-of-type, :invalid, :in-range, 
+:land(language), :last-child, :last-of-type, :nth-child(n), 
+:nth-last-child(n), :only-child, :optional, 
+:out-of-range, :read-only, :read-write, :required, 
+:root, :target, :valid
+
+	[::의사요소]
+1) ::after
+2) ::first-letter
+	::first-line
+::before, ::selection
+</pre>
+
+<a href="#">naver</a>
+<br>
+<!-- (input[type=text]+br)*4 -->
+<input type="text" />
+<br>
+<input type="text" />
+<br>
+<input type="text" />
+<br>
+<input type="text" />
+<br>
+
+<br><br>
+<!-- :hover 의사 클래스를 사용해서 간단한 툴팁(풍선 도움말) 기능 구현 -->
+
+<div>
+	HOVER TOOLTIP
+	<p>
+		Here I am ~
+	</p>
+</div>
+
+<p class="intro">
+Lorem ipsum dolor sit <i>amet</i>, consectetur adipisicing elit. 
+Ducimus doloribus distinctio <i>quam</i> laborum ut deserunt 
+amet dolorem tenetur aperiam quidem dolor cupiditate 
+quisquam <i>recusandae</i> ab iure blanditiis maxime expedita quod.
+</p>
+
+<script>
+
+</script>
+</body>
+</html>

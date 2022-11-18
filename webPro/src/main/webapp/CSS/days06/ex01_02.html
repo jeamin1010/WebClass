@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오전 10:16:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+p.test1{
+	writing-mode : horizontal-tb;
+}
+p.test3{
+	writing-mode : vertical-rl;
+}
+p.test2 > span{
+	writing-mode : vertical-rl;
+}
+
+</style>
+</head>
+<body>
+<h3>ex01_02.html - writing-mode 수평/수직 텍스트 배치(출력) 지정</h3>
+<!-- p.test$*3>lorem5 -->
+<p class="test1">Lorem ipsum dolor sit amet.</p>
+<p class="test2">Ex molestias <span>maiores</span> dignissimos tempore.</p>
+<p class="test3">Unde placeat nihil dolorem sunt.</p>
+<script>
+</script>
+</body>
+</html>

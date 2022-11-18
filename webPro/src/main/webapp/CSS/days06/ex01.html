@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 17. 오전 9:03:35</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+p{
+	width: 200px;
+	border: 1px solid black;
+}
+p.test1{
+	white-space: nowrap; /* 자동 개행 X */
+	overflow: hidden;
+	text-overflow: clip;/* 잘라내다 */
+}
+p.test2{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;/* 생략하다 */
+	
+	/* 긴 문자열.substring(0,25).concat("...") */
+}
+/* 마우스를 올릴 때 오버플로 된 콘텐츠를 표시하는 방법 */
+p.test2:hover {
+	overflow: visible;
+}
+</style>
+
+<style>
+p.test3{
+	word-wrap:break-all;
+}
+
+</style>
+</head>
+<body>
+<h3>ex01.html-css 텍스트 효과</h3>
+<pre>
+	1.텍스트 오버플로(text-overflow)
+	2.자동 줄 바꿈(word-wrap)
+		- 하나의 단어가 너무 길어 너비보다 오버플로우 발생
+		- 강제 줄 바꿈 시켜야겠다!!
+	3.줄 바꿈 규칙(word-break)
+	
+	4.쓰기 모드(writing-mode) - ex01_02.html
+</pre>
+<p class="test1">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam quasi.
+</p>
+<p class="test2">
+Numquam quisquam quis sequi modi corporis minima obcaecati dolores impedit.
+</p>
+<p class="test3">
+Dolorum deserunt ducimusquoconsequunturalias esse ex quaerat dignissimos!
+</p>
+<script>
+</script>
+</body>
+</html>
