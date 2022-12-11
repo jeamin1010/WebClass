@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 21. 오후 4:20:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex05_03.html</h3>
+
+팀원 이름 입력 : 
+<input type="text"  id="name" name="name" autofocus="autofocus" >
+  <!-- onkeydown="name_keydown();" -->
+<br>
+<div  id="demo">
+</div>
+
+<!-- js -->
+<script>
+
+   function name_keydown(){
+	   var demo = document.getElementById("demo");
+	   
+	   if( event.keyCode == 13 ){  // 엔터 칠 때
+		   var name = document.getElementById("name");
+	   
+		   // 1.
+		   // demo.innerHTML += "<input type='checkbox' value='"+ name.value+"'>" + name.value +"<br>";
+		   
+		   // 2. DOM 요소 생성 추가
+		   var ckb = document.createElement("input");  // <input>
+		   ckb.setAttribute("type", "checkbox"); // <input type='checkbox'>
+		   ckb.setAttribute("value", name.value); // <input type='checkbox'  value='엄태혁'>
+		   demo.appendChild(ckb);
+		   
+		   var textnode = document.createTextNode( name.value );
+		   demo.appendChild(textnode);
+		   
+		   var br = document.createElement("br"); 
+		   demo.appendChild(  br  );
+		   
+		   name.value = "";
+		   name.focus();
+	   } // if
+   } // function
+   
+</script>
+
+<!-- jquery -->
+<script>
+   
+   $("#name").keydown(function() {
+   	    if( event.keyCode == 13 ){
+   	    	var value = $(this).val();
+   	    	
+   	    	//var content = "<input type='checkbox' value='"+ value +"'>" + value +"<br>"; 
+   	    	//$("#demo").append($(content));
+   	    	
+   	    	var $ckb = $("<input>").attr({
+   	    		type:"checkbox",
+   	    		value:value
+   	    	})
+   	    	
+   	    	var $text = $("<lable>"+  value +"</label>");
+   	    	
+   	    	/*
+   	    	$("#demo")
+   	    	    .append($ckb)
+   	    	    .append($text)   	    	    
+   	    	    .append($("<br>"));
+   	    	*/
+   	    	$("#demo").append($ckb, $text, "<br>");
+   	    	
+   	    	$("#name")
+   	    	      //.val("")
+   	    	      .select()
+   	    	      .focus();
+   	    } // if
+   });
+  
+</script>
+</body>
+</html>
+
+
+
+

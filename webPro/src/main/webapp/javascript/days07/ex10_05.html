@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 12:30:43</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex10_05.html - js 객체 생성자</h3>
+<pre>
+	[js 객체 생성자]
+	- 객체를 생성할 때 사용되는 함수를 " 객체 생성자 "라고 한다.
+	- 대문자로 이름을 시작한다. (권장)
+	
+</pre>
+
+<script>
+	// js 함수
+	function Person(fname,lname,age) {
+		// 이 때 this 는 생성될 때의 새로운 객체를 나타낸다.
+		// function Person(name,age){this.name = name;this.age = age;} => 객체생성자 라고 부름 
+		this.firstname = fname;
+		this.lastname = lname;
+		this.age = age;
+		//메서드
+		this.name=function(){
+			return this.fristname + " " + this.lastname;
+		}
+	}
+	
+	var myFather = new Person("John","Doe",40);
+	var myMother = new Person("Saly","Doe",36);
+	
+	//1. 객체 생성자 함수를 통해서  -> 속성,메서드 추가
+	// Person.eyecolor="blue"; XXX
+	//Person.prototype.eyecolor="blue";// O
+	
+	//2. 생성된 객체를 통해서 -> 속성 메서드 추가
+	//myFather.eyecolor="blue"; // O
+	
+	//3. 객체생성자 함수 -> 속성, [ 메서드 ]추가
+	//Person.prototype.print=function(){}
+	//myFather.print=function(){}
+	
+</script>
+</body>
+</html>

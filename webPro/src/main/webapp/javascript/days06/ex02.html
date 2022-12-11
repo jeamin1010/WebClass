@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오전 11:28:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex02.html</h3>
+
+<script>
+
+     // 주민등록번호 -> 만나이 .
+     function getAge(  rrn ){
+    	 // "890123-1700001"
+    	 /*
+    	 rrn.substr(from, length);
+    	 rrn.substring(from, to)
+    	 rrn.slice(from, to);
+    	 */
+    	 // 89
+    	 var bYear =  getCentry(rrn) + parseInt(  rrn.substr( 0, 2 )  );
+    	 // 01
+    	 var bMonth = parseInt(  rrn.substring(2 ,  4) );
+    	 // 23
+    	 var bDate = parseInt(  rrn.slice(4 ,  6) );
+    	 // 1
+    	 // var bGender = rrn.slice( -7, -6)
+    	 var bGender = rrn.substr( 7, 1 );
+    	 console.log( bYear +" / " + bMonth + " /  " + bDate + " / " + bGender);
+    	 
+    	 
+    	 // 2022 - 1989  올해년도 - 생일년도
+    	 var today = new Date();
+    	 var todayYear = today.getFullYear();
+    	 var age = todayYear - bYear;    	 
+    	 // 오늘 생일 지났지 않았으면   -1 
+    	 //  js 날짜  > 날짜
+    	 //  js 날짜  < 날짜    비교연산자
+    	 //  js 날짜  == 날짜    비교연산자
+    	 var birthday = new Date( todayYear, bMonth-1, bDate);
+    	 today.setHours(0);
+    	 today.setMinutes(0);
+    	 today.setSeconds(0);
+    	 today.setMilliseconds(0);
+    	 
+    	 if(  today  < birthday )  age--;
+    	 
+    	 console.log( birthday.toLocaleString() ) ;
+    	 console.log( today.toLocaleString() ) ;
+    	 
+    	 return age;
+     }
+     
+     
+    function getCentry(  rrn ){
+    	 var gender = rrn.substr( 7, 1 );    	 
+    	 // 1,2,5,6    1900
+    	 // 3,4,7,8   2000
+    	 // 9,0         1800    	 
+    	 if(  [1,2,5,6].some((elt, i, array) =>  elt == gender )     )   return 1900;
+    	 else if(  [3,4,7,8].some((elt, i, array) =>  elt == gender )     )   return 2000;
+    	 else return 1800;
+    	 
+    }
+
+    // 만나이 생일 지난   상태 : 33
+    //                          X 상태 : 32
+     console.log( "> 만 나이 :  " +   getAge("891125-1700001") );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

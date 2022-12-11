@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오전 11:02:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  .myDiv{
+    background-color: #f1f1f1;
+    text-align: center;
+    border:1px solid #d3d3d3;
+    
+    position: absolute;
+    
+    z-index:9;
+  }
+  .myDivHeader{
+    padding: 10px;
+    cursor: move;
+    z-index:10;
+    background-color: #2396F3;
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+<h3>ex01_07_02.html</h3>
+<!-- 11:14 수업시작 -->
+
+<!-- #myDiv1.myDiv>#myDiv1Header.myDivHeader -->
+<div id="myDiv1" class="myDiv">
+	<div id="myDiv1Header" class="myDivHeader">Click Here</div>
+	<!-- p*3>lorem1 -->
+	<p>Lorem.</p>
+	<p>Nesciunt.</p>
+	<p>Reiciendis.</p>
+</div>
+<div id="myDiv2" class="myDiv">
+	<div id="myDiv2Header" class="myDivHeader">Click Here</div>
+	<!-- p*3>lorem1 -->
+	<p>Lorem.</p>
+	<p>Nesciunt.</p>
+	<p>Reiciendis.</p>
+</div>
+
+<script>
+    // $("#draggable").draggable();    
+    function draggable( elemt){
+    	
+    	var elemtX = 0, elemtY = 0;
+    	var moveX = 0,  moveY = 0;  // 이동한 x,y 좌표
+    	                                                  // "myDiv1"
+    	if(  document.getElementById(   elemt.id +"Header"  ) ){
+    		document.getElementById(   elemt.id +"Header"  ).onmousedown = dragMouseDown; // 이벤트 핸들러 등록
+    	}
+    	
+    	// 중첩함수
+    	function dragMouseDown( e ){
+    	    e = window.event || e;           // event
+    	    // console.log( e.clientX + " / " + e.clientY );
+    	    
+    	    // divHeader 위에서 마우스다운 할 때 의 X,Y 좌표 저장
+    	    elemtX = e.clientX ;
+    	    elemtY = e.clientY ;
+    	    
+    	    document.onmousemove = elementDrag ;
+    	    document.onmouseup = closeDragElement;
+    	    
+    	}
+    	
+    	// mousemove
+    	function elementDrag(){
+    		e = window.event || e;           // event
+    	    // console.log( e.clientX + " / " + e.clientY );
+    		moveX = elemtX - e.clientX;  // - 음수
+    		moveY = elemtY - e.clientY;
+    		
+    		// elemt.left;             -> "10px" 문자열
+    		// elemt.offsetLeft; -> 10 
+    		elemt.style.left = (  elemt.offsetLeft - moveX    )+"px";
+    		elemt.style.top =  (  elemt.offsetTop - moveY    )+"px";
+    		
+    		// 움직인 위치가 다시 요소의 시작 위치.
+    		elemtX = e.clientX;
+    		elemtY = e.clientY;
+    		
+    	}
+    	
+    	// mouseup
+    	function closeDragElement(){
+    		// 마우스 이벤트 제거
+    		document.onmousemove = null ;
+    	    document.onmouseup = closeDragElement;
+    	}
+    } // draggable
+    
+    
+    // 
+    draggable(  document.getElementById("myDiv1")  );
+    draggable(  document.getElementById("myDiv2")  );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

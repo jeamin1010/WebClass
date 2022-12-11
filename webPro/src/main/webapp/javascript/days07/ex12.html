@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 2:32:31</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex12.html - js 함수 [call()]/apply()</h3>
+<pre>
+	다른 객체의 메서드를 call() 메서드로 불러서 처리할 수 있다.
+	다른 객체의 메서드를 apply() 메서드로 불러서 처리할 수 있다.
+	person 	printf 			person1, person2
+	
+	[차이점] 매개변수가 있는 경우
+	call 			나열
+	apply 		배열
+	
+</pre>
+
+
+<!-- js -->
+<script>
+	//
+	var person1={
+			name:"hong",
+			age:20
+			
+			/*
+			printf:function(){
+				return this.name+"/"+this.age;
+			}
+			*/
+	};
+	var person2={
+			name:"admin",
+			age:45
+			
+			/*
+			printf:function(){
+				return this.name+"/"+this.age;
+			}
+			*/
+	};
+	
+	var person = {
+			//속성
+			//this.eyecolor ="blue"
+			//메서드
+		printf:function(city ,eyecolor){
+			return this.name+"//"+this.age+"//"+city + "//" + eyecolor;
+		},	
+		println:function(){
+		return this.name+"//"+this.age;
+		}	
+	};
+	
+	
+	//console.log(person1.printf());
+	//console.log(person2.printf());
+	
+	//1. 매개변수가 있는 call()메서드
+	console.log(person.printf.call(person1,"seoul","blue"));
+	console.log(person.printf.apply(person2,["pohang","green"]));
+	
+	//2.매개변수가 없는 call()메서드
+	console.log(person.println.call(person1));
+	console.log(person.println.apply(person2));
+	
+	
+	
+	//
+	//Math.max.apply(0,"",Math,null,[1,5,3,2]);
+	//Math.max.call(null,1,5,3,2);
+</script>
+
+
+<script>
+	//
+	
+</script>
+</body>
+</html>

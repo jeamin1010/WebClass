@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 21. 오후 2:26:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01_03.html - const 상수</h3>
+
+<pre>
+     [ const 상수 ]
+    1. 재선언 할 수 없다. 
+    2. 재할당 할 수 없다. 
+    3. 블록모드( block scope ) O
+    
+    [ js  에서 const 키워드 사용 ? ]
+    항상 변경할 수 없는 .....
+    const array
+    const object
+    const function
+    const RegExp
+    
+</pre>
+
+<script>
+
+    const PI = 3.141592;
+    console.log( PI );
+    
+    // const PI = 3.14;  1. 재선언 X
+    // Uncaught TypeError: Assignment to constant variable.
+    // PI = 3.14;
+    console.log( PI );
+</script>
+
+<script>
+  /*
+  // for(var i = 1; i<=10; i++){
+  for(let i = 1; i<=10; i++){  
+	   // Uncaught ReferenceError: i is not defined    at ex01_03.html:22:28
+	  
+  }
+
+  console.log( " > i = " + i );   // 11
+  */
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오전 9:19:13</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01_03.html </h3>
+
+<button>counter 증가</button>
+<p id="demo"></p>
+
+<script>
+     /*
+    // 1.  js 중첩 함수 이해.
+    function add(){
+    	let counter = 0; // 지역변수 ->  js 클로저
+    	// counter += 1 ; // 1 증가
+        function plus(){  // js 중첩 함수를 지원한다. 
+    		// 중첩함수(plus) 안에서  상위(부모)함수(add)의 지역변수에 접근 가능
+    		counter += 1;
+    	}
+    	plus();  // 중첩함수 호출 코딩.
+    	
+    	return counter;    	
+    } // add
+    
+    $("#demo").html(  add() ); 
+    
+    // 2. plus() 중첩함수를    add() 함수를 통하지 않고  외부에서 접근할 수 있다면 
+    //   add() 함수 안의 let counter = 0; // 지역변수   초기화 하는 코딩을 한 번만 
+    //    실행되어 초기화 되고 
+    //   [ js 클로저 ] 
+    //        -  1) js 중첩함수 
+    //        -  2) add() X,   plus() 호출 -> 자체 호출 함수  
+    */
+</script>
+
+
+<script>
+   // js 클로저 = 중첩함수 + 자체호출 함수     ( 시험 1 )
+   
+   //자체 호출 함수
+  var plus =  (function (){         //  자체호출 함수 - 1번 실행
+					   let counter = 0; // 지역변수 -> 전역변수 (  폐쇄  )
+					   
+					   return function (){   // 함수의 리턴값이      중첩함수
+						   // 부모함수의 지역변수를 접근할 수 있다. 
+						   counter += 1;
+					       return counter;
+					   };
+				   })();
+   
+   $("button").click(function() {
+   	   $("#demo").html(   plus()  );
+   })
+   
+   // 왜 ? counter 지역변수를 전역변수로 선언하면 쉽게 해결 ...-> js 클로저
+		    
+   // js 클로저는 부모함수가  닫힌 후에도 부모 범위 엑세스할 수 있는 함수... 		   
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

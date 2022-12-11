@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 11:48:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex10_03.html    js 개체</h3>
+<!-- 12:00 수업시작 -->
+<pre>
+   [ js 객체를 표시(출력)하는 방법 ]
+   1. 객체명.속성명  person.name
+   2. 반복문 사용 - 속성명/속성값    for( let p  in person){}
+   3. 속성의 값(value)들의  배열로 반환하는 함수 :  Object.values() 사용.
+   
+   
+   4.  js 객체 -> JSON (문자열)변환 :        JSON.stringify()
+                                                             []  stringify : 끊으로 묶다.(잇다)
+</pre>
+
+<script>
+
+   var person = {  // js object
+		      name:"admin",
+		      age:20,
+		      city:"seoul", 
+		      today:new Date(),               // 날짜 객체
+		      cars:["bmw", "kia", "volvo"],  // 배열   -> 문자열화 되어진다. 
+		      
+		      // method
+		      print: function (){
+		    	  return "print()...";
+		      }
+   };
+
+   /*
+    // console.log(   person );  // [object ]
+    var outArr = Object.values( person );
+    // alert( typeof out ); 배열 체크 
+    alert(   outArr  ); // admin,20,seoul
+    */
+    
+ 
+    // [ JSON 표기법을 따르는 문자열 ]
+    person.print = person.print.toString();
+    
+    var jsonStr =  JSON.stringify(   person   );            // jsp/servlet + jquery ajax 처리
+    //  {"name":"admin","age":20,"city":"seoul"}
+    //  { "속성명":"속성값", "속성명": }
+    
+    // 날짜 문자열화
+    // {"name":"admin","age":20,"city":"seoul","today":"2022-11-25T03:13:10.882Z"}
+    
+    // print 메서드 추가 -> JSON 변환  메서드는 문자열화 되지 않더라..
+    
+    alert( jsonStr );
+ 
+</script> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

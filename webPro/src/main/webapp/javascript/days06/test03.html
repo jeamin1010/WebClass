@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오전 10:50:18</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<button>구구단 출력 버튼</button>
+<p id="demo"></p>
+
+
+
+
+
+
+<!-- js -->
+<script>
+/*
+	//구구단 가로 , 세로 출력 java 에서 이미 많이했음
+	var content = "<table border ='1' width='100%'>";
+	content+="<tr>";
+	for (var i = 2; i <= 9; i++) {
+		content+="<th>"+i+"단</th>";
+	}
+	content+="</tr>";
+	//
+	for (var i = 1; i <=9; i++) {
+		content+="<tr>";
+		for (var j = 2; j <=9; j++) {
+			content+="<td>";
+			content+= j + "*" + i + "=" + (j*i);
+			content+="</td>";
+		}//for j
+		content+="</tr>";
+	}//for i
+	
+	content+="</table>";
+	$("#demo").html(content);
+	*/
+</script>
+
+<script>
+/*
+$("button").on("click" , function (){
+   
+   // DOM 
+   var tbl = document.createElement("table");
+   tbl.border="1px solid black";
+   tbl.width = "100%";
+   
+   var tr = document.createElement( "tr");
+   for (var i = 2; i <=9 ; i++) {
+      var th = document.createElement( "th");
+      th.innerText = i + "단";
+      tr.appendChild( th );
+   }        
+   tbl.appendChild( tr );
+   
+   for (var i = 1; i <=9 ; i++) {
+      var tr = document.createElement( "tr");
+      for (var j = 2; j <= 9; j++) {
+         var td = document.createElement( "td"); 
+         td.innerText =  j + " * " + i + " = " + ( j*i );
+         tr.appendChild( td );
+      } // for j         
+      tbl.appendChild( tr );
+   } // for i 
+   
+   
+   
+   $("#demo").append( tbl );
+});
+*/
+</script>
+
+<script>
+$("button").on("click" , function (){
+	var tbl = document.createElement("table");
+	tbl.setAttribute("border","1");
+	tbl.setAttribute("width","100%");
+	
+	var tr = tbl.insertRow(tbl.rows.length);
+	for (var i = 2; i <= 9; i++) {
+		var th = tr.insertCell(i-2);// td
+		th.setAttribute("align", "center");
+		th.innerText = "단";
+	}
+	   for (var i = 1; i <=9 ; i++) {
+		   var tr = tbl.insertRow(tbl.rows.length);
+		      for (var j = 2; j <= 9; j++) {
+		    	  var td = tr.insertCell(j-2);
+		         td.innerText =  j + " * " + i + " = " + ( j*i );
+		      } // for j         
+		   } // for i 
+	
+});
+</script>
+
+</body>
+</html>

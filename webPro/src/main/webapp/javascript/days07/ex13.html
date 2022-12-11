@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 3:11:33</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex13.html - setTimeout()/ clearTimeout()/ [setInterval()/ clearInterval]</h3>
+<h1 id="demo"></h1>
+<button>setTimeout</button>
+<button>clearTimeout</button>
+
+<pre>
+		
+</pre>
+
+
+
+<script>
+	//
+	$("button").first().on("click", function() {
+		//alert("1");
+		
+		dispTime();
+	});
+		//함수 호출한 뒤에 1초마다 호출.. 시간이 계속 가는것처럼 보이게 하려면
+
+
+	
+	function dispTime() {
+		var now = new Date();
+		$("#demo").html(now.toLocaleString());
+		// setTimeout(함수호출 X , 함수 등록 O , ms){}
+		// 1000ms (1초) 후에 등록된 함수를 1번 호출하는 메서드
+		timer1 = setTimeout(dispTime, 1000);
+	}
+	
+	//
+	$("button").last().on("click", function() {
+		//alert("2");
+		clearTimeout(timer1);
+	});
+</script>
+
+
+<script>
+	//
+	
+</script>
+</body>
+</html>

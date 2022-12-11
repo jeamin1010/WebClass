@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 9:35:02</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex02.html - js Map</h3>
+
+<pre>
+    1. Map 특징 -   key, value 한 쌍(entry)으로 저장.
+    2.  key 중복 X 
+    3. new Map()  맵 객체 생성
+    4. size 
+    5. set( key, value) : 엔트리 추가
+    6. get( key ) : 엔트리 얻어오기
+    
+    7. has(key)
+    8. delete( key )
+    
+    9. forEach()
+    10. entries()
+</pre>
+
+<script>
+    var m = new Map(  [ 
+    	                                  ["apples", 500], 
+    	                                  ["bananas", 300] 
+                                 ] );
+    console.log(  m.size );
+    
+    m.set("oranges", 700);
+    
+    console.log(  m.get("oranges") );
+    
+    // 모든 entry 출력.
+    m.forEach( function (value, key){
+    	console.log(    value + " /  " + key  );
+    });
+    
+    // entries()
+    for (let entry of  m.entries() ) {
+		// console.log( entry );  // key, value       []
+	   var key =	entry[0];
+		var value = entry[1];
+		console.log(    key + " /  " + value  );
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

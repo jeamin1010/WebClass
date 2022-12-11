@@ -3,93 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SS17 2022. 11. 18. 오전 11:09:33</title>
+<title>SS17 2022. 11. 18. 오전 11:08:47</title>
 <link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
 <style>
-.phoversytle{
-	color: blue;
-	font-size: 35px;
-	border: 1px solid gray;
-}
+   /*
+   p#demo:hover{
+       color:red;
+       font-size: 35px;
+       border:1px solid gray;
+   }
+   */
+   
+   .phoverstyle{
+      color:blue;
+       font-size: 35px;
+       border:1px solid gray;
+   }
 </style>
 </head>
 <body>
-<h3>ex01_02.html-문제3 풀이</h3>
-<!-- 문제 3 풀이 -->
-<p id="demo">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit.
- Ab eius quis aliquid ipsa maxime quasi molestiae nobis
-  officiis dolorum dignissimos tenetur minima mollitia.
-   Totam voluptate minima modi earum atque porro!
+<h3>ex01_02.html - </h3>
+
+<!-- 문제 3번 풀이
+   ㄱ. 글자색 빨강
+   ㄴ. 글크기 35px
+   ㄷ. 테두리 1 solid gray
+ -->
+<p id="demo" >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi incidunt 
+  fugiat voluptas totam nisi iste ab iure beatae veritatis laudantium id 
+  quidem quasi et quis tempora natus cum dicta perferendis.
 </p>
 
+<!-- js -->
 <script>
-	var pdemo = document.querySelector("#demo");
-	/* <시작태그>innerText</종료태그> */
-/* 	pdemo.innerText = "<span style = 'color:red;background-color:yellow'>message</span>" */
-	/* pdemo.innerHTML = "<span style = 'color:red;background-color:yellow'>message</span>" */
+    /*
+    var pdemo = document.querySelector("#demo");
+    // <시작태그>innerText</종료태그> 
+    //pdemo.innerText = "<span style='color:red;background-color:yellow;'>message</span>";
+    pdemo.innerHTML = "<span style='color:red;background-color:yellow;'>message</span>";
+    */
+</script>
+<script>
+    /*
+    var pdemo = document.querySelector("#demo");
+    pdemo.onmouseover = function (){
+    	// alert("dddd")
+    	
+    	// [1] 방법
+    	//this.style.color="red";
+    	//this.style.fontSize="35px";
+    	//this.style.border="1px solid gray";
+    	
+    	// [2] 방법
+    	// this.className = "phoverstyle";
+    	// this.classList.add("phoverstyle");   // remove(), replace()
+    	
+    	// [3] 방법
+    	// this.setAttribute("class",  "phoverstyle");    // getAttribute("class")
+    }
+    */
 </script>
 
+<!-- jquery -->
 <script>
-	var pdemo = document.querySelector("#demo");
-	pdemo.onmouseover = function() {
-		//alert("1");
-		
-		//[1] 방법
-		//this.style.color="red";
-		//this.style.fontSize="35px";
-		//this.style.border="1px solid gray";
-		
-		//[2] 방법
-		//this.className="phoverstyle";
-		//this.classList.add("phoverstyle");
-		
-		//[3]방법
-		//this.setAttribuet("class","phoverstyle"); // getAttribute("class")
-	}
+    // innerText == text() jquery method
+    //$("#demo").text("<span style='color:red;background-color:yellow;'>message</span>");
+    
+    // innerHTML == html()  jquery method
+    //$("#demo").html("<span style='color:red;background-color:yellow;'>message</span>");
 </script>
-
 <script>
-/* .innerText == $().text */
-/* 	$("#demo").text("<span style = 'color:red;background-color:yellow'>message</span>"); */
-	
-	//innerHTML == html() jquery method
- 	/* $("#demo").html("<span style = 'color:red;background-color:yellow'>message</span>"); */
- </script>
- 
- <!-- jquery -->
- 
- <script>
- /*
-	$("#demo").mouseover(function() {
-		//$.this.css("color", "red");
-		//$.this.css("font-size", "35px");
-		//$.this.css("border", "1px solid gray");
-		
-		//$(this).css("color", "red").css("font-size", "35px").css("border", "1px solid gray");
-		
-		//$(this).css( , function(){})
-		});
- */
- 
- //on() jquery method 이벤트 등록 + [Ajax 이벤트 등록 ? == on() 사용 ] 
- $("demo").on("mouseover",function(){
-/* 	 $(this).css({
-		 "속성명":"속성값",
-		 "속성명":"속성값",
-		 "속성명":"속성값",
-		 :
-	 }); */
-	 
-	 $(this).css({
-	"color":"red",
-	"font-size":"35px",
-	 "border":"1px solid gray"
-	 });
-	 
- })
- </script>
+    /*
+   $("#demo").mouseover(function() {
+	   //$(this).css("color","red");
+	   //$(this).css("font-size","35px");
+	   //$(this).css("border","1px solid gray");
+	   
+	   //$(this)
+       //        .css("color","red")
+       //        .css("font-size","35px")
+       //       .css("border","1px solid gray");
+	   
+	   // $(this).css("" , function (){}) 
+	   // jquery.com
+   }) ;
+   */
+   
+   // on() jquery method 이벤트 등록  [ + ajax 사용  ]
+   $("#demo").on("mouseover", function() {
+	   /*
+	   $(this).css({
+		   "속성명":"속성값",
+		   "속성명":"속성값",
+		   "속성명":"속성값",
+		   "속성명":"속성값",
+		   :
+	   });
+	   */
+	   $(this).css({
+		   "color":"red",
+		   "font-size":"35px",
+		   "border":"1px solid gray"
+	   });
+   });
+   
+   
+</script>
 </body>
 </html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 11:18:06</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>*** ex10.html - js 개체  ***</h3>
+
+<pre>
+  1. js 객체는 기본형을 제외하면 모두 js 객체이다. 
+  2. js 기본형 ? string, number, boolean, null, undefined, bigint,
+  3. js 객체 ?  new String(), new Number(),  new Boolean()
+                     new Date, 
+                     Math
+                     Array
+                     function 
+                     object
+                     등등
+    4.  js 배열  = []
+        js 객체  = {}
+        
+       js 객체도 변수이다. 
+        var person = {
+                   // 속성
+                   name:"admin",
+                   age:20,
+                   
+                   // 객체의 메서드 
+                   info:function (){}
+        }                 
+     
+     5. js 객체 생성 방법 ( 4가지 )
+         1) new 키워드
+              new Date()
+              new Car()
+              
+              var peron = new Object(); // 빈 객체 생성
+               person.name = "admin";  // 속성 추가
+              preson.age = 20;
+               
+         2) 객체 리터럴
+              var peron = {  name:"admin", age:20};
+              
+              var peron = {};                // 빈 객체 생성
+              person.name = "admin";  // 속성 추가
+              preson.age = 20;
+              
+              
+         3) 객체 생성자          
+         4) Object.create()    
+         
+     6. js 객체 속성
+            1) 접근
+               객체명.속성명;
+               person.name
+               객체명["속성명"];
+               person["name"];    
+               
+            2)for in 문
+            for( let p   in object)  {
+                       속성명
+            } 
+</pre>
+
+<script>
+   var peron = {
+		   firstname:'john',
+		   lastname:'Doe',
+		   age:40,
+		   eyecolor:'blue',
+		   
+		   fullName:function (){
+			   return this.firstname +" " + this.lastname;
+		   }
+   }
+   
+   // 1.   새로운 속성(필드) 추가.
+   //      객체명.새로운속성명=속성값;
+          person.nationality = "kerea";
+          
+          // 2. 속성 제거
+          // delete 객체명.속성명;
+          delete person.eyecolor;
+          // delete person["eyecolor"];
+          
+          // 3. 메서드 호출
+          // 객체명.메서드명();
+          var name =  person.fullName();
+          console.log( name );
+          
+          // 4. 새로운 메서드 추가.
+          // 객체명.메서드명 = function (){}
+          person.name  = function (){
+        	  return this.firstname +" /  " + this.lastname;
+          }
+          
+          // 5. 모든 속성 출력
+          for ( var p in person) {
+			console.log( p + " / " + person[p]);  // person.p X typeof string
+		}
+          
+          // 
+          /*
+          var person = {}
+          var person = new Object();   권장 X
+          
+          person.firstname = "john";
+          person.fullName = function(){
+        	  
+          }
+          */
+          
+          //var name = "admin";
+          //var name = new String( "admin");  X
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

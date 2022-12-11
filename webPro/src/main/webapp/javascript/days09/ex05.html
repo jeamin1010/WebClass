@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29 오전 10:38:34</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<!-- #div1>p#id$*2>lorem4 -->
+<div id="div1">
+    <p id="id1">Lorem ipsum dolor sit.</p>
+	<p id="id2">Ad necessitatibus perspiciatis deleniti.</p>
+</div>
+
+<script>
+  var parentNode = document.getElementById("div1");
+  // alert(  parentNode.nodeName   );  //DIV  element node
+  
+  //  alert(  parentNode.firstChild.nodeName );  // #text
+  //alert(  parentNode.firstChild.nodeValue);  // #text
+  
+  //  alert(   parentNode.firstElementChild.nodeName );
+  
+</script>
+
+<script>
+  /*
+   // 1.  DOM method 사용해서  새로운 요소 생성 추가
+   // <p id="id3">hong gil dong.</p>
+   var p3 = document.createElement("p");
+   // p3.id = "id3";
+   p3.setAttribute("id", "id3");
+   
+   
+   // p3.innerHTML = "hong gil dong.";   
+   // 1-2. text node 생성
+   var content = "hong gil dong.";
+   var textNode = document.createTextNode(content);
+   p3.appendChild(textNode)
+   
+   
+   // ㄱ.  appendChild()  부모의 마지막 자식으로 추가.. 메서드  
+   var parentNode = document.getElementById("div1");
+   //parentNode.appendChild(p3);
+   
+   // 11:02 수업 시작~ 
+   // ㄴ. 부모의 첫 번째 자식으로 추가...  insertBefore( newelemt, before)
+   // 내가 원하는 요소 앞에 추가 할 때 사용. 
+   //var p1 = parentNode.firstChild;
+   // parentNode.insertBefore( p3 , p1);
+   
+   // ㄹ.  p1 제거
+   var p1 = document.getElementById("id1");
+   // p1.remove();  // 자기자신노드 제거
+   parentNode.removeChild(p1);  // 자식 노드 제거 
+
+   // ㄷ. p1 = p3 교체
+   parentNode.replaceChild(p3, p1);
+   */
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

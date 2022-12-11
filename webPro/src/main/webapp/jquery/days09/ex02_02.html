@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오후 12:20:23</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex02_02.html</h3>
+
+  <!-- p*5 -->
+  <p id="ptag"></p>
+  <p class="box"></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  
+  <!-- div*5 -->
+  <div></div>
+  <div class="demo"></div>
+  <div></div>
+  <div></div>
+  <div></div>
+
+  <hr>
+  <p>....</p>
+  <div>1</div>
+  <div>2</div>
+  <div>
+    <p  class="team demo">3</p>
+    <p>4</p>
+  </div>
+  <hr>
+  <h3>5</h3>
+
+<script>
+   $(function (){
+	  
+	   /*
+	   // 1. 모든 요소들  *
+	   $("*").css("border", "1px solid red");
+	   $("*").css("padding", "20px" );
+	   $("*").css("color", "blue" );
+	   */
+	   
+	   /*
+	   // jquery 체이닝
+	   $("*")
+	       .css("border", "1px solid red")
+	       .css("padding", "20px" )
+	       .css("color", "blue" );
+	   */
+	   
+	   /*
+	   $("*").css({
+		   "border":"1px solid red" , 
+		   "padding":"20px" , 
+		   "color":"blue"
+	   });
+	   */
+	   
+	   /*
+	   // $("div p").css({
+	   //	   div 요소 안에 있는 모든 요소들
+	   $("div *").css({	   
+		   "color":"red", 
+		   "background-color":"green"
+	   });
+	   
+	   // 2. #id
+	   $("#ptag").hide();
+	   
+	   // 3. .class
+	   $(".box").hide();
+	   
+	   // 4. 
+	   // 클래스명 box , demo  숨기자.
+	   $(".box ,  .demo").hide()
+	   
+	   // 5.  element
+	   $("p").toggle();
+	   $("p, h3, div").toggle()
+	   */
+	   
+	   // 문제) .team &&  .demo  모두 가지는 요소의 font-size  3em 설정. 
+	   // <p class="team demo"></p>
+	   $(".team.demo").css("font-size", "3em");
+	   
+	   
+   })
+   
+
+</script>
+</body>
+</html>
+
+
+
+

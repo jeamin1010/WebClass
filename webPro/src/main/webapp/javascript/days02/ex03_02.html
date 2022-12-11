@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 18. 오후 2:17:55</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex03_02.html</h3>
+<pre>
+   [js 데이터 출력 기능]
+   1. document.write();
+   2. window.alert("") ;    - 경고창으로 데이터 출력
+       alert("");
+   3. console.log()  - 브라우저 콘솔 창에 데이터 출력( 디버깅 목적 )
+   4. 요소.innerText  속성         -> text()
+       요소.innerHTML 속성        -> html()
+</pre>
+
+<p id="demo" style="border:1px solid gray">OUTPUT:</p>
+
+
+<!-- table>tr*4>td*3>lorem1 -->
+
+<script>
+        var html = "";
+        html +="<table border='1'  width='300'>";
+    	html +="<tr>                           ";
+    	html +="	<th>Lorem.</th>            ";
+    	html +="	<th>Maxime?</th>           ";
+    	html +="	<th>Laborum.</th>          ";
+    	html +="</tr>                          ";
+    	html +="<tr>                           ";
+    	html +="	<td>Lorem.</td>            ";
+    	html +="	<td>Vel.</td>              ";
+    	html +="	<td>Itaque.</td>           ";
+    	html +="</tr>                          ";
+    	html +="<tr>                           ";
+    	html +="	<td>Lorem.</td>            ";
+    	html +="	<td>Quasi.</td>            ";
+    	html +="	<td>Distinctio.</td>       ";
+    	html +="</tr>                          ";
+    	html +="<tr>                           ";
+    	html +="	<td>Lorem.</td>            ";
+    	html +="	<td>Reprehenderit!</td>    ";
+    	html +="	<td>Consectetur.</td>      ";
+    	html +="</tr>                          ";
+        html +="</table>";
+        
+        
+        // document.getElementById("demo").innerHTML = html;
+        // document.write( html );
+        // console.log( html );
+        // alert( html );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

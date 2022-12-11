@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오전 10:21:28</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01_05.html - js  함수 클로저 예제</h3>
+
+<script>
+
+  var counterObject = (function (){            // 자체 호출 함수
+	                                     let counter = 0; // 지역변수 -> 전역변수 
+	                                     
+	                                     function changeBy( value ){  // 중첩함수
+	                                    	 counter += value;
+	                                     }
+										  
+										  return {
+											  increment:function (){ changeBy(1)},
+											  decrement:function (){ changeBy(-1)},
+											  value:function (){ return counter;}
+										  };            // js 객체 리턴
+									  })();
+  
+    console.log( counterObject.value() ); // 0
+    counterObject.increment();
+    counterObject.increment();
+    counterObject.increment();
+    console.log( counterObject.value() );  // 3
+    counterObject.decrement();
+    console.log( counterObject.value() );  // 2
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

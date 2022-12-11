@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오후 4:13:02</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+<h3>ex06_03.html - js 문자열</h3>
+<script>
+	//
+	var rrn = "781222-1700001";
+	//console.log(rrn.length);//14
+	//숫자 6-숫자7 		rrn.matches(정규표현식) 		t/f
+	//[js 정규표현식]
+	// 형식) 					/pattern/modifiers
+	//								/[0-9]{6}-\d{7}/ 					modeifiers i(대소문자구분),g,m
+	//pattern = /정규표현식/모드;
+	//boolean pattern.test(문자열) 메서드
+	var pattern = /^[0-9]{6}-\d{7}$/;
+	//console.log(pattern.test(rrn));
+	//console.log(/^[0-9]{6}-\d{7}$/.test(rrn));
+	
+	
+	
+	//생일 년도, 생일 월
+	//rrn.substring(from, to)
+	//rrn.substr(from, length)
+	//rrn.slice(from, to);
+	//console.log(rrn.substring(2,4)); // to
+	//console.log(rrn.substr(2,2)); // length
+	//console.log(rrn.slice(2,4)); // 
+	
+	// 주민등록번호 뒷자리 7 출력
+	console.log(rrn.substring(7)); // to
+	console.log(rrn.substring(7,14)); // to
+	console.log(rrn.substring(7,rrn.length)); // to
+	
+	console.log(rrn.substr(7)); // length
+	console.log(rrn.substr(7,7)); // length
+	
+	console.log(rrn.slice(7));
+	console.log(rrn.slice(7,14));
+	//차이점 slice는 음수 사용가능
+	console.log(rrn.slice(-7)); // 음수 뒷 자리부터
+	
+	
+	//생일 일
+	//console.log(rrn.substr(4,2));
+	//성별
+	//console.log(rrn.substr(8,1));
+</script>
+
+<script>
+	//
+	var input = "\nIs Th \nis it?";
+	//var pattern = /^is/;
+	//var pattern = /^is/i;
+	var pattern = /^is/m; // m == multiline -> 개행 여부와 상관없이 pattern에 맞는게 있냐?
+	//console.log(pattern.test(input));
+</script>
+
+<script>
+	//
+	var input = "Visit Microsoft!";
+	//var pattern = "Microsoft";
+	//var pattern = /microsoft/;
+	var pattern = /microsoft/i;
+	var index = input.search(pattern);
+	//console.log(index);
+	//console.log(input.replace(pattern, "XXX"));
+</script>
+
+<!-- js -->
+<script>
+	//
+	
+</script>
+
+<!-- jquery -->
+<script>
+	//
+	
+</script>
+</body>
+</html>

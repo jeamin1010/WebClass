@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29 오전 11:18:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex07.html</h3>
+
+전체 선택 : <input type="checkbox" />
+<table border="1"> 
+  <tr>     
+     <td><input type="checkbox" />1</td>
+     <td>hong</td>
+     <td>seoul</td>
+  </tr>
+  <tr>
+     <td><input type="checkbox" />2</td>
+     <td>admin</td>
+     <td>seoul</td>
+  </tr>
+  <tr>
+     <td><input type="checkbox"  />4</td>
+     <td>kenik</td>
+     <td>pohang</td>
+  </tr>
+</table> 
+ 
+<button id="btn">버튼</button>
+
+<p id="demo">
+ 1 / hong / seoul
+</p>
+
+<script>
+
+document.getElementById("btn").onclick = function(){
+	// 체크된 체크박스 
+	var ckbs = document.querySelectorAll("table input[type=checkbox]");
+	for (let ckb of ckbs) {
+		if( ckb.checked ){
+			// DOM 탐색           ckb 요소노드 의 뒤 형제 노드 1 : 텍스트 노드
+			//  ckb.nextElementSibling  X
+		    // alert( 	ckb.nextSibling.nodeName +" / " + ckb.nextSibling.nodeValue );
+		    var no = ckb.nextSibling.nodeValue ;
+		    // alert( ckb.parentNode.nextElementSibling.innerHTML ) ;  // TD
+		    // alert(  ckb.parentNode.nextElementSibling.firstChild.nodeName );
+		    var name = ckb.parentNode.nextElementSibling.firstChild.nodeValue;		    
+		    var loc = ckb.parentNode.nextElementSibling.nextElementSibling.firstChild.nodeValue;
+		    
+		    console.log( no + "/ " + name + " / " + loc  );
+		    
+		} // if
+	} // for
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

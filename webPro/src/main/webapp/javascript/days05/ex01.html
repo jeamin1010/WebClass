@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 23. 오전 5:09:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body> 
+  <!-- 예비군 훈련 : 김지훈 -->
+  <!--  
+   9:40 수업 시작~ 
+   10:01 수업시작~
+  -->
+  <h3>ex01.html - js 문자열 : 검색 </h3>
+  
+<script>
+  let str = "안녕하세요, 홍길동 입니다. - 홍길동 왈 -";
+  /*
+  console.log( str.indexOf("홍길동", 0) );  // 7
+  console.log( str.indexOf("홍길동") );       // 7
+  
+  //console.log( str.lastIndexOf("홍길동", from)  );       // 7
+  console.log( str.lastIndexOf("홍길동")  );       // 18
+  
+  // 찾는 문자열이 없는 경우 :   -1 반환
+  
+  // indexOf(), lastIndexOf()와 search()의 차이점 : 정규표현식
+  console.log(  str.search(/홍길동/) );  // 7
+  
+ console.log( str.match("김기수") );  // 일치하는 문자열이 없는 경우 : null 반환
+ console.log( str.match(/홍길동/ig) );   
+  // alert(  typeof str.match(/홍길동/ig) );   // object   배열  
+  
+  // ES 2020 새로 추가된 메서드 
+  //matchAll() 일치하는 결과를 포함하는 반복자(iterator)를 반환하는 함수
+  const iterator = str.matchAll( /홍길동/g );
+   // 자바 : console.log(  Arrays.toString( 배열명 )  )
+   console.log(   Array.from( iterator ) );
+  
+   
+  // ES6 새로 추가된 메서드 
+  // IE 지원되지 않는다.  
+   // 일치하는 문자열을 포함하고 있는지 여부를 boolean 형으로 반환.
+   console.log(  str.includes("홍길동") );  // true
+   
+   
+   var url = "www.sist.co.kr";
+   
+// ES6 새로 추가된 메서드 
+   // http://  문자열로 시작
+   //   ??       문자열로 끝나니
+   console.log(  url.startsWith( "http://") );		    // false
+   console.log(  url.endsWith( "co.kr") );		     // true
+   */
+</script>
+
+<script>
+    let text = "he\'s ~~";
+   //let text = 'he\'s ~~';   // 문자열 내부에  ' 홑따옴표를 사용해야 된다면
+</script>
+
+<script>
+    var name = "홍길동";
+    var age = 20;
+    
+    //                  이름은 '홍길동'이고, 나이는 20살이다.    
+    // var result = "이름은 '"+name+"'이고, 나이는 "+age+"살이다.";
+    // Java        String.format(   "이름은 '%s'이고, 나이는 %d살이다."     , name, age);
+    //                 printf( format, name, age);
+    
+    // js 에서도 변수를 사용해서 출력할 수 있네요... 
+    //        `            백틱문자
+    var result = ` > 이름은 '${ name }'이고, 나이는 ${ age }살이다. `;
+    // console.log( result );
+    
+</script>
+
+
+<p id="demo"></p>
+
+<script>
+   let header = "TEST";   
+   let html = `<h3>${ header}</h3>`;
+   
+   let tags = ["javascript", "jquery", "java"];  // js 배열            
+   // let tags = {};  // js 객체
+   
+   // java  foreach문
+   // js forin 문
+   // js forof 문
+   for (let tag of tags) {
+	  html +=  `<li>${ tag }</li>`;
+   } // for
+   
+   $("#demo").html(  html );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

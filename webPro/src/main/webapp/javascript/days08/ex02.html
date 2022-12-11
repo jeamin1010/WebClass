@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오전 11:57:58</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex02.html  - js 컬렉션 </h3>
+<!-- 12:10 수업시작 -->
+
+<form id="form1" name="form1" action="">
+  Name : <input type="text" name="name" value="admin" />
+  <br>
+  Age : <input type="text" name="age" value="20" />
+  <br>
+  Email : <input type="email" name="email" value="admin@naver.com" />  
+  <button type="button" value="ok">확인</button>
+</form>  
+
+<p id="demo"></p>
+
+<script>
+   // 1. arguments
+   // 2. options
+   // 3. forms
+   
+   // 4. elements
+   // 5. images
+   // 6. links 
+   // 등등
+   $("button").click(function() {
+   	    var form1 = document.forms["form1"];
+   	    var cnt =  form1.elements.length;
+   	    // alert( cnt );
+   	    for (var i = 0; i < cnt; i++) {
+			$("#demo").html(
+					$("#demo").html() + "<br>" + form1.elements[i].value
+					);
+		}// 
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 3:21:10</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex12_02.html</h3>
+
+<pre>
+     // 사용자 자주 사용하는 메서드 구현 -> jquery Object 사용 설정.
+     // 객체 생성자 + 함수 , 속성 추가.
+     // jQuery.prototype.myAlert = function (msg){
+     
+     $.fn.myAlert = function (msg) {
+     }
+</pre>
+
+<p>Lorem ipsum dolor sit amet.</p>
+
+<script>
+   $.fn.myAlert = function (msg) {
+	       alert( msg );
+   }
+
+   // Uncaught TypeError: $(...).myAlert is not a function
+   $("p").myAlert("경고창 띄웁니다.");
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

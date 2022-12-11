@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 21. 오후 4:55:35</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+input[type=text]{
+   text-align: center;
+   border: 1px solid gray;
+   padding: 5px; 
+}
+</style>
+</head>
+<body>
+
+<input type="number" autofocus="autofocus"  id="num1"  onkeydown="next_keydown('num2');">
++
+<input type="number" id="num2" onkeydown="sum();">
+=
+<input type="number" disabled="disabled" id="result">
+
+
+
+
+
+
+<!-- js -->
+<script>
+   //
+   
+
+   function next_keydown(next) {
+      if (event.keyCode == 13) {
+         document.getElementById(next).focus();
+      }
+   }
+
+   function sum() {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      if (event.keyCode == 13) {
+         var sum = Number(num1) + Number(num2);
+         //console.log(sum)
+         document.getElementById("result").value = sum;
+      }
+   }
+</script>
+
+</body>
+</html>

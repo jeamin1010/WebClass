@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오전 9:44:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01_04.html - js 함수 클로저를 사용 이유</h3>
+<!-- 
+ 9:46    
+ 10:05 수업
+  -->
+<!-- button*20>{0} -->
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+<button>0</button>
+
+<script>
+   // [ js  ]
+   /*
+   //  document.getElementsByTagName("button");
+   var btns =  document.querySelectorAll("button");
+   for (var i = 0; i < btns.length; i++) {
+	  btns[i].onclick = function (){		  
+		  var count =  parseInt(  event.srcElement.innerHTML  );
+		  event.srcElement.innerHTML=  ++count;		  
+	  } // click
+   } // for
+   */
+   
+   // jquery
+   /*
+   $("button").click(function() {
+   	     var count = $(this).html();
+   	     $(this).html(  ++count );
+   });
+   */
+   
+   
+</script>
+<script>
+    // 각 버튼 20개  +  counter 20 개 전역 선언
+    /*
+    var count1 = 0;
+    var count2 = 0;
+         :
+    var count20 = 0;
+    */
+    
+    /*
+    var counts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    // var counts = [];
+    // for( : i<20  )  counts.push(0)
+    
+    $("button").click(function() {
+    	  // jquery method :   index()
+    	  var idx = $(this).index();
+          $(this).html(  ++counts[idx] );
+    });
+    */
+</script>
+
+<script>
+   // [ js 함수 클로저 ]
+   /*
+   $("button").click(
+		     (function() {  //  자체 호출 함수 + 실행
+   	              let count = 0; //
+   	              return function (){  // 중첩 선언
+   	            	  event.srcElement.innerHTML = ++count;
+   	              };
+               })()           
+		   );
+	*/
+	
+	
+	// js
+	 var btns = document.getElementsByTagName("button");
+    for (var i = 0; i < btns.length; i++) {
+		btns[i].onclick = ( function (){    // 자체 호출 함수
+			                             let counter = 0;
+			                             return function(){   // 중첩함수
+			                                        event.srcElement.innerHTML = ++counter;
+		                                              }; 
+		                           })();
+	};
+     
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

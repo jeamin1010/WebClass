@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 18. 오후 12:38:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+ <h3>ex02.html - 문제 4번 풀이</h3>
+
+<fieldset>
+   <legend>html 적용여부</legend>
+   <input type="radio"  name="htmlAppy" checked="checked"  value="apply"><label>적용</label>
+   <input type="radio"  name="htmlAppy"  value="not apply"><label>비적용</label>
+</fieldset>
+<input type="text" value="<b>홍길동</b>">
+<br>
+<button>확인</button>
+<p id="demo"></p>
+<!-- js -->
+<script>
+     /*
+    document.querySelector("button").onclick = function (){
+    	// document.getElementsByName("htmlAppy");
+    	var rdbs =  document.querySelectorAll("fieldset > input[type=radio]");
+    	// alert( rdbs.length );
+    	// 라디오버튼 1개만 체크.
+    	var txtValue = document.querySelector("input[type=text]").value;
+    	if (  rdbs[0].checked  ) {  // 적용 
+    		document.querySelector("#demo").innerHTML = txtValue ;
+		} else {  // 비적용
+			document.querySelector("#demo").innerText = txtValue;
+		}
+    }
+     */
+</script>
+
+<!-- jquery -->
+<script>
+
+   $("button").click(function (){
+	    var rdbs =  $("fieldset > input[type=radio]");
+	    var txtValue = $("input[type=text]").val();
+	    if (  rdbs[0].checked  ) {  // 적용   attr()/prop()/is()
+			$("#demo").html( txtValue );
+		} else {  // 비적용
+			$("#demo").text( txtValue );
+		}
+   }); 
+ 
+</script>
+</body>
+</html>
+
+
+
+
+

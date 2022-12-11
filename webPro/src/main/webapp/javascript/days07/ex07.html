@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 10:36:21</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex07.html - js 클래스</h3>
+<pre>
+   1. js에도  class 키워드 사용. ( ES6 )
+   2. 객체 설계도( 템플릿  )
+</pre>
+
+<script>
+
+   class Car {
+	   // 필드 
+	   // private String name;
+	   // private int age;
+	   
+	  constructor(name, year) {   // js 생성자 : 객체 생성할 때 자동으로 호출되는 함수
+		this.name = name;
+	    this.year = year;
+	  }
+	  
+	    // 메서드
+	    age( year ){
+	    	 return year - this.year;
+	    }
+  }
+
+   
+   var myCar1 = new Car("Volvo", 2019);
+   var myCar2 = new Car("Audi", 2020);
+   
+   
+   console.log(   myCar1.name + "  /  " + myCar1.age(2022)  );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

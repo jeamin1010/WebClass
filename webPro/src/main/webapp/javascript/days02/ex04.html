@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 18. 오후 2:39:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   .active{
+      background-color: yellow;
+      color:red;
+      font-size: 25px;
+   }
+</style>
+</head>
+<body>
+<h3>ex04.html - 문제 6 풀이</h3>
+
+좋아하는 과목 선택?
+<br>
+ 
+<input type="checkbox" value="kor"  name="subject"  id="s_kor" ><label for="s_kor">국어</label>
+<input type="checkbox" value="eng"  name="subject"  id="s_eng"  checked="checked"><label for="s_eng">영어</label>
+<input type="checkbox" value="mat"  name="subject"  id="s_mat" ><label for="s_mat">수학</label>
+<input type="checkbox" value="pe"  name="subject"  id="s_pe" ><label for="s_pe">체육</label>
+ 
+ <br>
+ <br>
+ <button onclick="">확인</button> 
+ <p id="demo"></p>
+
+<!-- js -->
+<script>
+     /*
+     document.querySelector("button").onclick = function (){
+    	 document.getElementById("demo").innerHTML = "";
+    	  // alert("이벤트 확인")
+    	 //var ckbs = document.querySelectorAll("input[type=checkbox][name=subject]");
+    	 //var ckbs = document.querySelectorAll("[name=subject]");
+    	 var ckbs = document.getElementsByName("subject");
+    	 // alert( ckbs.length ); 
+    	 var content = "";
+    	 for (var i = 0; i < ckbs.length; i++) {
+    		  if(  ckbs[i].checked ){
+    			  // console.log( ckbs[i].value );
+    			  //document.getElementById("demo").innerHTML += ckbs[i].value+"<br>";
+    			  if( ckbs[i].value == "kor" ){
+    				  content += 	"<b class='active'>"+ ckbs[i].value+"</b><br>";   
+    			  }else{
+    				  content += 	"<b>"+ ckbs[i].value+"</b><br>";   
+    			  }
+    		       
+    		  }
+		  } // for
+		  
+    	 document.getElementById("demo").innerHTML =  content;
+     }
+     */
+</script>
+
+<!-- jquery -->
+<script>
+     /*
+    // 3:05 수업 시작~
+    $("button").click( function (){
+    	$("#demo").html("");    	
+    	// $("[name=subject]")
+    	
+    	//  jquery selector -   :checkbox
+    	//  $(":checkbox") ==$("input[type=checkbox]")
+    	var ckbs = $(":checkbox[name=subject]");
+    	// alert( ckbs.length );
+    	for (var i = 0; i < ckbs.length; i++) {
+    		  //if ( elem.checked )                            - js
+    		  //if ( $( elem ).prop( "checked" ) )
+    		  //if ( $( elem ).is( ":checked" ) )
+    			  
+    		 // 	  Uncaught TypeError: ckbs[i].prop is not a function
+    		 //   jquery object =   jquery method : prop(), val(), ....
+    		 //  *** $(html element) -> jquery object 변환 ***
+    		 if( $(ckbs[i]).prop( "checked" ) ){
+                //    	     	  Uncaught TypeError: ckbs[i].val is not a function
+    			 //  console.log( $(ckbs[i]).val()  );    // val() 메서드 == value 속성
+    			 
+    			 // $("#demo").html(  $("#demo").html() +   $(ckbs[i]).val() +"<br>"    );    			 
+    			 $("#demo").html( function (index, oldhtml){
+    				 return oldhtml +"<br>" + $(ckbs[i]).val();
+    			 } );
+    			 
+    		  }	   // if
+		} //for 
+    	
+    } );
+    */
+</script>
+
+<!-- jquery 두 번째 방법 -->
+<script>
+$("button").click(  function (){
+	$("#demo").html("");
+	// 체크박스 중에 체크된 체크 박스를 얻어오는 것.	
+	/* jquery selector -  :checked */
+	
+	// 반복문 - value 얻어와서 -> #demo 출력
+	// jquery method -   each()
+	$("[name=subject]:checked").each(function (index, element){
+		                                   //    element.val()
+		// console.log( index +" / " + element.value + " / " + $(element).val()  +" / " + $(this).val() );
+         $("#demo").html( function (index, oldhtml){
+        	 return oldhtml +"<br>" + $(element).next().text();
+         });		                                   
+	});
+	
+} );
+</script>
+
+</body>
+</html>
+
+
+
+
+

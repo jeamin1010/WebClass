@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 11:45:38</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01_08.html   stop(매개변수,,)</h3>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="stop2">Stop all</button>
+<button id="stop3">Stop but finish</button>
+<p>.</p>
+<div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+
+<script>
+
+    $(function (){
+    	$("#start").click( function (){
+    		// 큐 -  [ 1 애니, 2 애니 ]
+    		$("div").animate( {   left:"200px"  }, 5000);           // 1 애니
+    		$("div").animate( {   fontSize:"3em"  }, 5000);       // 2 애니
+    	});
+    	
+    	$("#stop").click( function (){ 
+    		// 1. 현재 진행중인 애니메이션 중지
+    		// 2. 큐에 애니메이션 남아있다면 그 다음 2 애니  실행.
+    		$("div").stop();
+    	});
+    	
+    	$("#stop2").click( function (){ 
+    		 // 모든 애니메이션 중지
+    		 // 1 애니 - 현재 진행 중
+    		 // 남은 애니 ? 
+    		// stop( 		  clearQueue   큐  - 남은 애니 제거  ) 
+    		$("div").stop(true);
+    	});
+    	
+    	
+    	// Stop but finish
+    	$("#stop3").click( function (){ 
+    	// 	, clearQueue  , jumpToEnd 
+    	//       1 진행 중지
+    	//       큐 애니 제거
+    	//                             1진행 상태 점프
+   		$("div").stop(true , true );
+   	});
+    	
+    }); // ready
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

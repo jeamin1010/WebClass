@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 9:49:21</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   span{
+      color:red;
+      cursor: pointer;
+   }
+   div{
+      width: 80px;
+      height:80px;
+      margin: 3px;
+      float:left;
+      
+      display: none;
+   }
+   #one{  background: red }
+   #two{  background: green }
+   #three{  background: blue }
+</style>
+</head>
+<body>
+<h3>ex01_02.html - jquery 효과 ( show(), hide(), toggle(), fade())</h3>
+
+<pre>
+    fade 사전적의미 : 희미하게 하다. 
+    // 10:01 수업 시작
+     effects  > fading 
+       .fadeIn()
+       .fadeOut()
+       .fadeTo()
+       .fadeToggle()
+</pre>
+
+<span>Click here...</span>
+<div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+
+<script>
+ // document.body  == <body>
+ // $("body")
+ $( document.body ).click( function (){
+	 $("div:hidden").first().fadeIn("slow");	
+	  alert(" body  click 이벤트 발생...")
+ } );
+
+ // [이벤트 버블링]
+ // 문제) span 태그를 클릭할 때 fadeOut()   빨강색 배경을 띈 div 를 사라지게 하세요. 
+ $("span").click( function (){
+	 $("div#one").fadeOut("slow");
+	 alert(" span  click 이벤트 발생...")
+ });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

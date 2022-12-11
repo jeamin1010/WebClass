@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 21. 오후 12:52:21</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<!-- 2:00 수업 시작 : 김지훈 X-->
+<h3>ex01_02.html -    let 키워드</h3>
+
+<pre>
+  1.   let 로 선언된 변수는 재선언할 수 없다.
+  2.  let 로 선언된 변수는 사용하기 전에 선언해야 된다. 
+  3. let로 선언된 변수는     글로벌 범위, 함수 범위  + 블록범위
+     var                           글로벌 범위, 함수 범위
+</pre>
+
+<script>
+    /*
+     var x = "John";
+     
+     var x = 0;
+     */
+     
+     /*
+     x = 100;
+     
+     
+     var x ;
+     console.log( x );  // 100
+     */
+     
+     // Global Scope( 전역변수 )
+     var x ;
+     
+     function test(){
+    	 // Function Scope ( 지역변수 )
+    	 var y;
+    	 
+    	 
+    	 // Block Scope
+    	 {
+    		 let z ;
+    	 }
+    	 
+    	 
+     }
+     
+</script>
+
+<script>
+     // Uncaught SyntaxError: Identifier 'x' has already been declared
+     /*
+    let  x = "John";
+    
+    let x = 0 ;
+    */
+    
+    // Uncaught ReferenceError: Cannot access 'x' before initialization
+    /*
+    x  = 200;
+    
+    
+    let x;
+    console.log( x );
+    */
+</script>
+
+<script>
+
+  function sample(){
+	  /*
+	  // var 변수는 선언되기 전에 변수를 사용할 수 있다. 
+	  // 왜 ? js 호이스팅
+			  //   블록의 맨 위로 선언된 코딩이 올라간다. 
+	  i = 10;
+	  var  i ;
+	  
+	  {
+		  var i ;  //  i 변수를 재선언
+		  i = 100;
+		  // 2  :  i = 100
+		  console.log("2  :  i = " + i );
+	  }
+	  
+	  // 1  :  i = 10
+	  // 1  :  i = 100
+	  console.log("1  :  i = " + i );
+	  */
+	  
+	  //  Uncaught ReferenceError: Cannot access 'j' before initialization
+	  // j = 100;	  
+	  var z = 1;
+	  let j;   // js 호이스팅 X       function scope 
+	  j = 100;
+	  
+	  {
+		  var z = 2;
+		  // block scope
+		  let j;
+		  j = 200;
+		  // 2  :  j = 200
+		  console.log("2  :  j = " + j );
+	  }
+	  
+	  {
+		  var z = 3;
+		  let j;
+		  j = 300;
+		  console.log("3  :  j = " + j );
+	  }
+	  
+	  
+	  // 1  :  j = 100
+	  // 1  :  j = 100
+	  console.log("1  :  j = " + j );
+	  
+	  
+  }
+  
+  sample();
+
+
+</script>
+
+<script>
+    // global scope
+    var t1;
+    let t2;
+    
+    function t(){
+    	// var t1;
+    	// let t2;
+    }
+    
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 2:14:02</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex11.html-js 함수</h3>
+<pre>
+	1. 함수 정의
+	2. 함수 선언 형식
+		function 함수명 ([매개변수...]){
+			[return 반환값;]
+		}
+	3. Function() 생성자
+		function sum(a,b){return a+b;}
+	
+		var sum = new Function("a","b","return a+b");
+		console.log(sum(1,2));// 위 코드와 같은 의미
+	
+</pre>
+
+<pre>
+	*** 익명 자체 호출 함수 ***
+	1) 함수선언 + 2) 함수호출
+</pre>
+
+<script>
+	/*
+	//1. 함수 선언
+	function print() {
+		console.log("print()...")
+	}
+	//2. 함수 호출
+	print();// 호출
+	*/
+	
+	//*** 익명 자체 호출 함수 ***
+	// 1. 함수 선언
+	(function () {
+		console.log("test");
+	})();//2. 함수호출
+</script>
+
+<script>
+	//매개변수에  자료형 X 
+	//function disp(var name, let age) {
+		
+	// 매개변수의 기본값을 설정할 수 있다.
+	//function disp( name = "hong",  age=20) {
+	function disp( name,  age) {
+		//arguments 컬렉션 사용가능
+		console.log("xxx");	
+	}
+	disp(); //호출할 때 매개변수가 없다면?  undefinde , undefined
+	disp("admin");
+	disp("admin",20);
+	disp("admin",20,true);
+</script>
+
+<script>
+	// java에서 ...
+	//public static int sum (int ...args){}
+	
+	function sum(...args) {
+		let reuslt=0;
+		for (let n of args) {
+			reuslt += n;
+		}
+		return reuslt;
+	}
+	
+	console.log(sum(1,2,3));
+	console.log(sum(1,2,3,4,5,6));
+	var m =[3,5,2,4,1];
+	//console.log(...m);
+	
+</script>
+
+</body>
+</html>

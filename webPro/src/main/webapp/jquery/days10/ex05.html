@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 12:16:19</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  div{
+     width: 300px;
+     height:200px;     
+     padding:10px;     
+     border:1px solid blue;
+     margin:3px;
+     
+     background-color: lightblue;
+  }
+</style>
+</head>
+<body>
+<h3>ex05.html</h3>
+
+<pre>
+  [jq  요소, 윈도우  크기]
+  1.                              width()
+  2. height()
+  3.                              innerWidth()
+  4. innerHeight()
+  5.                               outerWidth()
+  6. outerHeight()
+  
+    [너비(width)]
+    
+                                  margin  border  padding        [content]          padding      border     margin
+                                    10px     2px         5px                                        5px           2px         10px
+       
+         jq  width()                                                |<-                        ->|    
+         jq innerWidth()                        |<-                                                         ->|    
+         jq outerWidth()            |<-                                                                                       ->|    
+jq outerWidth(true)  |<-                                                                                                               ->|        
+</pre>
+
+<div id="demo"></div>
+<button>확인</button>
+
+<script>
+    /*
+    $("button").click(function (){
+    	var width = $("div").width();
+    	var height = $("div").height();
+    	
+    	var innerWidth = $("div").innerWidth();  // + 패딩
+    	var innerHeight = $("div").innerHeight();
+    	
+    	var outerWidth = $("div").outerWidth();  // + 패딩 + 보더
+    	var outerHeight = $("div").outerHeight();
+    	
+    	var outerWidth2 = $("div").outerWidth(true);  // + 패딩 + 보더 + 마진
+    	var outerHeight2 = $("div").outerHeight(true);
+    	
+    	
+    	$("div").append("<li>width: "+ width+"</li>");
+    	$("div").append("<li>height: "+ height+"</li>");
+    	$("div").append("<li>innerWidth: "+ innerWidth+"</li>");
+    	$("div").append("<li>innerHeight: "+ innerHeight+"</li>");
+    	$("div").append("<li>outerWidth: "+ outerWidth+"</li>");
+    	$("div").append("<li>outerHeight: "+ outerHeight+"</li>");
+    	$("div").append("<li>outerWidth2: "+ outerWidth2+"</li>");
+    	$("div").append("<li>outerHeight2: "+ outerHeight2+"</li>");
+    });
+    */
+</script>
+
+<script>
+    /*
+   $("button").click(function (){
+	   // html 문서와 윈도우 창(브라우저의 뷰포트)의 너비와 높이.
+	   var content =  $(document).width()+"/" +$(document).height() +"\n";
+	   content += $(window).width()+"/" +$(window).height() +"\n";
+	   alert( content )
+   });
+    */
+</script>
+<script>
+   $("button").click(function (){
+	    // 300px, 200px
+	    /*
+	   $("div").css( {
+		   "width" : "500px",
+		   "height":"500px"
+	   })
+	   */
+	   $("div").width(500).height(500);
+   });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

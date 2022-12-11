@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오후 2:48:30</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex05.html - BOM( screen )</h3>
+<!-- 3:00 수업시작 -->
+
+<pre>
+    [window.screen 객체]
+    - 사용자 화면에 대한 정보를 가지고 있는 객체
+    screen.width 화면 너비
+    screen.height 화면 높이
+    screen.availWidth:  사용가능한 화면 너비 
+    screen.availHeight:  사용가능한 화면 높이
+    scren.colorDepth  색 농도
+    16비트 : 65536가지
+    32비트 : 42억가지
+    등등 
+    
+</pre>
+
+<p id="demo"></p>
+
+<script>
+  var output = "";
+  output += screen.width +" / " + screen.height + "<br>";  
+  output += screen.availWidth +" / " + screen.availHeight + "<br>";
+  output += screen.colorDepth +"<br>";
+  $("#demo").html( output );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

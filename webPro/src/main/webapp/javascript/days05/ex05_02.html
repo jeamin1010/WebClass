@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 23. 오후 4:27:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex05_02.html - js 날짜 객체</h3>
+
+<script>
+    var now = new Date();
+   // 년도
+   console.log(  now.getFullYear() );  // 2022
+   // 월
+   console.log( now.getMonth() + 1 );      // 11
+   // 일
+   console.log( now.getDate() );      // 23
+   // 시
+    console.log( now.getHours() );    // 16
+   // 분
+   console.log( now.getMinutes() );    // 16
+   // 초
+   console.log( now.getSeconds() );    // 16
+   // 밀리세컨드
+   console.log( now.getMilliseconds() );    // 16
+   // 요일
+   console.log(  "일월화수목금토".charAt( now.getDay()  ) );    //   일(0) 1(월)  2(화) 3(수요일)    ~    6(토)
+
+   
+   // 날짜 설정
+   /* 
+   now.setFullYear(year);
+   now.setMonth(month)  // 1 달
+   now.setDate(date);
+   now.setHours(hour);
+   now.setXXX();  
+   */   
+    
+</script>
+
+<script>
+      //  getTime() :  1669188846578  ( 1970.1.1 00:00:00.000 )
+     var ms =  now.getTime();
+     alert( ms );
+</script>
+</body>
+</html>

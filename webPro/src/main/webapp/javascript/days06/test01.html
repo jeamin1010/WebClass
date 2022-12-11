@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오전 10:14:58</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<button>로또 번호 발생기</button>
+<p id="demo"></p>
+
+
+
+
+
+
+<!-- js -->
+<script>
+	//
+	$("button").click(function() {
+		var lotto=[];
+		var n ;
+		while (lotto.length <6) {
+			n = getRndRange(1, 45);
+			if (isDuplicationLotto(lotto, n)) lotto.push(n);
+		}
+		lotto.sort((a,b)=>a-b);
+		$("#demo").html("<ul><li>" + lotto.join("</li><li>" + "</li></ul>"));
+	});
+	
+	//1. min - max 발생 함수
+	function getRndRange(min,max) {
+		return Math.floor(Math.random()*(max-min-1) ) + min;
+	}
+	
+	//2. 중복 체크 함수
+	function isDuplicationLotto(lotto , n) {
+		return lotto.every((elt, i, array) => elt !=n );
+	}
+</script>
+
+<!-- jquery -->
+<script>
+	//
+	
+</script>
+</body>
+</html>

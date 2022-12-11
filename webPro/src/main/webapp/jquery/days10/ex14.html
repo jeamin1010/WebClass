@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 3:34:10</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+
+  button {
+    margin: 5px;
+  }
+  button#theone {
+    color: red;
+    background: yellow;
+  }
+
+</style>
+</head>
+<body>
+<h3>ex14.html</h3>
+
+<pre>
+    [ jq  이벤트 등록 ]
+    on()            jquery Ajax ( 기억 )
+    one()          이벤트 한번만 등록.
+    off() 
+    
+</pre>
+
+
+<button id="theone">Does nothing...</button>
+
+<button id="bind">Add Click</button>
+<button id="unbind">Remove Click</button>
+
+<div style="display:none;">Click!</div>
+
+<script>
+   // 비추다, 섬광, 번쩍.
+   function flash() {
+	  $( "div" ).show().fadeOut( "slow" );
+	}
+    // Add click  - 클릭 이벤트 등록    on()
+	$( "#bind" ).click(function() {
+	
+	  // 	$("body").on("click", function (){})
+	  $( "body" )
+	    .on( "click", "#theone", flash )
+	    .find( "#theone" )
+	      .text( "Can Click!" );
+	});
+	
+    // 클릭 이벤트 제거 - off()
+	$( "#unbind" ).click(function() {
+	  $( "body" )
+	    .off( "click", "#theone", flash )
+	    .find( "#theone" )
+	      .text( "Does nothing..." );
+	});
+ 
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29. 오전 5:01:03</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h3>ex02.html - DOM</h3>
+
+<pre>
+   BOM - window, screen, history, location, navigator
+
+   1. DOM ?
+      - Document Object Model의 약자
+      - 웹 페이지 -> 요청(request) ->  웹서버 
+                        <- 응답(response)
+         응답된 웹페이지가 로딩 되면   브라우저는  문서 객체 모델(DOM)을 생성한다.     
+          html 웹페이지 -> [html DOM]
+          xml    웹페이지 -> xml DOM
+   1-2. DOM 생성된  트리 구조     
+          [Document]  Node(노드)  
+                    |
+             [html 태그] Root element , Node(노드)    
+
+  [head 태그]      [body태그]
+          |                           |
+    [title 태그]       [a 태그 ]   []href 속성]
+      |                                       
+     [Text SS17 2022. 11. 29. 오전 5:01:03] Node 
+          
+          Node : element, attribute, text, comment 등등
+          
+   2. DOM 왜 생성(사용)
+      -    js + html 요소 변경             , 추가, 삭제
+      -    js + html 속성 변경             , 추가, 삭제
+      -    js + css    스타일 변경, 추가, 삭제
+      - 등등  
+      
+    3. W3C DOM  종류
+               - Core DOM - 모든 문서 유형에 대한 표준 DOM 
+               - html DOM
+               - xml   DOM
+               
+    4. DOM 메서드 
+        ㄱ. html 요소 찾는 메서드 
+          document.getElementById()        
+          document.getElementsByTagName( tagname  ) 
+	      document.getElementsByClassName( className)
+          document.getElementsByName( name )  
+          document.querySelector()
+          document.querySelectorAll()
+        ㄴ. html 요소 변경
+            element.innerHTML
+            element.innerText
+            element.속성명
+            element.style.속성명
+            element.setAttribute()
+            element.getAttribute()
+         ㄷ. html 요소 생성, 추가, 수정, 삭제
+            document.createElement()
+            document.appendChild()
+            document.removeChild()
+            document.reomve()
+            document.replace( new, old ) ***
+            document.write("<font></font>");
+          ㄹ. 이벤트 처리.
+          element.on이벤트명 = function (){}
+          element.onmousemove = function (){}       
+          :
+          :
+          
+        ㄹ. 1998   html DOM LEVEL 1 ( 11개의 html 객체, 컬렉션 , 속성 정의)
+              html DOM Level 3 ( 더 많은 객체, 컬렉션, 속성 추가)
+              html 5  유효..
+              
+         ㅁ. html 객체 
+             document.links 컬렉션
+             document.images 컬렉션
+             document.forms
+             :
+             document.scripts 컬렉션 == 모든 script 요소
+             
+             document.body  == <body>요소
+             document.documentElement == <html> 요소
+             document.title == <title>요소
+             
+             document.doctype = <!DOCTYPE> 요소
+             *** document.cookie   == 쿠키 객체 ***
+             document.head == <head>요소
+             등등
+                    
+</pre>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

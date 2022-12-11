@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 9:55:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+
+<h3>js 엄격모드 선언</h3>
+
+<script>
+  "use strict";    // ES5 새로 추가된 기능
+  // 변수를 선언하고 사용하겠다. 
+  
+  function xxx(){
+	  "use strict";  // 함수 내에서 엄격 선언 모드 
+	  
+  }
+</script>
+
+
+<h3>js hoisting(호이스팅) - 선언을 맨위로 옮기는 js 기본 동작 : 변수, 함수</h3>
+
+<script>
+
+     name = "admin";
+     
+     
+     mytest();
+     
+     
+     
+     var name;
+     console.log( name );
+
+     
+     
+     
+     function mytest(){
+    	 alert( "mytest...");
+     }
+     
+     
+
+</script>
+
+
+
+<h3>js 범위(scope)</h3>
+
+<pre>
+    [ 변수의 접근 범위 ]
+    1. global scope( 전역변수 )
+    2. function scope( 함수변수== 지역변수)
+    3. block scope( 지역변수 ) :   let, const
+</pre>
+
+
+<h3>ex04.html - js 예외처리(오류)</h3>
+<!-- 10:06 수업 시작 -->
+
+<pre>
+   try
+   catch
+   finally
+   throw
+</pre>
+
+
+<p id="demo"></p>
+
+<script>
+ 
+    
+    try {
+    	// 
+    	// test('hello world');
+    	
+    	// 0<=  kor  <= 100
+    	throw "too low";
+    	//
+	} catch (e) {
+		// $("#demo").html(   e.message  );
+		$("#demo").html(   e  );
+	} finally{
+		
+	}
+     console.log("end")
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

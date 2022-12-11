@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 3:00:18</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex12.html</h3>
+<!-- 3:11 수업 시작~ -->
+<pre>
+     // js     객체생성자 - 객체를 생성할 때 사용되는 함수   , 대문자로 함수명 시작.
+     // days08 폴더  jquery-3.6.1.js       164 라인
+     
+     jQuery.fn = jQuery.prototype = {
+
+	// The current version of jQuery being used
+	jquery: version,
+
+	constructor: jQuery,
+	    :
+	}
+	
+	// 객체 생성자로 속성, 메서드 추가
+	//  Person.prototype.속성명
+	//  Person.prototype.메서드명 = function (){}
+</pre>
+
+<script>
+    // alert(     jQuery.fn.jquery  )  // jquery version
+    // alert(     $.fn.jquery  )  // jquery version
+    // alert(     jQuery.prototype.jquery  )  // jquery version
+    
+    var b = $("body");   // jquery object    
+    // alert( "*" +  b.jquery ) ;// *3.6.1
+    
+    var person = {
+    		name:"admin",
+    		age:20
+    }
+    
+    // alert( person.jquery ) // undefined
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

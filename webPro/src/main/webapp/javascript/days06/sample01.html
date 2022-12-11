@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오전 9:32:26</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+
+<button id="click" onclick="click_btn();">버튼</button>
+<p id="demo" >d</p>
+
+
+
+
+<!-- js -->
+<script>
+	//
+	var m = [];
+	m.fill(value, start, end)
+</script>
+
+
+<script>
+	function click_btn() {
+		document.write("<table>");
+		document.write("<tr>");
+		for (var i = 2; i <= 9; i++) {
+			document.write("<th>" + i + "단 </th>");
+		}
+		document.write("</tr>");
+		document.write("<tr>");
+		
+		for (var i = 1; i <=9; i++) {
+			for (var j = 2; j <=9; j++) {
+				document.write("<td>"+j+"*"+i+"="+i*j+"<td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	}//func
+</script>
+</body>
+</html>

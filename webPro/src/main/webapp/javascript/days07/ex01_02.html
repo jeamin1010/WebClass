@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 9:16:06</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01_02.html - 로또 출력</h3>
+
+<button>로또 번호  발생기</button>
+<p id="demo"></p>
+
+<script>
+   // [js_5일차_문제의   3-1 코딩을 Set 객체를 사용해서 수정 ]
+   
+    $("button").click( function (){    	
+	   var lotto = new Set() ;    // var lotto = [];               1
+	   var n ;
+	   while (  lotto.size < 6 ) {   // 2
+		    n = getRndRange( 1, 45);
+	        // 3. 중복 체크 X
+		    lotto.add( n );  // 4    lotto.push( n ) X
+    	} // 
+    	
+    	// array       lotto.sort( (a,b)=> a-b); 정렬
+    	// Set, Map  정렬하고자 한다면  -> 배열 변환 + 정렬 -> Set, Map 변환
+	    
+    	var lottoArray = [];
+    	lotto.forEach(  function (el){
+    		lottoArray.push( el );
+    	}  );
+    	lottoArray.sort((a,b) => a-b );
+    	
+    	$("#demo").html( "<ul><li>" +  lottoArray.join("</li><li>")  +" </li></ul>");
+    	
+  });
+  
+  // 1.   min ~ max 발생시키는 함수
+  function getRndRange( min, max){
+	  return  Math.floor(  Math.random()*(max-min+1)  ) + min;
+  } 
+</script>
+</body>
+</html>

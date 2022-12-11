@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오후 12:17:11</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  table, th, td{
+    border: 1px solid gray;
+  }
+  
+  table{
+     width: 50%;
+     margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+<h3>ex02.html - 문제(이해+암기)</h3>
+
+<table>
+  <thead>
+	<tr>
+		<td><input type="checkbox" class="all">모두 선택</td>
+		<td>Name</td>
+		<td>Loc</td>
+	</tr>
+  </thead>	
+  <tbody>
+	<tr>
+		<td><input type="checkbox" id="ck1"></td>
+		<td>Animi.</td>
+		<td>Hic.</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" id="ck2"></td>
+		<td>Esse.</td>
+		<td>Fuga.</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" id="ck3"></td>
+		<td>Fuga.</td>
+		<td>Ducimus?</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" id="ck4"></td>
+		<td>Beatae.</td>
+		<td>Optio.</td>
+	</tr>
+  </tbody>
+  <tfoot>
+     <tr>
+        <td colspan="3" align="center">
+           <button>선택 확인</button>
+        </td>
+     </tr>
+  </tfoot>	
+</table>
+
+<p id="demo">
+   "선택 확인" 버튼을 클릭할 때 체크박스의 id 속성값 +  [Name 컬럼]의 값도 모두 출력 
+   ck1, ch3, ch4
+</p>
+
+<!-- js -->
+<script>
+   /*
+   document.querySelector("tfoot  button").onclick = function (){
+	   // alert("1");
+	   // document.querySelectorAll("input[type=checkbox].not(.all)")
+	   var ckbs = document.querySelectorAll("tbody input[type=checkbox]");
+	   var pdemo = document.querySelector("#demo");
+	   var content = "";
+	   for (var i = 0; i < ckbs.length; i++) {
+		     if( ckbs[i].checked ){
+		    	
+		    	 // DOM 요소(노드) 탐색
+		    	 // console.log(  ckbs[i].parentElement.parentElement.childNodes ); // 노드 컬렉션
+		    	 var name = ckbs[i].parentElement.parentElement.children[1].innerText ;  // 요소 컬렉션
+		    	 // ckbs[i].parentNode
+		    	 
+		    	 content += ckbs[i].id + " / " + name + "<br>";
+		     }
+	    }  // for
+	    pdemo.innerHTML = content;
+   }
+   */
+</script>
+
+<!-- jquery -->
+<script>
+   $("tfoot button").click( function (){
+	   // jquery selector   :checkbox  == input[type=checkbox]
+       var content = "";
+	   $("tbody :checkbox:not(.all):checked").each(function(i, element) {
+	   	   var id =  element.id ;
+	   	   var name = element.parentElement.nextElementSibling.innerText;
+	   	    content += "<li>"+  id + " / " + name + "</li>" + "<br>";
+	   	    
+	   	   /*
+	   	   $("#demo").html( function ( index, oldhtml){
+	   		   // return oldhtml +"<li>"+ id +" / " + name + "</li>";
+	   		   return oldhtml + $("<li></li>").text(  id +" / "+ name );
+	   	   });
+	   	   */
+	   });
+	   
+	   $("#demo").html(  content  ) ;
+   } );
+</script>
+	<script>
+		$(":checkbox.all").click(function() {
+			$(":checkbox:not(.all)").prop("checked",$(this).prop("checked"))
+		});
+		$(":checkbox:not(.all)").click(function() {
+			// 체크된 체크박스의 갯수
+			var checkedCount = $(":checkbox:not(.all):checked").length; 
+			// 전체 갯수
+			var totalCount = $(":checkbox:not(.all)").length;
+			$(":checkbox.all").prop("checked",checkedCount == totalCount? true:false);
+			/*
+			if (checkedCount == totalCount) {
+				$(":checkbox.all").prop("checked",true);
+			}else{
+				$(":checkbox.all").prop("checked",false);
+			}
+			*/
+			
+			
+		});
+	</script>
+</body>
+</html>

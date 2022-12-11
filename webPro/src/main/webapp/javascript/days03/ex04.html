@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 21. 오후 3:11:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex04.html - 자료형( data type)</h3>
+
+<pre>
+  [ typeof 연산자 ]
+  1.  number
+  2. string 
+  3. boolean
+  4. function 
+  5. object  - js array,  js object
+  
+  js 타입(유형)은  동적 유형이다.  
+</pre>
+
+
+<pre>
+    var x;         // typeof    undefined
+    x = 5;          //        "          number
+    x = "admin"; //      "           string
+    x = [] ;           //                object
+    x = function (){}  //       function 
+    
+    
+    [지수 표기법]
+    let y  =  123e5;     //12300000;
+     y = 123e-5;          //0.00123
+     
+     [js  정수,실수 = number]
+     let z = 100;
+     z = 3.14;
+     
+     
+     [typeof 연산자]
+     
+     console.log(   typeof   100 );
+     console.log(   typeof   (100) );
+     
+     
+     var xx;         // undefined
+     var xx = "";  // string
+    
+</pre>
+
+<script>
+   let length = 10;
+   let name = "admin";
+   let gender = true;
+   
+   let fn = function (){
+	   //
+   }
+   
+   // java 배열 
+   // int [] m = new int[3];
+   // m[0]=1;  m[1]=2; m[2]=3;
+   
+   // 배열 초기화    int [] m = {1,2,3}
+   
+   // js 배열   -              대괄호   []
+   // let m = [ 1,2,3 ];
+   
+   /* 
+   let m = [];
+   m[0]=1;
+   m[1]=2;
+    m[2]=3;
+    */
+   
+    // java 객체
+    /*
+    class Person{
+    	String name;
+    	int age;
+    }
+    
+    Person p1 =new Person();
+    p1.name= "admin";
+    p1.age = 20;
+    */
+   
+    // js 객체 -    중괄호를 사용한다.  {}
+    let p1 = { 
+    		           name:"admin"
+    		           , age:20 
+    		     };
+    console.log( p1.name );
+    console.log(  p1["age"]);
+    
+</script>
+</body>
+</html>
+
+
+
+
+
+

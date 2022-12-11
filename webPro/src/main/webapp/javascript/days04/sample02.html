@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오전 10:41:13</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   select{
+      height: 200px;
+      width: 100px;
+   }
+   button{
+      width:40px;
+   }   
+</style>
+</head>
+<body>
+<h3>sample02.html - (문제2) 풀이</h3>
+
+<table>
+	<tr>
+		<td>
+				<select multiple="multiple" id="sleft">
+				  <option>이창익</option>
+				  <option>김가율</option>
+				  <option>임종윤</option>
+				  <option>문혜빈</option>
+				  <option>엄태혁</option>
+				</select>
+		</td>
+		<td>
+		   <button>▶</button><br>
+		   <button>▶▶</button><br>
+		   <button>◀</button><br>
+		   <button>◀◀</button><br>
+		</td>
+		<td>
+		<select multiple="multiple" id="sright">
+		</select>
+		</td>
+	</tr>
+</table>   
+
+<!-- js -->
+<script>
+    /*
+    // <button>▶ 클릭
+    document.querySelector("button:first-of-type").onclick = function (){
+    	// 1. sleft 에서 선택된(selected) option의 text, value 얻어와야...
+        var sleftOptions = document.querySelectorAll("#sleft option");
+    	var sright = document.querySelector("#sright");
+    	
+    	// 2. sright 모든 option 제거
+    	// sright.options.length=0;
+    	sright.innerHTML = "";
+    	
+        for (var i = 0, j=0; i < sleftOptions.length; i++) {
+    		if( sleftOptions[i].selected ){
+    			// console.log( sleftOptions[i].value +" / " + sleftOptions[i].text );
+    			// sright  + option 추가
+    			// sright.options[j++] = new Option(sleftOptions[i].value,sleftOptions[i].value); 
+    			
+    			// js   복제 :  cloneNode() 
+    			sright.appendChild( sleftOptions[i].cloneNode(true)  );
+    		}
+    	} // for
+    } // 
+
+    
+    // 10:57 + 3 + 10
+    // 11:11 수업 시작~~
+    // select , option 요소 생성, 제거
+    //              createElement() / 제거 메서드
+    // 1)  sleft.remove(index);          반드시 뒤에 인덱스 ->
+    
+    // <button>▶▶ 클릭
+    document.querySelector("button:nth-of-type(2)").onclick = function (){
+    	// 1. sleft 에서 선택된(selected) option의 text, value 얻어와야...
+        var sleftOptions = document.querySelectorAll("#sleft option");
+    	var sright = document.querySelector("#sright");
+    	
+    	//sright.innerHTML = ""; 
+    	// sright.options.length=0;
+    	
+        for (var i = 0, j=0; i < sleftOptions.length; i++) {
+    		if( sleftOptions[i].selected ){
+    			// console.log( sleftOptions[i].value +" / " + sleftOptions[i].text );
+    			// sright  + option 추가
+    			// sright.options[j++] = new Option(sleftOptions[i].value,sleftOptions[i].value);
+    			
+    			// jquery method : append()/ appendTo()
+    			// js         method : appendChild()
+    			sright.appendChild( sleftOptions[i] ); 
+    		}
+    	} // for
+    } // 
+    */
+</script>
+
+<!-- jquery -->
+<script>
+// <button>▶ 클릭
+   $("button").first().click( function (){
+	   // alert("a")
+	   $("#sleft option:selected").each(function(i, element) {
+		   // jquery 복제 메서드  : clone()
+	   	   $("#sright").append(  $(element).clone() );
+	   });
+   });
+   
+   // <button>▶▶ 클릭
+   $("button").eq(1).click( function (){
+	   // alert("b")
+	   $("#sleft option:selected").each(function(i, element) {
+	   	   $("#sright").append(element);
+	   });
+   });
+</script>
+</body>
+</html>
+
+
+
+

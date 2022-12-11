@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29 오후 4:38:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex03.html</h3>
+
+<pre>
+   jQuery는 html 페이지의 이벤트에 응답하도록 제작..
+   이벤트  ? 요소에 발생하는 행동(액션)
+   이벤트 핸들러 
+   
+   마우스 이벤트 :  click, mousedown, mouseup, mouseXXX
+                           dbclick
+    키보드 이벤트 : keydown, keypress, keyup
+    Form 이벤트 : submit,  change, focus, blur
+    Document, Window 이벤트 :  scroll,  load, unload, resize
+    등등                      
+</pre>
+
+
+<form action="ex100.html">
+   이름 : <input ><br>
+   나이 : <input ><br>
+   <input type="submit" > 
+</form>
+
+<script>
+   /*
+    document.forms[0].onsubmit = function (){
+    	// 유효성 검사 한 후 
+    	alert("입력 X  전송한다. ");
+    	return false; // 이벤트 취소
+    }
+   */
+   
+   //           이벤트 메서드
+   $("form").submit(function() {
+	   alert("jquery 입력 X  전송한다. ");
+   	   return false; // 이벤트 취소
+   });
+</script>
+
+
+<!--
+1.  클릭 이벤트 등록
+     1) js    onclick="test()"  속성
+     2) js   document.querySelector("button").click = function (){};
+                DOM
+      3) // js  addEventListener
+    document.querySelector("button").addEventListener(
+    		"click", function(e) {
+    }, capture);
+    
+     4) jquery 
+         $("button").click( function (){} );
+      5) jquery
+         [암기] jquery ajax 처리할 때 on("이벤트")
+         $("button").on("click", function (){});               
+-->
+<button>확인</button>
+
+
+<script>
+   
+        // on() -  하나 이상의 이벤트 핸들러 등록할 때 사용하는 jquery 메서드
+        /*
+        $("button").on({
+        	
+        	mouseenter: function (){
+        		$(this).css("background-color", "lightgray");
+        	},
+        	mouseleave: function (){
+        		$(this).css("background-color", "lightblue");
+        	},
+        	click:function (){
+        		$(this).css("background-color", "yellow");
+        	}
+        	
+        });
+        */
+        
+        // one()   투표 한번 클릭
+        $("button").one("click", function (){
+        	alert("test");
+        })
+    
+       // jquery 효과
+       // jquery HTML 조작
+       // jquery 탐색
+       // jqeury ajax X
+       // jquery 충돌 $
+       // jquery selector 
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

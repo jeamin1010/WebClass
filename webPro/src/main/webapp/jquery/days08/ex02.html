@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29 오후 4:10:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+<script>
+    // *****
+    // 문서 로딩(준비) 되기 전에  jquery 코딩이 실행되기 때문에 
+    
+    // 아래 jquery  코딩을 문서 로딩 된 후에 실행하세요.. 
+    /*
+    $( document).ready( function (){
+    	
+    	// $("img").width();  로딩 되기 전이라면 요소 X, 너비 X
+    	
+    	$("h3").click( function (){
+       	 alert("test");
+       });
+    	
+    }); // ready
+    */
+    
+    $(function (){  //  ==   $( document).ready( function (){
+    	jQuery("h3").click( function (){
+    		alert("XXX");
+    		
+    		}); 
+    });
+    
+    // document == window.document
+    // $ == jQuery == window.jQuery == widnow.$ 
+    // 10878 라인
+    
+    /* 
+    js/jquery    프레임워크( 라이브러리 )  다양하게.. 
+    $ 충돌
+     */
+</script>
+</head>
+<body>
+<h3>ex02.html</h3>
+
+<pre>
+   1. jQuery  구문
+       1) html 요소를 선택하고                       $( selector)     jquery 객체
+       2) 요소에 대해 일부 작업을 수행...         jquey method ()
+       $("h3").click( function(){}); 
+       $("h3").hide(); 
+       j(선택자).액션()
+       
+    2.    
+</pre>
+
+<!-- p*5>lorem5 -->
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Blanditiis iusto maiores iure illum.</p>
+<p>Quo illo eaque a deserunt!</p>
+<p>Dolore eligendi iste provident soluta?</p>
+<p>Nobis rerum cum asperiores nostrum.</p>
+
+<script>
+  
+     $(function (){
+    	 // $("p")
+    	 // jQuery("p")
+    	 window.jQuery("p").click( function (){
+    		  // $(this).hide();
+    		  window.jQuery(this).hide();
+    	 });
+   	 });
+  
+
+</script>
+
+
+<script>
+
+   var m =  [];
+   m.push(1);
+   m.push(2);
+   m.push(3);
+   
+   // push()
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

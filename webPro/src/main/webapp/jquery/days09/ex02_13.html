@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오후 3:25:29</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+<h3>ex02_13.html</h3>
+<!-- (input[type=text]+br)*5 -->
+<input type="text" >
+<br >
+<input type="text" >
+<br >
+<input type="text" >
+<br >
+<input type="text" >
+<br >
+<input type="text" >
+<br >
+
+
+
+
+
+<!--  -->
+<script>
+	//
+	$(function() {
+		//input[type=text] == :text jquery selector
+		//$("input[type=text]:eq(2)").focus();
+		$(":text:eq(2)").focus();
+		
+		// 현재 포커스를 가진 요소를 선택자로 사용하겠다 == :focus
+		$(":focus").css("background-color","red")
+		
+	});
+</script>
+
+<!--  -->
+<script>
+	//
+	
+</script>
+</body>
+</html>

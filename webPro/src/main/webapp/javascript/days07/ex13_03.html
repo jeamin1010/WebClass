@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 3:27:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex13_03.html</h3>
+<button>TypeWirter</button>
+<p id="demo"></p>
+
+
+
+
+<script>
+	//
+	var content;
+	var contentLength;
+	var timer1;
+	$("button").on("click", function() {
+		//document.documentElement == <html> 루트요소(element)
+		content = document.documentElement.innerHTML;
+		//alert(content);
+		contentLength = content.length;
+		//alert(contetn);
+		typerWriter();
+		timer1=setInterval(typerWriter,10);
+	});
+	
+	var i = 0;
+	function typerWriter() {
+		if (i<=contentLength) {
+			
+		
+			var oneChar = content.charAt(i++);
+			$("#demo").html(function(index,oldhtml) {
+				return oldhtml + (oneChar == "\n"?"<br>" :oneChar);
+			});
+			window.scrollTo(0,document.body.scrollHeight);
+		}else{
+			clearInterval(timer1);
+			alert("출력완료");
+		}//if
+	}
+</script>
+
+
+<script>
+	//
+	
+</script>
+</body>
+</html>

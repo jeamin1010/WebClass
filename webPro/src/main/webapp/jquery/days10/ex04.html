@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오전 11:33:29</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   .header{
+      color:red;
+      background-color: yellow;
+      text-align: center;
+   }
+</style>
+</head>
+<body>
+<h3>ex04.html</h3>
+<pre>
+  [jq CSS 조작]
+  1.  css()
+  2. addClass()
+  3. removeClass()
+  4. toggleClass()
+  5. hasClass()  true/fasle
+</pre>
+
+<h1>Lorem ipsum dolor.</h1>
+<h1>Quod soluta doloribus.</h1>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p  class="demo">Commodi quia voluptate sint a.</p>
+<p>Quas consequuntur inventore quaerat modi!</p>
+
+<div>Lorem ipsum dolor sit amet.</div>
+
+<button>add class</button>
+
+<script>
+   $("button").click( function (){
+	   // h1 요소의 글자색을 빨강.
+	   // js
+	   // document.querySelector("h1").style.color = "red";
+	   
+	   // jq
+	   // $("h1").css("color", "blue");
+	   /*
+	   $("h1").css({
+		   "color":"blue",
+		   "background-color":"yellow"
+	   });
+	   */
+	   
+	   // $("h1").addClass(  "header" )
+	   // $("h1").removeClass(  "header" )
+	   
+	   // $("h1").toggleClass(  "header" )
+	   
+	   // $("h1").toggleClass(  "header   box" )
+	   // $("h1").toggleClass(  ["header",    "box"] )
+	   
+	   // [문제]   모든 p 태그 중에 demo 클래스를 가진  p 태그의 클래스를 demo -> box 로 변경하세요.
+	   // 12:02 수업 시작
+	   /*
+	   $("p").each(function(i, element) {
+	   	     // console.log(    i + " / " + element.className  );
+	   	     if(element.className == "demo"){
+	   	    	 // demo -> box
+	   	    	element.className = "box";
+	   	     }
+	   });
+	   */
+	   
+	   /*
+	   $("p").each(function(i, element) {
+	   	     // html element -> jquery object 변환
+	   	     // $( element ).attr("class")
+	   	     // $( element ).prop("class")
+	   	     // console.log(  $(element).hasClass("demo") );
+	   	     if(  $(element).hasClass("demo") ) 
+	   	    	 $(element)
+	   	    	     .removeClass("demo")
+	   	    	     .addClass("box")
+	   });
+	  */
+	  
+	  // demo 클래스를 가진 p 요소
+	  /*
+	  $("p.demo") 
+	      .removeClass("demo")
+	     .addClass("box")
+	  */
+	  
+	  //                         callback
+	  $("p").addClass(function (index, currentClassName){
+		  // console.log( index  + " /  " + currentClassName)
+		  if(currentClassName === "demo" ){
+			  $(this).removeClass("demo")  
+			  return "box"
+		  }
+		  else return currentClassName;
+	  });
+	  
+   } );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

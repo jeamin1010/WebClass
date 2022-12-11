@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29 오후 2:19:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex08_03.html</h3>
+
+str 1  :  <input type="text" id="str1"  value="홍길동"><br> 
+str 2 :  <input type="text" id="str2"><br> 
+<br>
+
+<button onclick="escape_test();"> escape()</button>
+<button onclick="unescape_test();"> unescape()</button>
+
+<script>
+  function escape_test(){
+	   var result =  escape( document.getElementById("str1").value ); // 한글 ->  ASCII
+	   document.getElementById("str2").value= result;
+	   // %uD64D%uAE38%uB3D9
+  }
+  
+  function unescape_test(){
+	   var result =  unescape( document.getElementById("str2").value ); // 한글 ->  ASCII
+	   document.getElementById("str1").value= result;
+	    
+ }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

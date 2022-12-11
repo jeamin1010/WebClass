@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 23. 오전 10:52:34</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex03.html  -  js 숫자 함수</h3>
+
+<pre>
+    1. toString()                   7.toString()  "7"
+    2. toExponential()          반올림되고 + 지수 표기법 + "" 문자열 변환
+    3. toFixed()                    반올림 + "" 문자열 변환
+    4. toPrecision()               지정된 길이로 작성된 숫자로 반환.
+    5. valueOf()                    X  숫자 변환
+    
+    6. Number()
+    7. parseInt()
+    8. parseFloat()
+</pre>
+
+<script>
+   var n = 7 + "";    // "7"
+   var m = 10;
+   m.toString();      // "10"   
+</script>
+<script>
+    // 11:05 수업 시작~ 
+   // toExponential()  반올림 + 지수표현 + 문자열 반환.
+   var n = 9.656;
+   // 2,4,6 매개변수는 소수점 뒤의 문자의 수를 정의한다. 
+   // 매개변수를 지정하지 않으면 반올림하지 않는다. 
+   //console.log(   n.toExponential(2)  ); // 9.66e+0
+   //console.log(   n.toExponential(4)  ); // 9.6560e+0
+   //console.log(   n.toExponential(6)  ); // 9.656000e+0
+</script>
+
+<script>
+     /*
+    console.log(  n.toFixed(0) );  // 10
+    console.log(  n.toFixed(2) );  // 9.66      지수표현 X
+    console.log(  n.toFixed(4) );  // 9.6560  지수표현 X
+    console.log(  n.toFixed(6) ); // 9.656000
+    */
+</script>
+    
+<script>
+   // 전체 자리수 
+    /*
+    console.log(  n.toPrecision() );   // 9.656
+    console.log(  n.toPrecision(2) );  // 9.7
+    console.log(  n.toPrecision(4) );  // 9.656
+    console.log(  n.toPrecision(6) );  // 9.65600
+    */
+</script>
+  
+<script>
+   /*
+   // Number() 메서드  :   js 변수 -> 숫자 변환
+   //                                 숫자 변환할 수 없으면 NaN 반환.
+   //                                   날짜를 숫자로 변환할 수 도 있다. 
+   console.log(    Number(true)  );   // boolean(true)  ->   1
+   console.log(    Number(false)  );  //                 false ->  0
+   
+   console.log(    Number("10")  );  //                 "10" ->  10
+   console.log(    Number("10.33")  );  //             "10.33" ->  10.33
+      
+   console.log(    Number("          10")  );  //             "          10" ->  10
+   console.log(    Number("10          ")  );  //             "10          " ->  10
+   
+   console.log(    Number("admin")  );  // NaN
+   
+   console.log(    Number("10 33")  );  // NaN
+   console.log(    Number("10,33")  );  // NaN
+   
+   //                                   날짜를 숫자로 변환할 수 도 있다. 
+   console.log(    Number("2022-01-22")  );  // NaN
+   
+   // 1970.1.1 이후   ms값을 반환
+   console.log(    Number( new Date( "2022-01-22") ) );  // 1642809600000
+   */
+</script>
+
+<script>
+  /*
+   // parseInt() 메서드  :  문자열을 구문 분석해서       정수 반환
+   console.log( parseInt( "10"  )  );  // "10"     -> 10
+   console.log( parseInt( "-10"  )  );  // "-10" -> -10
+   console.log( parseInt( "10.33"  )  );  // "10.33" -> 10
+   
+   // Number()  NaN
+   console.log( parseInt( "10 33"  )  );  // "10 33" -> 10
+   console.log( parseInt( "10,33"  )  );  // "10,33" -> 10
+   console.log( parseInt( "10abcde"  )  );  // "10adbcde" -> 10
+   console.log( parseInt( "year 100"  )  );  // "year 100"-> NaN
+   console.log( parseInt( "100 year"  )  );  // "year 100"-> 100
+   */
+</script>
+    
+<script>
+   /*
+   // parseFloat() 메서드  :  문자열을 구문 분석해서      숫자( 정수 , 실수 ) 반환
+   console.log( parseFloat( "10"  )  );  // "10"     -> 10
+   console.log( parseFloat( "-10"  )  );  // "-10" -> -10
+   console.log( parseFloat( "10.33"  )  );  // "10.33" -> 10.33
+   
+   // Number()  NaN
+   console.log( parseFloat( "10 33"  )  );  // "10 33" -> 10
+   console.log( parseFloat( "10,33"  )  );  // "10,33" -> 10
+   console.log( parseFloat( "10abcde"  )  );  // "10adbcde" -> 10
+   console.log( parseFloat( "year 100"  )  );  // "year 100"-> NaN
+   console.log( parseFloat( "100 year"  )  );  // "year 100"-> 100
+   */
+   
+   // eval()
+</script>        
+
+<script>
+
+    var n = 10;
+    console.log(    Number.isInteger(  n )  );  // true
+    n = 10.33;
+    console.log(    Number.isInteger(  n )  );   // false
+    
+    
+    // 동일한 코딩
+    // parseFloat( "10 33"  )  == Number.parseFloat("10 33")
+    
+    // alert();
+    // window.alert()
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

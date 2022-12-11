@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오전 11:28:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>  
+  input[type=text], input[type=number]{
+     text-align: center;
+  }
+</style>
+</head>
+<body>
+<h3>sample03.html - (문제 6) 풀이</h3>
+<!-- 
+숫자(0~9)가 아닌 입력을 하면 입력된 값을 취소
+ 1) 입력값 체크 후 지우기
+ 2) 이벤트 자체를 취소 - 1. keydown 이벤트   :  키보드를 누를 때   Ctrl, F1 인식 O, 대소문자 구분 X, 키보드 취소 가능
+ --> 
+<input type="text"  autofocus="autofocus" >
+<!-- onkeydown="txt01_keydown();" -->
+ + 
+<input type="number" >
+ = 
+ <!-- 12e+5 -->
+ <input type="text"  disabled="disabled">
+ 
+<!-- js --> 
+<script>
+   /*
+   function txt01_keydown(){
+	   // console.log( event.keyCode );  48(0) ~ 57(9)
+	   if(  !(  event.keyCode >= 48 && event.keyCode <= 57  || event.keyCode == 8  || event.keyCode == 13 || event.keyCode == 229 )    ){
+		   alert("입력 잘못!!!");
+		   event.returnValue = false ;   // 이벤트 취소 + 출력 O
+	   }
+	   
+	   if( event.keyCode == 13 ){
+		   document.querySelector("input[type=number]").focus();
+	   }
+   }
+   
+ 
+   document.querySelector("input[type=number]").onkeyup = function (){	
+	   // alert("xxxx");
+	   if( event.keyCode == 13 ){	   
+		    var n1 = document.querySelector("input[type=text]:first-of-type").value;		    
+		    // alert( typeof n1);  // js :  number   [string]  function  boolean  object		    
+		    var n2 = this.value;
+		    
+		    // "12"  -> 12 형변환
+		    // java  :   Integer.parseInt( "12" )
+		    // js      :   Number(),  parseFloat(),   parseInt(), eval()
+		    var sum = Number(n1) + parseInt(n2);  // "12"+"23" = "1223"
+		    
+		    
+		    document.querySelector("input[type=text]:last-of-type").value = sum;
+	   }
+   }
+   */
+</script>
+
+<!-- jquery -->
+<script>
+   // $("input[type=text]")
+   $(":text").first().keydown(function() {
+   	  if ( event.keyCode == 13 ) {
+		 $(this).next().focus();
+	  } // 
+   })
+   
+   $("input[type=number]").keydown(function() {
+   	    if ( event.keyCode == 13 ) {
+		    var n1 =  eval( $(":text").first().val() );
+		    var n2 = parseInt( $(this).val() );
+		    var sum = n1 + n2;
+		    // $(":text").last()
+		    $(this).next().val( sum );
+	  } // 
+   })
+   
+   
+</script>
+</body>
+</html>
+
+
+
+
+

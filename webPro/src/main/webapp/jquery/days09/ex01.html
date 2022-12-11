@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 8:58:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+
+<!-- 구글 CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+</style>
+</head>
+<body>
+<h3>ex01.html - jquery  효과</h3> 
+ <pre>
+  1.  쿠키 - 상태 관리 , 클라이언트 PC , 브라우저( IE, Chrome )
+       장바구니 - 테이블 , 세션
+                    - 쿠키
+       js 쿠키  - document.cookie 속성 저장/읽기 
+                    "쿠명=쿠값; 만료시점=10일 날짜; 경로=/; 도메인=; 보안"
+       jsp 쿠키              
+  2. jQuery 개요 , 사용 방법  , 선언 형식
+     $(document).ready(function (){
+     });
+  
+      $(function (){
+      });         
+      $( jq selector).action();
+      
+   3. click()
+       on("click", function (){})     jquery ajax( 암기 )  여러 이벤트 등록..
+       one("click", function (){})
+ </pre>
+ <pre>
+     [jquery  효과 ] - 숨기기, 표기             ,  토글 , 슬라이드, 페이드 , 애니메이션... 등등
+                                hide(), show()
+  </pre>
+  
+  <button>show</button>
+  <button>toggle</button>
+  
+  
+  <!-- p*5>lorem5 -->
+  <p>1. Lorem ipsum dolor sit amet.</p>
+  <p  style="display: none;">2. Sunt hic repudiandae sed reiciendis!</p>
+  <p>3. Nulla ab nobis ea reprehenderit?</p>
+  <p  style="display: none;">4. Deserunt nam enim ut accusamus.</p>
+  <p>5. Minima sunt amet perferendis excepturi.</p>
+  
+  
+  <script>
+       $(function (){
+    	   $("button").last().click(function (){
+    		   // show() -> hide()
+    		   // hide() -> show()
+    		   // 토글 기능
+    		   $("p").toggle(600);  
+    	   } );
+       });
+  </script>
+  
+  
+<script>
+   $(function (){
+	   //                 css selector  -> jquery selector  +  알파
+	   //$("button:nth-of-type(1)")
+	   //$("button:first-of-type")
+	   //$("button:eq(0)")
+	   // $("button").first().click( function (){
+	   $("body").find("button").eq(0).click(  function (){
+		    // alert("2")
+		    // 모든 p 태그
+		    // $("p").hide();
+		   // $("p").hide(400);
+		   $("p").hide("slow" , function (){
+			      alert("숨기기 완료!!")
+			});  // "fast"
+	   });
+   });
+</script>
+
+<br>
+<a href="http://www.daum.net">daum</a>
+<br>
+
+<script>
+    // 위의 daum 링크태그를 클릭할 때 
+    // 그 링크 태그를 숨겨라..
+    // a 링크 태그의 기본 기능이 페이지 이동.(연결)
+    $("a").click( function (event){
+    	// $(this).href = "#";
+    	// this.href = "#";  // (고민)  href 속성 X
+    	event.preventDefault();  // ( 기억 )
+    	// submit
+    	$(this).hide();
+    });
+    
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

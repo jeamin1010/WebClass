@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 23. 오후 3:50:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex05.html -  arguments 컬렉션,  js 날짜</h3>
+<!-- 4:01 수업 시작 -->
+
+<pre>
+ [  js  날짜 객체 :  Date ]
+ 1. 새로운 날짜 객체를 생성하는 4가지 방법
+    (1)  new Date() :  현재 시스템의 날짜 + 시간.
+    (2)  new Date(y, m, d, h, m, s, ms)
+    (3)  new Date( ms )                  1970.1.1 00:00:00.000
+    (4)  new Date( string date )
+</pre>
+
+<p id="demo"></p>
+
+<script>
+  //  [  js  날짜 객체 :  Date ]
+  //  (1)  new Date() :  현재 시스템의 날짜 + 시간.
+  /* 
+      var now = new Date();
+      // Wed Nov 23 2022 16:12:30 GMT+0900 (한국 표준시)
+      $("#demo").html(  now  );
+   */  
+  
+  //  (2)  new Date(y, m, d, h, m, s, ms)
+       /*
+        // var d = new Date(2018 , 11-1, 23);  // 11월
+        var d = new Date(2018 , 11-1 );          // 날짜 생략    1일
+        $("#demo").html( d   );
+      */
+      
+  //  (3)  new Date( ms )                  1970.1.1 00:00:00.000
+      /*
+       var ms =   Number(new Date());
+       // console.log( ms );   1669187859080
+       var d = new Date( ms );
+       
+       // Wed Nov 23 2022 16:18:18 GMT+0900 (한국 표준시)
+       $("#demo").html( d   );
+       */
+  
+  //  (4)  new Date( string date )
+  //        Sun Nov 25 2018 09:00:00 GMT+0900 (한국 표준시)
+       //var d = new Date("2018-11-25");
+       //var d = new Date("2018-11");  // 1일
+       // var d = new Date("2018");  // 1월 1일
+       // $("#demo").html( d   );
+       
+       // GMT  == 그리니치 표준시
+       // UTC   == 협정 세계시
+       
+  
+        // MM/DD/YYYY
+        // Wed Mar 25 2015 00:00:00 GMT+0900 (한국 표준시)
+         var d = new Date("03/25/2015");       
+       // var d = Date.parse("03/25/2015");
+       
+       // d.toString() ; //   날짜 -> 문자열 변환
+       
+        // $("#demo").html( d.toDateString()   );  // "Wed Mar 25 2015"
+        // $("#demo").html( d.toUTCString()  );  // "Tue, 24 Mar 2015 15:00:00 GMT"
+        // $("#demo").html( d.toISOString()  );  // "2015-03-24T15:00:00.000Z"
+        //$("#demo").html( d.toLocaleDateString() );  // 2015. 3. 25.
+        // $("#demo").html( d.toLocaleTimeString() );  // 오전 12:00:00
+       
+</script>
+
+<script>
+
+   /*
+  function sum(a, b, c){
+	  console.log(" >> sum(3) ... " );
+  }
+   */
+   
+   /*
+  function sum(){
+	   // forms 컬렉션
+	   // options 컬렉션
+	   // arguments 컬렉션 : 인자(매개변수) 컬렉션 객체
+	   // 등등  links, images 컬렉션 ... ~ 
+	   
+	   // console.log(  arguments.length );
+        var result = 0;
+        for (var i = 0; i < arguments.length; i++) {
+			result += arguments[i];
+		}
+	   return result;
+   } 
+
+  
+  // sum();
+  console.log(  sum(1, 2)  );              // 3
+  console.log(  sum(1, 2, 3) );           // 6
+  console.log(  sum(1, 2, 3, 4)  );      // 10
+  */
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 3:27:46</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+    p{
+       background-color: yellow;
+       margin:4px;
+    }
+    div{
+       border: 2px solid blue;
+    }
+</style>
+</head>
+<body>
+<h3>ex13.html</h3>
+
+<pre>
+    wrap()                      / unwrap()
+    감싸다(포장하다)
+</pre>
+
+<button>wrap()/unwrap() test</button>
+
+<!-- p*3>lorem1 -->
+<p>Lorem.</p>
+<p>Maxime!</p>
+<p>Ea.</p>
+
+<script>
+   $("button").click(function (){
+	   
+	   // p 태그의 직계 부모
+	   if(   $("p").parent().is("div")  ){
+		   $("p").unwrap() ;
+	   }else{ // body
+		   $("p").wrap("<div></div>") ;
+	   
+	       // div 객체 생성. + 자식 p
+	   }
+	   
+   });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

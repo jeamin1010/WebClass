@@ -1,0 +1,266 @@
+
+1. 모두 선택 체크박스 처리 
+<div>
+      <input type="checkbox">모두 선택
+      <br>
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+</div>
+   
+   모두 선택이라는 체크 박스를 체크하면 나머지 모든 체크 박스를 체크하도록 
+   코딩하세요.
+   
+  ㄱ. js 코딩
+  
+  <script>  
+   document.querySelector("div > input[type=checkbox]:first-of-type").onclick = function (){
+	   // aler t("이벤트 확인")
+	   //alert( this.checked );
+	   // getAttribute()
+	   
+	   // :not(selector)
+	   var ckbs = document.querySelectorAll("div > input[type=checkbox]:not( input[type=checkbox]:first-of-type)");
+	   for (var i = 0; i < ckbs.length; i++) {
+		  ckbs[i].checked = this.checked ;
+	   } // for	   
+   }
+</script>
+  
+  ㄴ. jquery 코딩
+
+<!-- jquery -->
+<script>  
+  // $("input[type=checkbox]")
+  // jquery selector  - :checkbox 
+  // jquery method  - first() / last() ,   eq() , filter()
+  // $(":checkbox:first-of-type").click( function (){
+  // $(":checkbox").first().click( function (){
+  $(":checkbox").eq(0).click( function (){
+	  // alert("c");
+	  // $(":checkbox:not(:first-of-type)")
+	  /*
+	  $(":checkbox")
+	      .filter( function (index){
+		    return index >= 1;
+		  })
+		  .click(function() {
+		  	  $(this).hide();
+		  }) ;
+	   */  
+	   
+	   /*
+	   $(":checkbox")
+	      .filter( function (index){
+		    return index >= 1;
+		  }).prop("checked", $(":checkbox").eq(0).prop("checked"));
+	   */
+	   
+	  $(":checkbox")
+      .filter( function (index){
+	    return index >= 1;
+	  }).prop("checked", $(this).prop("checked"));
+	   
+  } );
+</script>
+   
+
+2. p 태글 동적으로 10개 생성하고,  p 태그를 클릭할 때 그 p 태그를 숨기는 js 코딩을 하세요 
+2-2. 위의 코딩을 jquery로 수정 하세요 
+
+ <!-- js -->
+ <script>
+   for (var i = 1; i <= 10 ; i++) {
+	 // DOM 사용 - 요소 조작(  생성, 수정, 삭제  )
+	 // Document    Object Model 
+	 //      문서     -> 객체             +  속성, 메서드
+	 let pEle = document.createElement("p");  // Node	 
+	 pEle.innerText = "생성된 p - " + i;
+	 pEle.style.border = "1px solid gray";
+	 // pEle 클릭 이벤트 등록 - addEventListener()/ removeEventListener()
+	 pEle.addEventListener("click", function( ) {
+	 	this.style.display = "none";
+	 });	 
+	 document.body.appendChild(pEle);	 
+  } // for
+ </script>
+ 
+<!-- jquery -->
+ <script>
+    // jquery method :  body.append( p ),    p.appendTo(body)
+ 
+     for (var i = 1; i <= 10 ; i++) {
+		$("<p></p>")
+		     .text( "생성된 p - " + i)
+		     .css("border", "1px solid red")
+		     .click( function (){
+		    	 $(this).hide();
+		     })
+		     .appendTo($("body"));
+		
+	} // for
+ </script>
+
+3. select 태그에서 과목을 선택해서  라디오버튼의 선택한 과목을 체크하는 js 코딩을 하세요
+ <!--  11:02 수업 시작 -->
+ <select id="selsubject" >
+   <option>선택하세요.</option>    
+   <option value="kor">국어</option> 
+   <option value="eng">영어</option> 
+   <option value="mat">수학</option>
+   <option value="pe">체육</option> 
+</select>
+ <br>
+ <input type="radio" name="subject"   value="kor"><label>국어</label>
+ <input type="radio"  name="subject"  value="eng"><label>영어</label>
+ <input type="radio"  name="subject"  value="mat"><label>수학</label>
+ <input type="radio"  name="subject"  value="pe"><label>체육</label>
+
+ <!-- js -->
+ <script>
+    document.getElementById("selsubject").onchange = function (){
+    	// console.log( "이벤트 확인~" );
+    	// alert(  this.selectedIndex );
+    	// options 컬렉션
+    	var svalue = this.options[this.selectedIndex].value ;
+    	// alert( this.options[this.selectedIndex].text );
+    	// alert(  svalue );
+    	if(svalue == "선택하세요."){
+    		alert("과목만 선택하세요.");
+    		return;
+    	}
+    	
+    	var radios = document.getElementsByName("subject");
+    	// alert( radios.length );
+    	for (var i = 0; i < radios.length; i++) {
+			if( radios[i].value ==  svalue ){
+				radios[i].checked = true;
+				break;   // return;
+			} // if
+		} // for
+    	
+    }
+ </script>
+
+3-2. 위의 코딩을 반대로 jquery로 수정하세요 .
+
+ <!-- jquery -->
+ <script>
+    $("#selsubject").change(function() {
+    	 // var svalue =  $(this).val() ;              // "kor"
+    	 
+    	 // $("input[type=radio]")
+    	 // jquery selector    -   :radio   
+    	 // jquery method    -  each() 
+    	 /*
+    	 $(":radio").each(function(i, element) {
+    	 	  if(  $(element).val() ==  svalue )  $(element).prop("checked", true);
+    	 });
+    	 */
+    	 $(":radio[value="+  $(this).val()  +"]").prop("checked", true);
+    	 
+    });
+ </script>
+
+
+ <!-- js -->
+ <script>
+     /*
+     // document.getElementById("selsubject").options
+     // children - DOM 메서드 
+     var ops = document.getElementById("selsubject").children;
+     // alert( ops.length );
+     // ops[4].setAttribute("selected", "selected");
+     ops[4].selected = true;
+     */
+     
+     var ops = document.getElementById("selsubject").children;
+     
+     var radioIndex = 0;
+     var radios = document.getElementsByName("subject");
+     // [문제] index  12:08 수업 시작~ 
+     //   왜 ?    4
+    // let 키워드 / var 키워드 차이점 X		 
+     //for (var i = 0; i < radios.length; i++) {  	 
+     for (let i = 0; i < radios.length; i++) {	 
+		// if( radios[i].checked ) radioIndex = i;
+		radios[i].onclick = function (){
+			 // alert( i + " /  " + this.value ) ;
+			ops[i+1].selected = true;
+		} // click
+	} // for
+	// alert( radioIndex  )  
+ </script>
+ 
+  <!--  11:02 수업 시작 -->
+ <select id="selsubject" >
+   <option>선택하세요.</option>    
+   <option value="kor">국어</option> 
+   <option value="eng"  selected="selected">영어</option> 
+   <option value="mat">수학</option>
+   <option value="pe">체육</option> 
+</select>
+ <br>
+ <input type="radio" name="subject"   value="kor"><label>국어</label>
+ <input type="radio"  name="subject"  value="eng"><label>영어</label>
+ <input type="radio"  name="subject"  value="mat"><label>수학</label>
+ <input type="radio"  name="subject"  value="pe"><label>체육</label>
+
+ <!-- 문제) js 코딩 /  jquery 코딩 
+   라디오버튼을 먼저 체크하면 그 라디오 버튼의 value 속성값에 해당하는 
+   select 태그의 option을 checked 속성을 부여하자. 
+ -->
+ 
+<!-- jquery -->
+<script>
+   // var opts =   $("#selsubject > option");
+   
+   $(":radio[name=subject]").click(function() {
+   	     //  jquery method :  index()
+   	     var idx =   $(":radio[name=subject]").index( this );
+         // alert( idx );
+         // ex01.html:48 Uncaught TypeError: $(...)[(idx + 1)].prop is not a function
+         //$("#selsubject > option")[idx+1].prop("selected", true);
+         $("#selsubject > option").eq(idx+1).prop("selected", true);
+         
+   });
+   
+</script>
+
+4.  js 변수를 선언 4가지 방법
+    1)  var i;
+    2)  let i; 
+    3)  const i;
+    4)  i=100;
+
+5. <img src="../images/pic_bulboff.gif" alt="" id="bulb">
+   마우스를 올리면 불이켜지고, 마우스를 내리면 불이 끄지도록 js 코딩하세요.
+   
+   var blub = d.g("bulb");
+   blub.onmouseover = function (){
+       this.src = "on.gif";
+       event.srcElement = "on.gif";
+   }
+   blub.onmouseout = function (){
+      this.src = "off.gif";
+       event.srcElement = "off.gif";
+   }
+   
+5-2. jquery 로 코딩하세요.   
+   $("#bulb").hover(
+       function (){  // mouseover
+           attr() / prop()
+       }, 
+       function (){  // mouseout
+       } 
+   );
+
+
+
+
+
+
+
+
+

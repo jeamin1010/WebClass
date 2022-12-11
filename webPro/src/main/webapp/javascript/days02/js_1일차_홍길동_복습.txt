@@ -1,0 +1,172 @@
+0. CSS
+    1) 툴팁 기능 구현 ( 문제0.png 파일 참고) ***
+    2) 미디어 쿼리의 구문 형식을 적으세요 .    ***
+    3) css 애니메이션( 로딩 이미지 처리) 코딩을 설명하세요. 
+       <div class="loader"></div>
+       
+	    <style>
+	   .loader{
+	       width: 120px;
+	       height:120px;
+	       border:16px solid #f3f3f3;
+	       border-top-color: red;
+	       
+	       border-radius: 50%;
+	       
+	       animation:spin 1.5s linear infinite;
+	   }
+	   
+	   @keyframes spin{
+	           변환: 이동,[회전], 기울기, 크기비율저정
+	       from{ transform:rotate(0deg); }       0%
+	       to { transform:rotate(360deg); }   100%
+	   }
+	</style>
+    
+     4) CSS 변환(transform) + 전환(transition) 코딩을 설명하세요. 
+       <div></div>
+       
+       <style>
+	   div{
+	      width: 100px;
+	      height: 100px;
+	      background-color: red;
+	      
+	      transition:width 2s ease, height 2s ease, transform 2s;
+	      
+	      display: inline-block;
+	   }
+	   div:hover{
+	      width: 300px;
+	      height: 300px;
+	       
+	      transform:rotate(180deg);
+	   }
+</style>
+
+   5) css 2D, 3D 비교하는 아래 코딩을 상세히 설명하세요.. 
+   <style>
+   #rotate2D, #rotate3D{
+      width:80px;   // 너비 설정
+      height:70px;  // 높이 설정
+      color:white;   // 글자색 
+      position:relative;  // 상대좌표
+      font-weight: bold;  // 굵게
+      font-size: 15px;     // 크기
+      padding: 10px;  // 
+      float: left;
+      margin-right:50px;
+      border-radius: 5px;
+      border:1px solid #000;
+      background-color: red;
+      margin:10px;  
+   }
+</style>
+
+ <div style="height: 80px;">
+	<div id="rotate2D"  onmouseover="rotateDiv1();">2D rotate</div>
+	<div id="rotate3D"  onmouseover="rotateDiv2();">3D rotate</div>
+</div>
+
+  onmouseover 속성 : 마우스오버 이벤트/ onmouseout 속성 :
+
+<script>
+   var div2D;  // js 전역변수 선언 - div요소
+   var div3D;  // div    id="rotate3D" 
+   var timer2D;
+   var timer3D;
+   var angle2D = 0;
+   var angle3D = 0;
+   
+   function  rotateDiv1(){ 
+	   div2D = document.getElementById("rotate2D");
+	   clearInterval(timer2D);
+	   timer2D = setInterval(function() {
+	   	    angle2D++;
+	   	 div2D.style.transform = "rotate("+  angle2D+"deg)";
+	   	 div2D.style.webkitTransform = "rotate("+  angle2D+"deg)";
+	   	 div2D.style.OTransform = "rotate("+  angle2D+"deg)";
+	   	 div2D.style.MozTransform = "rotate("+  angle2D+"deg)";
+	   	  
+	   	 if( angle2D == 180 || angle2D == 360 ){ // 
+	   		 clearInterval(timer2D);
+	   	     if( angle2D == 360)
+	   		   angle2D = 0;
+	   	 }
+	   }, 10);
+   }
+   function  rotateDiv2(){
+	   div3D = document.getElementById("rotate3D");	   
+	   clearInterval(timer3D);
+	   timer3D = setInterval(function() {
+	   	    angle3D++;
+	   	 div3D.style.transform = "rotateY("+  angle3D+"deg)";
+	   	 div3D.style.webkitTransform = "rotateY("+  angle3D+"deg)";
+	   	 div3D.style.OTransform = "rotateY("+  angle3D+"deg)";
+	   	 div3D.style.MozTransform = "rotateY("+  angle3D+"deg)";
+	   	 
+	   	if( angle3D == 180 || angle3D == 360 ){
+	   		 clearInterval(timer3D);
+	   	     if( angle3D == 360)
+	   		   angle3D = 0;
+	   	 }
+	   	 
+	   }, 10);
+   }
+</script>
+  
+
+1. 문자열을 입력 후 확인 버튼을 클릭할 때 입력한 문자열을 p 태그에 출력하는 js 코딩을 하세요.
+<input type="text">
+<br>
+<button>확인</button>
+<p id="demo"></p>
+
+1-2. 위의 코딩을 jquery로 수정하세요 .
+ 
+
+2. Turn on 버튼을 클릭하면 Turn on 버튼은 비활성화시키고, Turn off 버튼은 활성화시키는 js 코딩을 하세요. 
+<button>Turn on</button> 
+<button disabled="disabled">Turn off</button>
+
+2-2. 위의 코딩을 jquery로 수정하세요 .
+ 
+3. p 태그에 마우스를 올리면 
+   ㄱ. 글자색 빨강
+   ㄴ. 글크기 35px
+   ㄷ. 테두리 1 solid gray
+   스타일을 바꾸는 js 코딩을 하세요.
+   
+<p id="demo">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi incidunt 
+  fugiat voluptas totam nisi iste ab iure beatae veritatis laudantium id 
+  quidem quasi et quis tempora natus cum dicta perferendis.
+</p>
+ 
+3-2.   위의 코딩을 jquery로 수정하세요 .
+
+4. 확인 버튼을 클릭할때 html 적용시에는 굵은 bold 스타일로 홍길동이 출력되고
+    html비적용 시에는 <b>홍길동</b>가 출력되는 js 코딩을  하세요.
+<fieldset>
+   <legend>html 적용여부</legend>
+   <input type="radio" checked="checked"  value="apply"><label>적용</label>
+   <input type="radio" value="not apply"><label>비적용</label>
+</fieldset>
+<input type="text" value="<b>홍길동</b>">
+<br>
+<button>확인</button>
+<p id="demo"></p>
+
+5-2. 위의 코딩을 jquery로 수정하세요 .
+
+6. 좋아하는 과목을 여러 개 선택하고 확인 버튼을 클릭하면 좋아하는 과목의 value 속성을 #demo 태그에 출력하는 js 코딩을 하세요.
+<input type="checkbox" value="kor"  name="subject"  id="s_kor" ><label for="s_kor">국어</label>
+<input type="checkbox" value="eng"  name="subject"  id="s_eng"  checked="checked"><label for="s_eng">영어</label>
+<input type="checkbox" value="mat"  name="subject"  id="s_mat" ><label for="s_mat">수학</label>
+<input type="checkbox" value="pe"  name="subject"  id="s_pe" ><label for="s_pe">체육</label>
+ 
+ <br>
+ <button >확인</button> 
+ <p id="demo"></p>
+
+6-2. 위의 코딩을 반대로 jquery로 수정하세요 .

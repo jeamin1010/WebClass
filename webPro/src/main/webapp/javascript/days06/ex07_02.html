@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오후 4:35:24</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex07_02.html  -  js 제어문( for in)</h3>
+
+<script>
+    // 1. for in 문은 객체(개체)의 속성을 반복하는 반복문
+    // 2. 형식
+    //           for( let  prop   in object){
+    //}
+    
+    /*
+    var m = [ 3,5,2,4,1];
+    // console.log(  typeof m );  // 배열도 타입은 object 이다. 
+    
+    // x = 0,1,2,3,4           index
+    for ( var idx in m) {
+		// console.log( idx ) ;
+		console.log(   m[idx] );
+	}
+    
+    // 
+    Array.forEach( function (elt, index, array){
+    	
+    } )
+    */    
+</script>
+<script>
+    // js object
+     var person = {
+    		// 속성명:속성값
+    		name:"admin", 
+    		age:20
+    };
+    
+    // person.name
+    // person["name"]
+    
+    for ( var p in person) {  // object
+		console.log(  person[p]  );
+    	
+        // for in문안에서 person.idx는 왜 안되나요??
+        // 		console.log( person.p);
+        // console.log(  typeof p );  // string
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

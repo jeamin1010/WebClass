@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 12:42:56</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  .ancestors *{
+     display: block;
+     border:2px solid lightgray;
+     color:lightgray;
+     padding:5px;
+     margin:15px;
+  }
+</style>
+</head>
+<body>
+<h3>ex07.html - 조상 탐색</h3>
+<pre>
+  jq  탐색(Traversing(횡단))
+    -  증조부모
+          ㄴ 조부모
+                  ㄴ 부모
+                        ㄴ 자식, +  자식 ... ( 형제 )
+                            ㄴ 증손자 + 증손자 ..
+                            
+    [ 부모 탐색하는 jq 메서드 ]                         
+    parent()
+    parents()
+    parentsUntil()       
+    
+                     
+</pre>
+   <!-- // 2:00 수업 시작 -->
+ 
+ <div  class="ancestors">
+  
+  <div style="width:500px">div( great-grandparent )
+ 	<ul>ul ( grandparent )
+ 		<li>li ( direct parent)
+ 		  <span>span</span>
+ 		</li>
+ 	</ul>
+ </div>
+ 
+ </div>
+  
+<script>
+
+    // 1. parent()  직계 부모
+    // 2. parents() 모든 조상 부모 포함.
+    // 3. parents("ul")  부모 중에  ul 부모만     
+    // 4. parentsUntil("div")  부모 중에    div 까지.
+   $("span").parentsUntil("div")
+            .css({
+	               "color":"red",
+	               "border":"2px solid red"
+	               });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

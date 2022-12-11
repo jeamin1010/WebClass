@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오전 11:57:55</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+select {
+	width: 100px;
+	text-align: center;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+}
+
+.month {
+	padding: 70px 25px;
+	width: 100%;
+	background: #1abc9c;
+	text-align: center;
+}
+
+.month ul {
+	margin: 0;
+	padding: 0;
+}
+
+.month ul li {
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.month .prev {
+	float: left;
+	padding-top: 10px;
+}
+
+.month .next {
+	float: right;
+	padding-top: 10px;
+}
+
+.weekdays {
+	margin: 0;
+	padding: 10px 0;
+	background-color: #ddd;
+}
+
+.weekdays li {
+	display: inline-block;
+	width: 13.6%;
+	color: #666;
+	text-align: center;
+}
+
+.days {
+	padding: 10px 0;
+	background: #eee;
+	margin: 0;
+}
+
+.days li {
+	list-style-type: none;
+	display: inline-block;
+	width: 13.6%;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 12px;
+	color: #777;
+}
+
+.days li .active {
+	padding: 5px;
+	background: #1abc9c;
+	color: white !important
+}
+</style>
+</head>
+<body>
+<!-- 12:10 수업 시작 -->
+<h3>ex03.html - 달력( 일정관리 )</h3>
+    
+    <select id="cmbyear" onchange="changeDate()"></select>
+    <select id="cmbmonth" onchange="changeDate()"></select>
+    <select id="cmbdate"></select>
+    
+	<br>
+	<br>
+	<div class="month">
+		<ul>
+			<li class="prev" onclick="changeCalendar(-1)">&#10094;</li>
+			<li class="next" onclick="changeCalendar(1)">&#10095;</li>
+			<li>
+			     <span id="month">August</span><br> 
+			     <span id="year"	style="font-size: 18px">2017</span>
+			</li>
+		</ul>
+	</div>
+	<ul class="weekdays">
+		<li>Su</li>
+		<li>Mo</li>
+		<li>Tu</li>
+		<li>We</li>
+		<li>Th</li>
+		<li>Fr</li>
+		<li>Sa</li>
+	</ul>
+	<ul class="days">
+ 
+ <!-- 
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>  
+ --> 
+ 
+</ul>
+<script>
+   // 전역변수 
+  var year;        // undefined
+  var month;     // undefined
+  
+</script>
+<script>
+    var today = new Date();
+    var tYear = today.getFullYear();
+    var tMonth = today.getMonth();
+    // select 1970~2050 년도 option 추가.
+    // js
+    // jquery
+    for (var i = 1970; i <= 2050; i++) {
+    	$("#cmbyear").append( $("<option></option").text( i ) );
+	}
+    // 현재 년도로 option 선택
+    $("#cmbyear").val(  tYear );
+     
+    
+    // select 1~12 월 option 추가.
+    // js
+    // jquery
+    for (var i = 1; i <= 12; i++) {
+    	$("#cmbmonth").append( $("<option></option").text( i ) );
+	}
+    // 현재 월로 option 선택
+    $("#cmbmonth").val(  tMonth + 1 ); 
+    
+   </script>
+   
+   <script>
+      // select year, month 옵션을 선택할 때 .. change 이벤트 호출되는 함수( 이벤트 핸들러 )
+      function changeDate(){
+    	  year =  $("#cmbyear").val(  );
+    	  month = $("#cmbmonth").val(  );
+    	  console.log( year + " /  " + month );
+    	  
+    	  var lastDay = getLastDay(year, month);
+    	  
+    	  $("#cmbdate").html(""); // 초기화  
+    	  for (var i = 1; i <= lastDay; i++) {
+    		  $("#cmbdate").append( $("<option></option").text( i ) );
+		  } // for
+		  
+    	  // 
+    	  printCalendar(year, month);
+      }
+      
+      function printCalendar(year, month){
+    	  //  <span id="month">August</span><br> 
+		  //  <span id="year"	style="font-size: 18px">2017</span>
+		  $("#month").text(  month  );
+		  $("#year").text(  year  );
+		  
+		  // 2:00 수업시작~
+		  //  <li>1</li> ~ <li>28,29,30,31</li>   append()
+    	  // 1.    year, month, 1  무슨 요일 ? 
+    	  var dayOfWeek = getDayOfWeek( year, month, 1 );		  
+    	  // 2. 마지막 날짜
+    	  var lastDay = getLastDay(year, month);
+    	  
+    	  
+    	  // <ul class="days">
+    	  $("ul.days").html("");  // 초기화
+    	  for (var i = 0; i < dayOfWeek ; i++) {
+    		  $("ul.days").append($("<li></li>"));
+		  } // for
+		  // 1~마지막날짜.
+		  
+		  var outputDay ;  // 출력 날짜.
+		  var toDay = new Date();  // 오늘 날짜
+		  
+		  for (var i = 1; i <= lastDay ; i++) {    		  
+    		  // if( 출력날짜 == 오늘날짜)  active 클래스 속성 추가
+    		  outputDay =new Date( year, month-1 , i );    		  
+    		  //console.log( outputDay.toDateString() +" / " + toDay.toDateString()
+    		  //	  + " / " + (toDay.toDateString() == outputDay.toDateString() ))
+    		  
+    		  if(  toDay.toDateString() == outputDay.toDateString() ){
+    			  // <li><span class="active">10</span></li>
+    			  $("ul.days").append(  "<li><span class='active'>"+i+"</span></li>"  );
+    			  /* 
+    			     $("ul.days").append(
+    		              $("<li></li>").append(
+    		                $("<span></span>").text(i).addClass("active")
+    		              ) 
+    		           )
+    		       */
+    		  }
+    		  else{
+    			  $("ul.days").append($("<li></li>").text( i ));
+    		  }
+    				  
+    		   
+    		   
+		  } // for
+		  
+    	  
+      }
+      
+      function getDayOfWeek(year, month, date){
+    	  var d = new Date( year, month-1, date );
+    	  return  d.getDay();  //   일(0) ~ 토(6)
+      }
+      
+      function getLastDay(year, month){
+    	  var lastDay = 0;
+    	  var d = new Date( year, month ); // 2022.12.01 - 하루 =  일
+    	  d.setDate(0);
+    	  // console.log( d.toDateString() );  Wed Nov 30 2022
+    	  lastDay = d.getDate();
+    	  return lastDay ;
+      }
+      
+      changeDate(); // 2022 / 11
+   </script>
+   
+   <script>
+   // 3:00 수업 진행~                  -1    1
+   function changeCalendar(  value ){
+	   // alert(  (typeof month) + "/" + (typeof value) );
+	   month =  Number(month) +  value;
+	   if( month == 0 ){
+		   month = 12;
+		   year--;
+	   }else if( month == 13){
+		   month = 1;
+		   year++;
+	   }
+	   
+	   // select 변경.
+	   $("#cmbyear").val(  year );
+	   $("#cmbmonth").val(  month ); 
+	   changeDate();  // 1~ 마지막날짜.
+	   
+	   // console.log(   month + " /  "  + ( typeof month)   ) ;
+	   printCalendar(year, month);
+   }
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

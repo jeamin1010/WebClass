@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 11:59:12</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01_09.html - 콜백(callback) 함수</h3>
+
+<button>hide</button>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Quibusdam dolorem soluta accusamus sint atque explicabo 
+nesciunt consequatur beatae quae fuga excepturi corrupti 
+tempora commodi enim nulla deleniti magni provident? 
+Vitae.</p>
+
+<script>
+  $(function (){
+	  $("button").click( function (){
+		  // 1. p 숨기기. (3초)
+		  // 2. p 완전히 숨기진 후에 경고창 띄우기를...
+		  /*
+		  $("p").hide(3000);
+		  alert("완전히 숨겨습니다.")
+		  */
+		  
+		  $("p").hide(3000, function (){
+			  // 콜백함수
+			  alert("완전히 숨겨습니다.")
+		  });
+		  
+	  });
+  });
+
+</script>
+</body>
+</html>

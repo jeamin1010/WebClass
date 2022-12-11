@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 12:18:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex10_04.html   js 개체(객체)</h3>
+
+<pre>
+    // js ES6        getter, setter 도입.
+    // java      private member ->  getter, setter 선언.
+</pre>
+
+<script>
+   var person = {
+		   firstname:"john",
+		   lastname:"Doe",
+		   language:"kr", 
+		   
+		   fullName:function (){ 
+			   return this.firstname + " " + this.lastname;
+			 }, 
+   
+           // getter
+           get  name () {
+			return  this.firstname + " " + this.lastname;
+		    },           
+           // getter, setter
+           get lang() {
+			return      this.language.toUpperCase();
+		   },
+           set lang( lang ) {
+			 this.language = lang.toUpperCase();
+		   } 
+		   
+   }
+   
+   // alert( person.name)
+   
+   // person.lang="en";   // setter
+  // 함수인데 왜 호출할때 () 를 안붙여도 되는건가요? 게터 세터가 특수한 경우인건가요?
+  // alert( person.lang ); // getter
+  
+   alert( person.fullName() )
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

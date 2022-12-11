@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오후 3:24:43</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+<h3>ex06.html - js 문자열 , 메서드 , 검색</h3>
+<pre>
+	1. "js 문자열"		, 'js 문자열'
+</pre>
+
+
+
+
+<!-- js -->
+<script>
+	//
+	//var msg = "AB\"CD\"EFGHIJKLMNOPQRSTUVWXYZ";
+	//1. 문자열의 길이 - length 속성
+	//console.log("1.msg 문자열 길이 : "+msg.length)// 28
+	
+	//2. 두 문자열 비교 함수
+	//var name1= "홍길동";						//string
+	//var name2= "홍길동";					//string
+	//var name2 = new String("홍길동");//object
+	// java 		equals()
+	// js 			==
+	//console.log(name1==name2); //true 			== 값 비교							true
+	//console.log(name1===name2);//true 			=== ? 값 + 타입 비교			false
+	
+	
+</script>
+
+
+<script>
+	//\n 개행 제어문자
+	//\t
+	//\b
+	//\f
+	//\r 등등....
+	var msg = "안녕하세요. \n홍길동\n입니다. "
+	//alert(msg);
+</script>
+
+<script>
+	//공백제거
+	var msg = "      Hello World       ";
+	//console.log("["+msg.trim()+"]");
+	
+	// 문자열 연결
+	var str1 = "hello", str2 = "world";
+	//var str3 = str1 + " " + str2;
+	//var str3 = str1.concat("-").concat(str2);
+	var str3 = str1.concat("-",str2,"연결문자열");
+	//console.log(str3);
+	
+	
+</script>
+
+
+<script>
+	//to upper/lower case();
+	msg = "Hello World!!!!";
+	console.log(msg.toUpperCase());//HELLO WORLD!!!!
+	console.log(msg.toLowerCase());//hello world!!!!
+	
+</script>
+</body>
+</html>

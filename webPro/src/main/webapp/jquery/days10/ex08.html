@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 2:15:39</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+ .descendants *{
+     display: block;
+     border:2px solid lightgray;
+     color:lightgray;
+     padding:5px;
+     margin:15px;
+  }
+</style>
+</head>
+<body>
+<h3>ex08.html - jquery 탐색( 자손 )</h3>
+
+<pre>
+    - children()  : 선택한 요소의 모든 직계 자식을 반환
+    - find()        : 선택한 요소의      모든 하위(후손)을 반환
+</pre>
+
+<div class="descendants"  style="width:500px">
+  div( 현재 요소)
+  <p class="first"> p
+    <span>span</span>
+  </p>
+  <p class="second"> p
+    <span>span</span>
+  </p>
+</div>
+
+<script>
+   /*
+   $("div").children()  // 모든 직계 자식      p
+		                .css({
+				               "color":"red",
+				               "border":"2px solid red"
+				               });
+   */
+   
+   // $("div").find("*")  // 모든 후손들...
+   
+   $("div").children("p.first")    // 필터링. jq selector
+						   .css({
+						          "color":"red",
+						          "border":"2px solid red"
+						          })
+						    .end()      // 의미 파악.   
+			.find("span")
+		         .css({
+		          "color":"blue",
+		          "border":"2px solid blue"
+		          })
+</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 23. 오후 2:53:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex04_04.html :   js 배열</h3>
+<!-- 3:05 수업시작 -->
+
+<pre>
+  1. forEach()
+     배열의 각 요소 마다  한 번씩 함수를 호출해서 반복 처리.
+     
+  2. map()
+     배열의 각 요소에 함수를 실행하여 새로운 배열을 생성하는 함수   
+  
+  3. filter()
+      필터링된 요소만을 갖는 새로운 배열을 생성하는 함수   
+      
+  4. reduce()
+       배열의 각 요소를 실행하는 함수에서 단일 값을 생성하는 함수    
+       
+   5. every()
+       배열의 모든 요소가 테스트를 통과하는지 여부 확인하는 함수    
+       
+   6. some()
+       배열의 일부 요소라도 테스트를 통과하면 true/false 반환하는 함수    
+       
+   7. indexOf()    / lastIndexOf()
+       배열에서 요소의 값을 검색하고 검색한 요소의 인덱스값을 반환하는 함수  ( - 1 )
+       
+   8.  find()  / findIndex()
+        요소값      요소 인덱스
+        5                 1
+        var m = [3,5,2,4,1];
+        첫 번째 5보다 같거나 큰 수를 찾고 싶다.
+        
+        var num = m.find( function (elt, i, array){
+           return elt >=5;
+        } )
+     
+     9. from()     
+             길이(length) 속성이 있는 객체 또는 반복 가능한 객체에서 -> 배열 반환하는 함수
+             문자열
+             배열
+             등등   
+             
+      10. keys() 
+          배열의 키(인덱스값)가 있는 iterator 객체를  반환하는 함수
+          
+          entries()    key                        +   value 한쌍
+                        배열의 인덱스값                요소의 값
+                        [ 0 , 3 ]
+</pre>
+
+<script>
+   var m = [3,5,2,4,1];
+   // var ir = m.keys();
+   var ir = m.entries();  // 엔트리 = key + value  한쌍
+   
+   for (let n of ir) {  // index   0/1/2/3/4   인덱스값 
+	console.log( n[1] );
+  }
+   
+   /* JAVA
+   while( ir.hasNext()){
+	    int n = ir.next();
+   }
+   */
+	   
+</script>
+
+
+<script>
+        /*
+        var str = "안녕하세요.";
+        // console.log( str.length );  // 6
+        var arr =  Array.from( str );
+        console.log( typeof arr);  // object
+        console.log( arr.toString()  );  // "안,녕,하,세,요,."
+        */
+</script>
+
+<script>
+   /*
+   var m = [3,5,2,4,1];
+   // 1. forEach()
+   m.forEach(function(elt, i, array) {
+          console.log( elt + " / " +  i ); 	
+    });
+   */
+</script>
+
+<script>
+    /*
+    // 2. map()
+    var m = [3,5,2,4,1];
+    console.log( m.toString() );            // 3,5,2,4,1
+    
+    // 각 요소의 값을  2를 곱해서 새로운 배열 생성.
+  
+    var newm = [];
+    for (var i = 0; i < m.length; i++) {
+    	newm.push(    m[i] * 2 );
+	}; 
+ 
+	
+	// map() 사용
+	var newm = m.map(function(elt, i, array) {
+		return elt *3 ;
+	});
+	
+	console.log(   newm.toString() );  // 9,15,6,12,3
+	*/
+</script>
+
+<script>
+   /*
+   // 3. filter()
+   var m = [];
+   for (var i = 0; i < 10; i++) {
+	    m.push(   parseInt(  Math.random() * 100 )  );
+  }
+   console.log( m.toString() );
+   
+   // 50보다 큰 값을 -> 새로운 배열 생성
+ 
+   var newm = [];
+   m.forEach(function(elt, i, array) {
+   	     if(  elt >= 50  )   newm.push( elt );
+   })
+   console.log( newm.toString() );
+ 
+   
+   var newm = m.filter(function(elt, i, array) {
+   	   return elt >= 50 ;
+   });
+   console.log( newm.toString() );
+   */
+</script>
+
+<script>
+    /*
+   // 4. reduce()
+   var m = [3,5,2,4,1];
+   
+   // 배열의 총합을 구해서 출력.
+ 
+   var sum = 0;
+   
+   for (var i = 0; i < m.length; i++) {
+	  sum += m[i];
+	  console.log(  m[i] +"+" )
+  }
+   console.log( sum );
+ 
+   
+   // m.reduceRight( )               오른쪽 -> 왼쪽
+   var sum = m.reduce(function(sum, elt, i, array) {
+   	   return sum + elt;
+   } )
+    console.log( sum );  // 115
+    */
+</script>
+
+<script>
+   // 정보처리기사 시험
+   var m = [78, 60, 35, 89, 76];
+   // 과락. 체크
+   /*
+   for (var i = 0; i < m.length; i++) {
+	   if(  m[i]  < 40 ){  // 40 미만 
+		    console.log("과락")
+	   }
+  }
+   */
+   
+  var result =   m.every(function(elt, i, array) {
+   	   return elt >=40 ;
+   })
+   
+   console.log( result  ); // false
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

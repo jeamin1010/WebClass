@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오전 10:49:08</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<!-- 상대경로 -->
+<link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
+<style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+</style>
+  
+</head>
+<body>
+<h3>ex01_07.html - dragdrop</h3>
+
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div>
+
+<script>
+    // jquery-ui.js 외부 js 파일
+    $("#draggable").draggable();
+    
+    $("h3").draggable();
+
+</script>
+</body>
+</html>
+
+
+
+
+

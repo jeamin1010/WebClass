@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오후 3:31:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex02_14.html</h3>
+<!-- p*5>lorem10 -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi voluptatem?</p>
+<p>Dolore <span>optio</span> architecto et debitis totam nihil aliquam quisquam quasi.</p>
+<p>Debitis eum earum blanditiis quibusdam mollitia quasi nisi repudiandae cum!</p>
+<p>Hic eveniet maxime veritatis obcaecati repudiandae voluptates magnam tempore et.</p>
+<p>Minus quae dicta  <span class="box">delectus </span> soluta nihil hic animi doloremque repudiandae.</p>
+
+
+
+
+
+
+<!--  -->
+<script>
+	//
+	$(function() {
+		
+		//$("p").css("background-color","yellow");
+		//span 이라는 자식태그를 가지는 p 태그
+		//$("p:has(span)").css("background-color","yellow");
+		//문제) span 클래스 box 자식태그를 가지는 p 태그 == span.box
+		//$("p:has(span.box)").css("background-color","yellow");
+	$("p:contains('maxime')").css("background-color","red");
+	})
+	
+</script>
+
+<!--  -->
+<script>
+	//
+	
+</script>
+</body>
+</html>

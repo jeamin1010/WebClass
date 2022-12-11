@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 11:38:37</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex10_02.html - js 개체</h3>
+
+<script>
+   // [ 중첩된 객체 ]
+   /*
+   var person = {
+		   name:"admin", 
+		   age:20,
+		   cars: [
+				   { name:"BMW", models:["a","b","c"]},
+				   { name:"KIA", models:["a","b","c"]},
+				   { name:"Ford", models:["a","b","c"]}
+			   ]
+   };
+   */
+   // person.name
+   //  person.cars[0].name             BMW
+</script>
+
+<script>
+// 중첩된 객체
+var person = {
+		   name:"admin", 
+		   age:20,
+		   cars: {
+			   car1 : "BMW",
+			   car2: "KIA",
+			   car3: "FORD"
+		   }
+};
+   // KIA
+   person.cars.car2;
+   person.cars["car2"];
+   person["cars"]["car2"];
+   
+</script>
+
+<script>
+const myObj = {
+		  name: "John",
+		  age: 30,
+		  cars: [
+		    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+		    {name:"BMW", models:["320", "X3", "X5"]},
+		    {name:"Fiat", models:["500", "Panda"]}
+		  ]
+		}
+		
+		
+for (let i in myObj.cars) {
+	  x += "<h1>" + myObj.cars[i].name + "</h1>";
+	  for (let j in myObj.cars[i].models) {
+	    x += myObj.cars[i].models[j];
+	  }
+	  
+	  console.log( x );
+	}
+	
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

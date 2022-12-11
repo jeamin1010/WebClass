@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오전 9:54:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+div {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    float: left;
+    border: 2px blue solid;
+    padding: 2px;
+  }
+  span {
+    font-size: 14px;
+  }
+  p {
+    clear: left;
+    margin: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div></div>
+<div></div>
+<div><span>has child</span></div>
+<div></div>
+<div></div>
+<div></div>
+<div id="start"></div>
+<div></div>
+<p><button>Go to Prev</button></p>
+
+<script>
+   $(function (){
+	   var $curr = $("#start");
+	   $curr.css("background-color", "#f99");
+	   
+	   // $curr =첫 번째 -> 버튼 클릭 -> 가장 마지막 div
+	   // 10:10 수업 시작~
+	   $("button").click(function (){
+		   $curr.css("background-color", "");
+		   
+		   $curr = $curr.prev(); 
+		   
+		   /*
+		   // [조민경]
+		   // 검색 ? $curr == DIV 확인 
+			// undefined 값 반환  == false
+		   // console.log( $curr.prop("tagName") );
+		   if( !$curr.prop("tagName")  ){
+			   $curr =  $("div").last()
+		   }
+		   */
+		   
+		   // console.log( $curr );  // jquery object 출력             DIV
+		   // console.log( $curr.nodeName )  // DIV          undefined 
+		   // console.log( $curr.get(0).nodeName )  // DIV   
+
+		   
+		   
+		   try {
+			   console.log( $curr.get(0).nodeName ) 
+		  } catch (e) {
+			  $curr =  $("div").last()
+		 }
+		   
+		   $curr.css("background-color", "#f99");
+		   
+		   
+          /*  이재민          
+		  var i = $curr.index();  
+          console.log(i);  //  
+          if ( i == -1 ) {
+              $curr = $("div").last();
+           }
+          */
+		   
+	   });
+   });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12 01. 오전 7:58:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex01.html</h3>
+<!-- 미출석 : 강새암 -->
+<!-- 
+   > 박예린, 엄태혁, 오승주, 박혜은, 권재현
+ -->
+ 
+ <pre>
+    1. jq
+    2. jq 사용방법 
+    3. jq selector
+    4. jq 효과 - show, hide, toggle, fade, slide, animate
+    5. jq DOM 조작
+        요소 쉽게 엑세스, 조작(생성, 수정, 삭제, 이동 등등)  - DOM 관련 메서드 
+        DOM - html, xml 문서에 엑세스 하기 위한 표준 정의
+        
+        1) jq DOM method : 
+           val()        input value     설정, 반환                             value
+           text()      <시>텍스트</종>  html  X  설정, 반환            innerText
+           html()     <시>텍스트</종>  html O  설정, 반환             innerHTML
+           
+        2) 속성 반환, 설정
+            attr()
+            prop()
+            is()
+            
+               
+ </pre>
+ 
+  <input type="text" id="name" value="<b>admin</b>">
+  <br>
+  <button>확인</button>
+  <p id="demo"></p>
+  
+  <hr>
+  <!-- http://www.sist.co.kr -->
+  <a href="#">sist</a>
+  
+  
+<script>
+  // $(document).ready(function (){});
+  $(function (){
+	  // $("a").href
+	  // $("a").prop("href", ??)
+	  
+	  
+	  // $("a").attr("href", "http://www.sist.co.kr");
+	  
+	  // href  속성 설정 + alt  속성
+	  $("a").attr({
+		  "href":"http://www.sist.co.kr",
+		  "alt":"test",
+		  "title": "쌍용교육센터"
+	  });
+	  
+  });
+</script>  
+  
+<script>
+   // js
+   /*
+   document.querySelector("button").onclick = function (){
+	   //document.getElementById("demo").innerText
+	   document.getElementById("demo").innerHTML
+	        =  document.getElementById("name").value;
+   }
+   */
+</script>
+<script>
+    // jq 
+    // $(selector).action();
+    $("button").click( function (){
+    	// $("#demo").text(  $("#name").val() );
+    	// $("#demo").html(  $("#name").val() );
+    	
+    	$("#name").val( "xxx" );
+    });
+    
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

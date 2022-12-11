@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 5:10:30</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>days07.ex01.html</h3>
+
+<pre>
+   - js  set, map   컬렉션 클래스 
+   [js set ]
+   1. set 객체를 생성  :   new Set()
+   2.  특징 : 중복허용 X, 순서 유지 X
+   3.  요소 추가          : add();
+   3.  크기                 : size
+   4. 모든 요소 처리     : values()                           ir
+   5. delete() - 요소 제거
+   6. has()     - set 안에 요소 를 가지고 있는지 t/f
+   7. forEach() 
+   8. clear()
+</pre>
+
+<script>  
+
+ /*
+   var s = new Set();
+   s.add("a");
+   s.add("b");
+   s.add("c");
+*/
+
+   var s = new Set(["aa", "bb", "cc"]);
+   
+   s.forEach( function (el){
+	   console.log( el );
+   } );
+   
+   /*
+   s.add("b");  // 중복 추가
+   s.add("b");  // 중복 추가
+   s.add("b");  // 중복 추가
+   
+   console.log( s.size );  // 3
+   
+   // b 요소가 있는지 확인해서 삭제(제거)
+   if(  s.has("b") ){
+	   s.delete("b");
+   }
+   
+   var ir =  s.values();
+   
+   for (let el of ir) {
+       console.log( el );	
+ }
+   */
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

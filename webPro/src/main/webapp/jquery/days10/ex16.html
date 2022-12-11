@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 3:51:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex16.html</h3>
+<!-- 4:05 수업 시작 -->
+ 
+ <!-- ul>li*5>{item$} -->
+ <ul>
+ 	<li>item1</li>
+ 	<li>item2</li>
+ 	<li>item3</li>
+ 	<li>item4</li>
+ 	<li>item5</li>
+ </ul>
+ 
+ <pre>
+        each()  검색
+        1)  컬렉션 조작 :  each()
+        2) 유틸리티      :  jQuery.each()
+ </pre>
+ 
+ <script>
+     /*
+     //  1)  컬렉션 조작 :  each()
+     $("ul li").each( function (index, element){
+    	 // console.log( element.innerHTML )
+    	 // console.log( $(element).html() );
+    	 console.log( $(this).html() );
+    	 
+    	 // return  문 :   함수 빠져나는 문
+    	 return index == 2;
+     })
+     */
+ </script>
+ 
+ <script>
+     
+     // 2) 유틸리티      :  jQuery.each()
+     // jQuery.each();
+     var arr = ["one", "two", "three", "four", "five"];
+     $.each(  arr, function ( index, value ){
+    	 console.log( index + " / " + value );
+    	 
+    	 // *** return 리턴값 이 false 반복 중단  ***
+    	 // We can break the $.each() loop at a particular iteration by making the callback function return false
+    	 // return ( index == 2 );  // false
+    	 return ( index  != 1 );  // false
+     } )
+   
+     
+     /*
+     var person = {
+    	 name:"admin",
+    	 age:20
+     };
+     
+     $.each( person, function (pn, pv){
+    	 console.log( pn + " /  " + pv );
+     })
+     */
+     // jQuery.XXXX
+ </script>
+</body>
+</html>
+
+
+
+
+

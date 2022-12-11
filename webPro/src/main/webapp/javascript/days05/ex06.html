@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 23. 오후 4:39:20</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex06.html - 배경색 변경</h3>
+
+<select   onchange="bc_change(  this  );">
+   <option>선택하세요.</option>
+   <option value="white">흰색</option>
+   <option value="red">빨강</option>
+   <option value="green">녹색</option>
+   <option value="blue">파랑색</option>
+</select>
+
+<p id="demo"></p>
+
+<script>
+
+   function bc_change(  selTag ){
+	   /* 
+	  // document.querySelector("select");
+	   var idx =  selTag.selectedIndex;  // 0 ~ 4
+	   var op = selTag.options[idx];
+	   var text =  op.text;
+	   var value =  op.value;
+	   */
+	   
+	   // alert(  selTag.value );    == $("select").val()
+	   document.bgColor =   selTag.value;
+   }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

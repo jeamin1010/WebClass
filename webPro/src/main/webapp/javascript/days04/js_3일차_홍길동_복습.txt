@@ -1,0 +1,92 @@
+1.   [ sample01.html ]
+ <select id="selsubject" >
+   <option>선택하세요.</option>    
+   <option value="kor">국어</option> 
+   <option value="eng">영어</option> 
+   <option value="mat">수학</option>
+   <option value="pe">체육</option> 
+</select>
+
+     [ sample01_ok.jsp ] 
+<input type="radio" name="subject"   value="kor"><label>국어</label>
+ <input type="radio"  name="subject"  value="eng"><label>영어</label>
+ <input type="radio"  name="subject"  value="mat"><label>수학</label>
+ <input type="radio"  name="subject"  value="pe"><label>체육</label>
+ 
+    test01.html 페이지에서 select 태그의 option을 선택하면 test01_ok.jsp 페이지로
+    submit 되어서  radio 버튼이 체크되도록  js로 코딩하세요~
+     
+1-2. 위의 코딩을 jquery로 코딩하세요.
+    
+
+2. ▶, ▶▶ 버튼을 구현하세요         [ smaple02.html ]
+   ( 조건 : js 로 구현 )
+   
+<style>
+   select{
+      height: 200px;
+      width: 100px;
+   }
+   button{
+      width:40px;
+   }   
+</style>
+<table>
+	<tr>
+		<td>
+				<select multiple="multiple" id="sleft">
+				  <option>이창익</option>
+				  <option>김가율</option>
+				  <option>임종윤</option>
+				  <option>문혜빈</option>
+				  <option>엄태혁</option>
+				</select>
+		</td>
+		<td>
+		   <button>▶</button><br>
+		   <button>▶▶</button><br>
+		   <button>◀</button><br>
+		   <button>◀◀</button><br>
+		</td>
+		<td>
+		<select multiple="multiple" id="sright">
+		</select>
+		</td>
+	</tr>
+</table>   
+ 
+ 2-2. 위의 코딩을 jquery 로 코딩하세요...
+ 
+ 
+ 3. 아래 ㄱ, ㄴ 코딩의 차이점에 대해서 설명하세요. 
+  ㄱ. 
+  for (let i = 0; i < 2; i++) {   // {  block scope}
+  }  
+  console.log( i )   i X 
+
+  ㄴ.
+  for (var i = 0; i < 2; i++) { 
+  }  
+  console.log( i )   2
+  
+  4. js에서 변수를 선언하는 4가지 방법을 적고 설명하세요.
+  ㄱ.   var
+  ㄴ.   let
+  ㄷ.   const
+  ㄹ.    X
+  
+  5. keydown/keypress/keyup 이벤트 설명하세요.
+  
+  [ sample03.html ]
+  6. 첫 번째 텍스트 박스에 숫자를 입력 후 엔터 치면 두 번째 텍스트 박스로 포커스 넘기고
+   두 번째 텍스트 박스에 숫자를 입력 후 엔터 치면 덧셈 결과를 세 번째 텍스트 박스에 출력하는 
+   js 코딩을 하세요.  
+<input type="text"  autofocus="autofocus">
+ + 
+<input type="text" >
+ = 
+ <input type="text"  disabled="disabled">
+ 
+6-2. 위의 코딩을 jquery로 수정 하세요 
+  
+  

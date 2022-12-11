@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오후 2:04:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex02_05</h3>
+<button id="btn1">:first</button>
+<button id="btn2">:first-child</button>
+<button id="btn3">:first-child-of</button>
+
+
+<p>The first paragraph in body.</p>
+
+<div style="border:1px solid;">
+  <p>The first paragraph in div.</p>
+  <p>The last paragraph in div.</p>
+</div>
+<br>
+<div style="border:1px solid;">
+  <span>This is a span element.</span>
+  <p>The first paragraph in another div.</p>
+  <p>The last paragraph in another div.</p>
+</div>
+
+<p>The last paragraph in body.</p>
+
+
+
+<!--  -->
+<script>
+	// :first 와 :first-child와 :first-of-type 의 차이점 이해
+	$(function(){
+		$("#btn1").click(function() {
+			//$("p").css("background-color","yellow");
+			
+			//first 선택자 : 모든 p 태그중 첫번째 p 태그...
+			$("p:first").css("background-color","red");
+		});//btn 1 클릭
+		
+		$("#btn2").click(function() {
+			//first-child : 어떤 요소의 자식 요소 중에 첫번째 자식이 p 인 선택자
+			$("p:first-child").css("background-color","green");
+		});//btn 2 클릭
+		
+		$("#btn3").click(function() {
+			//first-child : 어떤 요소의 처음인 p 태그
+			$("p:first-of-type").css("background-color","blue");
+		});//btn 3 클릭
+	});
+</script>
+<!-- 
+	:first 와 :first-child와 :first-of-type 의 차이점 이해
+	1)모든 p 태그중 첫번째 p 태그
+	2)요소의 자식요소중 첫번째 자식이 p 태그인 선택자
+	3)어떤 요소의 처음인 p 태그 
+ -->
+<!--  -->
+<script>
+	//
+	
+</script>
+</body>
+</html>

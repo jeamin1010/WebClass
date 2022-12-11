@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 11:21:19</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  div{
+     width: 100px;
+     height: 100px;
+     background-color: green;
+     
+     position: absolute;
+  }
+</style>
+</head>
+<body>
+<h3>ex01_06.html</h3>
+
+<pre>
+   - 기본적으로 jquery는 애니메이션을 위한 큐(Queue == 대기열) 기능을 제공한다. 
+   A,B,C,D -> 은행 [    A, B, C, D  ]  -> 처리
+   - FIFO  == 대기열
+   - 피자주문=> FIFO
+</pre>
+
+<button>애니메이션 시작</button>
+<br>
+<br>
+<div>HELLO</div>
+
+<script>
+   $(function (){
+	   $("button").click( function (){
+		   var div =  $("div");
+		   
+		   // 1~ 4 애니  => 큐  
+		   
+		   // 1 애니~
+		   div.animate({ 
+			   height:'300px',
+			   opacity: "0.4"
+		   });
+		   
+		   // 2 애니~
+		  div.animate({ 
+			   width:'300px',
+			   opacity: "0.8"
+		   }, "slow");
+		   
+		// 3 애니~
+		  div.animate({ 
+			   height:'100px',
+			   opacity: "0.4"
+		   }, "slow");
+		
+		// 4 애니~
+		  div.animate({ 
+			   width:'100px',
+			   opacity: "0.8"
+		   }, "slow");
+		
+		// 5 애니~
+		  div.animate({ 
+			  fontSize:'3em'
+		   }, "slow");
+	   } );
+	   
+	   
+	   /* 
+	   jquery 체이닝
+	   div
+	       .animate()
+	       .animate()
+	       .animate()
+	       .animate();
+	   
+	   $("#demo")
+	        .css("color","red")
+	        .slideUp(2000)
+	        .slideDown();
+	   
+	    */
+   });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

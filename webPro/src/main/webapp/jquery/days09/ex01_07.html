@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 11:33:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   #panel, #flip{
+      color: white;
+      background-color: #555;
+      border:1px solid #666;
+      border-radius:3px;
+      text-align: center;
+      font-size: 18px;
+      padding: 5px; 
+   }
+   
+   #panel{
+      padding: 50px;
+      display: none;
+   }
+</style>
+</head>
+<body>
+<h3>ex01_07.html </h3>
+<pre>
+      stop()  :   애니메이션 완료되기 전에 중지(stop)
+                       슬라이딩, 페이딩, 사용자 정의 애니메이션을 포함한 모든 애 기능에 대해서 작동.
+                       
+      .stop( [queue ] [, clearQueue ] [, jumpToEnd ] )                 
+</pre>
+
+<button id="stop">Stop sliding</button>
+<br>
+<br>
+<div id="flip">Lorem ipsum dolor sit amet.</div>
+<div id="panel">Hello World!</div>
+
+<script>
+  /*
+  event.preventDefault();
+  event.stopPropagation();  이벤트 버블링 취소
+  이벤트  중지               전파
+  */
+  
+  $(function (){
+	  $("#flip").click( function (){
+		  $("#panel").slideDown(5000);
+	  } );
+	  $("#stop").click( function (){
+		  $("#panel").stop();  // 판넬 div 의 애니메이션 중지
+	  } );
+  });
+  
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

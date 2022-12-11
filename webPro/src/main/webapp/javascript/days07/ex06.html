@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 10:25:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex06.html - js 화살표 함수( 람다식 )</h3>
+
+<script>
+    // => 화살표 함수를 사용하면 함수를 더 짧은 구문으로 작성할 수 있다. 
+    // ES6 도입
+    /*
+    var hello = function (){
+    	// 1
+    	// 2
+    	// 3
+    	return "hello world";
+    }; 
+    */
+    
+    // 람다식
+    /*
+    var hello = () => {
+    	// 1
+    	// 2
+    	// 3
+    	return "hello world";
+    }
+    */
+    // 지금처럼   {   }  안에 return 문만 있는 경우에는  {} 중괄호 생략 + return 문 생략
+    // var hello = () => "hello world" ;
+    
+    /*
+    var hello = function (  name ){ 
+    	return "hello world " + name;
+    }; 
+    */
+    
+    // 매개변수가 1개인 경우에만  () 괄호를 생략할 수 있다.
+    // var hello =   ( name ) =>  	 "hello world " + name;
+    // var hello =    name  =>  	 "hello world " + name;
+    
+    var hello = () => {
+    	// 람다식에서의 this는   ? 함수의 소유한자..
+    	console.log( this );
+    }
+    
+    console.log(   hello()  );
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

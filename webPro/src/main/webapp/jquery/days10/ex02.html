@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오전 9:31:58</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex02.html - jq method   text(), val(), html() :   매개변수  (  , callback)</h3>
+
+
+<!-- p#demo>lorem10 -->
+<!-- 
+<p id="demo">Lorem ipsum <b>dolor</b> sit amet, consectetur adipisicing elit. </p>
+ -->
+
+<p>Lorem ipsum <b>dolor</b> sit amet, consectetur adipisicing elit. </p>
+<p>Lorem ipsum <b>dolor</b> sit amet, consectetur adipisicing elit. </p>
+<p>Lorem ipsum <b>dolor</b> sit amet, consectetur adipisicing elit. </p>
+ 
+<button id="btn1">Show Text</button>
+
+<script>
+  $(function (){
+	  $("#btn1").click( function (){
+		  
+		  // $("#demo").text( function (index, origText ){
+			  $("p").text( function (index, origText ){
+			  
+			  return "[" + origText + "] - " + index ;
+			  
+		  } );
+		  
+	  }); // click
+  }); // ready
+</script>
+
+<hr>
+  <a href="ex01.html">ex01.html</a>
+  <button id="btn2">확인</button>
+  
+  <script>
+     /*
+     // 확인 버튼을 클릭할 때..
+     // a 태그의 href="ex01.html?name=admin&age=20"          JSP
+     $("#btn2").on("click", function (){
+    	  // console.log(  $(this).prev().prop("tagName") );  // A
+    	  // console.log( $(this).prev() );
+    	  
+    	  var origHref = $(this).prev().prop("href");
+    	  // http://localhost/webPro/jquery/days10/ex01.htm
+    	  // console.log(  origHref );
+    	  origHref += "?name=admin&age=20";
+    	  $(this).prev().prop("href", origHref);
+     });		 
+     */
+     
+     // 위의 코딩을 콜백함수 사용해서 수정.
+     $("#btn2").on("click", function (){
+    	 $(this).prev().attr("href" , function ( index, origHref){
+    		 return origHref + "?name=admin&age=20";
+    		 });
+     });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

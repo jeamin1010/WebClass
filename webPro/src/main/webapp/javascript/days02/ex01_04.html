@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 18. 오전 11:35:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+	<h3>ex01_04.html - [ js ]html 속성 변경</h3>
+	<pre>
+         [Turn on]  클릭하면   [Turn off]       전구 불 ON
+         [Turn off]  클릭하면   [Turn on]       전구 불 OFF
+    </pre>
+	<!-- 문제 2 풀이 -->
+	<button>Turn on</button>
+
+	<br>
+	<img src="../images/pic_bulboff.gif" alt="" id="bulb">
+
+	<!-- js -->
+	<script>	   
+	  /*
+	   document.querySelector("button").onclick = function (){
+		    // alert( this.innerText );		    alert( this.innerHTML );
+		    let bulb = document.getElementById("bulb");
+		    var text = this.innerText;
+		    
+		    if( text == "Turn on"){ // js     if~else                   equals()		    	 
+				bulb.src = "../images/pic_bulbon.gif";
+				this.innerText = "Turn off";
+		    }else{		    	
+				bulb.src = "../images/pic_bulboff.gif";
+				this.innerText = "Turn on";
+		    } // if
+		    
+	   }
+	*/
+	</script>
+	<script>	  
+	   /*
+	   // 스위치 변수 사용
+	   
+	   var sw = false;
+	   let bulb = document.getElementById("bulb");
+	   document.querySelector("button").onmouseover= function (){		 
+	   document.querySelector("button").onclick = function (){		  
+	 
+		   // if( !sw ){ 		    	 
+		   //	bulb.src = "../images/pic_bulbon.gif";
+		   // }else{		    	
+		   //	bulb.src = "../images/pic_bulboff.gif";
+		   // } // if
+		  
+		    // js 삼항연산자  ? :
+		    //  bulb.src =   sw ? "../images/pic_bulboff.gif" : "../images/pic_bulbon.gif";
+		    bulb.src = "../images/pic_bulb" +  ( sw ? "off" : "on" ) + ".gif";		    
+		    this.innerText =   sw ?   "Turn on" : "Turn off"; 
+		    sw = !sw;
+	   } 
+	   */
+	</script>
+
+	<!-- jquery -->
+	<script>
+		 /* 각자 해 보기 */
+		  let bulb = document.getElementById("bulb");
+		 $("")
+	</script>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 10:33:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  div{
+     width:100px;
+     height:100px;
+     background:gray;
+     margin:3px;
+     
+     float: left; 
+     
+     display: none;
+  }
+</style>
+</head>
+<body>
+<h3>ex01_04.html - jquery 효과 : show, hide, toggle, fade,  [ slide ] </h3>
+
+<pre>
+   1. slideDown()
+   2. slideUp()
+   3. slideToggle()
+</pre>
+
+Click me!
+<div></div>
+<div></div>
+<div></div>
+
+<script>
+   $(document.body).click(function (){
+	   
+	   $("div").slideToggle("slow");
+	   
+	   /*
+	   if (   $("div").first().is(":hidden")   ) {
+		  $("div").slideDown("slow");
+	  } else {
+		  // 
+		  // $("div").hide();
+		  $("div").slideUp("slow");
+	  }
+	   */
+   });
+</script>
+</body>
+</html>

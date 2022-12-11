@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29. 오전 5:01:03</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<h3>ex.03.html - DOM 탐색 </h3>
+<!-- 10:05 수업시작 -->
+
+<pre>
+   1. html 문서의 모든 것은 Node(노드)이다.
+   2. Document 노드  == 전체 문서
+      
+       <span style="">text</span> 
+       요소  노드 (element node)
+       속성  노드 ( attribute node)
+       텍스트 노드( Text node)
+       주석 노드( comment node)
+       
+    3. 모든 노드들은 관계 맺고 있다. 
+        - 부모 : 자식
+           parentNode
+           childNode
+           
+        - 형제
+        next[Element]Sibling   다음 형제 요소         
+        [A E NODE]  - [B A NODE] - [C E NODE]
+             (기준)                  X
+        nextSibling  다음 형제 노드    
+        
+        previousElementSibling  이전 형제 요소
+        previousSibling                이전 형제 노드
+        
+        - 자식 노드 
+           firstChild 첫 번째 자식 노드
+           lastChild   마지막 자식 노드
+           
+     4. 노드 트리에서 최상위 노드 ?     (  html 노드   == 루트 노드 )
+         루트 노드를 제외한 모든 노드들은 하나의 부모 노드를 가진다. 
+         하나의 노드는 여러 자식 노드를 가질 수 있다. 
+         형제 노드는 부모 노드가 같은 노드들이다. 
+           
+       5. 노드 들 간의 탐색할 때 자주 사용되는 속성
+           1) parentNode 속성 : 부모노드
+           2) childNodes 속성 : 모든 자식 노드 목록  nodeList
+           3) firstChild 속성
+           4) lastChild 속성
+           5) nextSibling 속성
+           6) previousSibling 속성
+</pre>
+
+</body>
+</html>

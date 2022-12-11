@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 2:26:46</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+ body *{
+     display: block;
+     border:2px solid lightgray;
+     color:lightgray;
+     padding:5px;
+     margin:15px;
+  }
+</style>
+</head>
+<body>
+<h3>ex09.html - 탐색</h3>
+<pre>
+   1. 조상 탐색
+       parent(), parents(), parentsUntil()
+   2. 후손 탐색
+       children(), find()
+   3. 형제 탐색
+      siblings()      
+      next()  / prev()      
+      nextAll(), nextUntil()
+      prevAll(), prevUntil()
+</pre>
+
+<div>div (parent)
+  <p>p</p>
+  <span>span</span>
+                                       <h2>h2</h2>
+  <h3>h3</h3>
+  <h3>h3</h3>
+  <h3>h3</h3>
+  <p>p</p>
+</div>
+ 
+<script>
+  $(function (){
+	  
+	  //$("h2").siblings()   h2 모든 형제들..
+	  // $("h2").siblings("p")  //h2    모든  p 형제 
+	  
+	  // $("h2").next()   // 다음 형제 요소
+	  //$("h2").nextAll()   // 모든 다음 형제 요소
+	  $("h2").nextUntil("p")   // 모든 다음 형제 요소
+	                     .css({
+	                    	 "color" :"red",
+	                    	"border":"2px solid red"	 
+	                     })
+	                     .end()
+	             // .prev()
+	            // .prevAll()
+	            .prevUntil("p")
+	                  . css({
+	                    	 "color" :"blue",
+		                    	"border":"2px solid blue"	 
+		                     })
+  }); // ready
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

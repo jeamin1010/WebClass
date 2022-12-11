@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 3:11:33</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex13.html - setTimeout()/ clearTimeout()/ [setInterval()/ clearInterval]</h3>
+<h1 id="demo"></h1>
+
+<button>setInterval</button>
+<button>clearInterval</button>
+
+<script>
+$("button").first().on("click", function(){
+   dispTime();
+   
+   timer1 = setInterval( dispTime, 1000 );
+});
+
+var timer1;
+
+function dispTime(){
+   var now = new Date();
+   $("#demo").html( now.toLocaleString() );
+};
+
+$("button:nth-of-type(2)").on("click", function(){
+});
+</script>
+
+
+<script>
+	//
+	
+</script>
+</body>
+</html>

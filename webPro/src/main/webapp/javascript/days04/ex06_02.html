@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오후 3:43:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+input{
+	width: 100%;
+}
+</style>
+</head>
+<body>
+<h3>ex06_02.html</h3>
+
+팀원 이름 : 
+<input type="text" value="김가율(팀장), 조민경(기술고문), 임희진, 이재민, 엄태혁, 황수빈, 박혜은">
+<div id ="demo">
+	<!-- 
+		<li>김가율</li> 
+		<li>조민경</li> 
+		-->
+</div>
+<script>
+	//
+	document.querySelector("input[type=text]").onkeydown = function () {
+		if (event.keyCode==13) {
+			// 1. 텍스트박스에서 입력받은 팀원명을  얻어와,
+			var team = this.value;
+			// 2. 구분자(,) 콤마로 문자열 자르기
+			// 3. js 배열에 저장
+			var teamList = team.split(",");
+			/* 
+			for (var i = 0; i < teamList.length; i++) {
+				console.log(teamList[i].trim());
+			}
+			 */
+			
+			// 4. js 배열을 반복문을 사용하여 <li>김가율</li> 
+			// 5. <div id="demo"> 자식으로 추가 or innerHTML 설정.
+			var demo = document.querySelector("#demo");
+			/*
+			//DOM
+			for (var i = 0; i < teamList.length; i++) {
+				var li = document.createElement("li");
+				li.innerText = teamList[i].trim();
+				demo.appendChild(li);		
+			}// for
+			*/
+			
+			var content ="<ol>";
+			for (var i = 0; i < teamList.length; i++) {
+				content += "<li>";
+				content += teamList[i].trim();
+				content += "</li>";
+			}//for
+			content += "</ol>";
+			demo.innerHTML = content;
+		}
+	}
+</script>
+
+
+
+
+
+
+<!-- js -->
+<script>
+	//
+	
+</script>
+
+<!-- jquery -->
+<script>
+	//
+	
+</script>
+</body>
+</html>

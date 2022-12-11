@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오전 10:45:55</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex08.html - js 모듈</h3>
+
+<pre>
+     - js 모듈을 사용하면 코드를 별도의 파일로 나누어 저장 -> 관리(유지, 보수)
+                                      변수 , 함수 
+     - import(수입) / export(수출하다) 문을 사용
+     - ex08_person.js              :    변수
+     - ex08_message.js           :    함수
+     11:00 수업 시작~ 
+</pre>
+
+
+<p id="demo"></p>
+
+<script type="module">
+   // Uncaught SyntaxError: Cannot use import statement outside a module
+   import {name, age}  from "./ex08_person.js";
+   
+   let content = "name="+name +", age=" + age;
+   $("#demo").html( content );
+</script>
+
+
+<script type="module"> 
+   import message  from "./ex08_message.js";
+    
+   $("#demo").html(  message()  );
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

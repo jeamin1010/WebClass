@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 2:38:08</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex10.html - jquery 탐색</h3>
+<pre>
+  1. 조상 탐색
+  2. 후손 탐색
+  3. 형제 탐색
+  
+  4. 필터링
+      first()
+      last()
+      not()
+      eq()
+      
+      filter()
+</pre>
+
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in a div.</p>
+  <p>Another paragraph in a div.</p>
+</div>
+<br>
+
+<div class="second" style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+<br>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+
+<script>
+    $(function (){
+    	$("div")
+    	      .first()        // div 태그 중에 첫 번째..
+    	             .css("background-color","yellow")
+    	      .end()
+    	      .last()
+    	            .css("background-color","red") 
+    	      .end()  
+    	      .filter(".second")
+    	            .css("background-color","green")
+    	      .end()
+    	      .not(".sceond")
+    	            .css("color","white")
+    	      .end()
+    	      //.eq(1)    index
+    	      //        .css();
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

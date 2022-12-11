@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오후 4:18:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex07.html - js 제어문 </h3>
+<pre>
+    1. if, if~else, if ~else if~ else
+    2. switch ~case + break
+    3. for / foreach
+    4. while(){}
+        do{
+        }while();
+</pre>
+
+정수 : <input type="text"  id="txtnum">
+<br>
+<p id="demo"></p>
+
+<script>
+   /*
+   $("#txtnum").keydown(function() {
+   	    if( event.keyCode == 13 ){
+   	    	// 필수 입력 사항 + 정수 입력.  isNaN() , 정규표현식   /^\d+$/
+   	    	 
+   	    	if( !$("#txtnum").val().trim()){         
+   	    		alert("필수 입력!!!");
+   	    		return ;
+   	    	}
+   	    	 
+   	    	var n = Number(  $("#txtnum").val() );
+   	    	if ( n % 2 == 0) {
+				// 짝수
+			} else {
+                 // 홀수
+			}
+   	    }
+   });
+   */
+</script>
+<script>
+   /*
+  $("#txtnum").keydown(function() {
+	  var n = Number(  $("#txtnum").val() );
+	  switch (   n % 2  ) {
+		case 0:
+			break;
+		default:
+			break;
+		}
+   }
+  */
+</script>
+<script>
+ 
+  $("#txtnum").keydown(function() {
+	  if( event.keyCode == 13 ){
+				  var n = Number(  $("#txtnum").val() );
+				  var content = "";
+				  
+				  var sum = 0;
+				  /*
+				  for (var i = 1; i <= n; i++) {
+					  content += i+"+";
+					  sum += i;
+				 } // for
+				 */
+				 var i = 1;
+				 while( i <= n ){
+					 content += i+"+";
+					  sum += i;
+					  i++;
+				 } // while			 
+				 
+				  content += "=" + sum;
+				  
+				  $("#demo").html( content );
+				  
+				  //for ( var x in iterable) { }
+				  //for ( var x of iterable) { }
+	  } // if
+	   
+   });
+ 
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

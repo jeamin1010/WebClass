@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오전 10:44:06</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex03_02.html</h3>
+
+<p>Lorem ipsum dolor sit amet.</p>
+<p>In omnis incidunt quisquam veritatis.</p>
+
+<script>
+   // 모든 p 요소에 마지막 자식으로 추가.
+   // $("p").append("<b>Append Text</b>");
+   
+   // $("<b></b>").text("Append Text").addClass("box")
+   $("<b class='box'>Append Text</b>").appendTo($("p"));
+</script>
+
+ <!-- ol>li*3>{$.}+lorem3 --> 
+<ul>
+	<li>1. Lorem ipsum dolor.</li>
+	<li class="clear">2. Aliquam dolore incidunt.</li>
+	<li>3. Aperiam dolore a.</li>
+</ul>
+
+<script>
+    $( "ul li" ).addClass(function( index ) {
+	  return "item-" + index;
+	});
+</script>
+
+<button>모든 li 요소 제거</button>
+<script>
+    // prepend(), prependTo() 설명
+    // 11:05 수업시작~
+    // $("ul").append( "<li>4. new list item</li>" )  ;  // htmlString
+    
+    // 마지막 자식으로 추가  append()
+    // 첫 번째 자식으로 추가. prepend()
+    // $("ul").prepend( "<li>4. new list item</li>" )  ;  // htmlString
+    
+    // var $li = $( "<li>5. new list item</li>" );
+    // $li.prependTo( $("ul")  );
+    
+    // $("ul li").last().prependTo($("ul"));
+    
+    // alert( $("ul li").eq(2).text() );
+    $("ul li").eq(2)
+              .before( $("<li>3-1. list item</li>") )
+              .after( $("<li>3-2. list item</li>"))
+    
+</script>
+<script>
+    $("button").click(function (){
+    	// $("ul").html("");
+    	
+    	// $("ul li").remove(); // 선택한 요소 제거
+    	
+    	// $("ul").empty();  // 모든 자식 제거
+    	
+    	// 모든 li 를 제거 X,  li 태그 중에 clear 클래스명를 가진 li 만 제거
+        // $("ul  li.clear").remove();
+    	
+    	// remove( 필터링 jq selector ) 
+    	// $("ul  li").remove(".clear");
+    	
+    	// 모든 li 를 제거 X,  li 태그 중에 clear 클래스명를 가진 li 만 그외 li 제거
+    	// $("ul li").not(".clear").remove();
+    	// $("ul li:not(.clear)").remove();
+    	// $("ul li").remove(":not(.clear)");
+    	
+    	$("ul li").remove(":contains('Aliquam')");
+    	
+    	
+    	
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

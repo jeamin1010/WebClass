@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 30. 오전 10:50:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+   div{
+      background-color: green;
+      height: 100px;
+      width: 100px;
+      
+      position: absolute;
+   }
+</style>
+</head>
+<body>
+<h3>ex01_05.html - show, hide, toggle, fade, slide,   [animate] </h3>
+
+<pre>
+    // 11:05 수업 시작
+    jquery method
+    animate( {css properties }, [duration], [easing], [ callback])
+</pre>
+
+<button>애니메이션 시작</button>
+<br>
+<br>
+<div></div>
+
+<script> 
+ 
+   $("button").click(function (){
+	   // 미리 정의된 값을 사용할 수 도 있다. 
+	   $("div").animate({ 
+		    height: "toggle"          // "hide"  "show"
+	   });
+   }); 
+ 
+</script>
+
+<script> 
+    /*
+   $("button").click(function (){
+	   // 여러 css 속성을 동시에 애니메이션 ..
+	   $("div").animate({
+		    "left":"250px",
+		    opacity: "0.5",
+		    height:"150px",
+		    width:"150px"
+	   });
+   }); 
+    */
+</script>
+
+<script>
+   /*
+   $("button").click(function (){
+	   $("div").animate({
+		    left:"+=50px"           //  +=  , -=  현재 let 위치에서 50px 이동( 상대 값 )
+	   });
+   });
+   */
+</script>
+<script>
+  /*
+   $("button").click(function (){
+	   $("div").animate({
+		    left:"250px"
+	   });
+   });
+  */
+</script>
+</body>
+</html>

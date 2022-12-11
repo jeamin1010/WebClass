@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 29 오후 2:02:34</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex08_02.html</h3>
+
+<pre>
+  1. 쿠키 생성
+  2. 쿠키 삭제
+  3. 쿠키 확인
+  4. 쿠키 수정( 다시 같은 쿠키명으로 생성 )
+  
+  쿠키 생성 2가지 - 클라이언트 ( 컴퓨터 -텍스트 파일 저장)
+   1) 클라이언트  js 쿠키 생성, 사용 방법
+   2) 서버          jsp 쿠키 생성, 사용 방법    => 응답 + 쿠키생성
+   
+   document.cookie 속성 : 저장, 읽기.
+   
+   
+   cookie.js
+</pre>
+
+쿠키이름 :  <input type="text" id="cookieName"><br> 
+쿠키값 :  <input type="text" id="cookieValue"><br>   <!-- 홍길동  => escape( ASCII 인코딩 저장  ) -->
+<br>
+
+<button onclick="setCookie();">쿠키 생성(수정)</button>
+<button onclick="getAllCookies();">모든 쿠키 확인</button>
+<button onclick="getCookie();">쿠키 확인</button>
+<button onclick="delCookie();">쿠키 삭제</button>
+
+<p id="demo"></p>
+
+
+<script>
+    function setCookie() {
+    	var cname = document.getElementById("cookieName").value;
+    	var cvalue = document.getElementById("cookieValue").value;
+    	
+    	var now = new Date();  // 오늘날짜 + 10 일 추가
+    	now.setDate(  now.getDate() + 10 );
+    	// console.log( now.toLocaleString() );
+    	
+    	// 쿠키이름="쿠키값"; 만료시점="날짜"; 경로="/"; 도메인="도메인명"; 보안(true/false)
+		 document.cookie =  cname +  "=" + escape(cvalue) + "; expires=" + now.toUTCString() ;  //  문자열 형식
+		 
+		 document.getElementById("cookieName").value = "";
+		 document.getElementById("cookieValue").value = "";
+		 
+		 // ( 기억 )
+		 // 브라우저  [localhost/webPro/javascript/days09] URL 경로  요청파일     -> 요청 ->   서버
+		 //                        쿠키값 서버 전송 X                                                                 자동  전달
+		 //                        name, age                                                                                             전달된 쿠키값을 사용해서 서버 처리.( JSP/Servlet )
+	}
+	function getAllCookies() {
+		// name=admin; age=20
+		var cookies =  document.cookie;
+		
+		document.getElementById("demo").innerHTML = cookies;
+	}
+	
+	// 3:01 수업 시작~
+	function getCookie() {
+		var cname = document.getElementById("cookieName").value;
+		// "name=admin; age=20"
+		var cookies =  document.cookie;
+		//  cookies  문자열 파싱
+		var cookieArray = cookies.split(";");   // string or regexp
+		for (var i = 0; i < cookieArray.length; i++) {
+			 var cnv = cookieArray[i].split("=");
+			  // var cname =  cnv[0]; 
+			  if(  cname == cnv[0].trim() ){
+				  var cvalue =  cnv[1];
+				  document.getElementById("cookieValue").value =  unescape( cvalue );
+				  break;
+			  }
+		}
+		
+	}
+	function delCookie() {
+	     // 만료시점을 지정하지 않으면 브라우저 닫으면 쿠키 자동 삭제.
+	     // 같은 쿠키이름으로 쿠키 생성 +  만료시점을 과거로 설정
+	     
+	     var cname = document.getElementById("cookieName").value;
+    	
+    	var now = new Date();  // 오늘날짜 + 10 일 추가
+    	now.setDate(  now.getDate() - 10 );
+    	// console.log( now.toLocaleString() );
+    	
+    	// 쿠키이름="쿠키값"; 만료시점="날짜"; 경로="/"; 도메인="도메인명"; 보안(true/false)
+		 document.cookie =  cname +  "=; expires=" + now.toUTCString() ;  //  문자열 형식
+		 
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

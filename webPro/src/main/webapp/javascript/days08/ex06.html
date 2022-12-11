@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오후 3:06:28</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex06.html - BOM location 객체</h3>
+<pre>
+     1. window
+     2. screen
+     3. window.location 객체
+           - 윈도우(창)  위치
+           - 현재 페이지 주소(URL)를 가져오고
+           - 현재 페이지 주소(URL)를 새로 설정 -> 이동 ( redirect )
+</pre>
+
+<a href="ex01.html?msg=hello&age=10">ex01.html</a>
+<br>
+<button onclick="move()">URL이동</button>
+
+<br>
+<br>
+<br>
+<button onclick="history.back()">이전 페이지로 이동</button>
+
+
+<script>
+   var url = location.href;
+   console.log( url )
+   
+   console.log(  location.hostname ) ; // 도메인이름 반환
+   console.log(  location.protocol ) ; // 웹 프로토콜 반환
+   console.log(  location.port ) ; // 포트번호 반환
+   
+</script>
+
+<script>
+    function move(){
+    	// 쌍용교육센터 사이트
+    	// location.href = "http://www.sist.co.kr";      속성 *****
+    	// console.log( location.href );  현재 페이지 주소(URL)를 가져오고
+    	
+    	location.assign("http://www.sist.co.kr"); // 새 페이지로 이동  , 함수
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 25. 오후 2:50:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<h3>ex12_02.html - js 함수 bind()</h3>
+<pre>
+	- bind : 묶다, 감싸다.
+	- 다른 객체의 메서드를 빌린다. + 실행 X
+	
+	- call()/apply() 와 bind() 차이점
+	
+</pre>
+
+
+
+<script>
+	//
+	var person = {
+			name:"admin",
+			age : 20,
+			print:function(){
+				return this.name + " " + this.age;
+			}
+	};
+	
+	
+	// member 객체에는 print() 메서드가 없다
+	var member = {
+			name:"kim",
+			age : 34
+	};
+	
+	//console.log(person.print.call(member));//kim/34
+	//console.log(person.print.apply(member));//kim/34
+	
+	//console.log(person.print.bind(member));
+	/* 
+	결과값
+	ƒ (){
+				return this.name + " " + this.age;
+			}
+	함수 차용 + 		호출() X
+	*/
+	var fnprint =person.print.bind(member);
+	console.log(fnprint());// kim/ 34
+	
+	
+	
+	function sum(){
+		console.log("합");
+	}
+	console.log(sum);
+	/* 
+	결과값
+	ƒ sum(){
+		console.log("합");
+	}
+	*/
+</script>
+
+
+<script>
+	//
+	
+</script>
+</body>
+</html>

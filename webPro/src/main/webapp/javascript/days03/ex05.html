@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 21. 오후 3:24:24</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* css 선택자 */
+  input[type=text]{
+     border: 1px solid grey;
+     padding: 5px;
+     font-size: 20px;
+     margin:10px;
+     width:90%;
+  }
+  
+  /* 특정상태 ,   :의사클래스 */
+  input[type=text]:focus{
+     background-color: yellow;
+  }
+</style>
+</head>
+<!-- <body onload="init()"> -->
+<body>
+
+<pre>
+   [ 키보드 관련 이벤트 ]
+   1. keydown 이벤트   :  키보드를 누를 때   Ctrl, F1 인식 O, 대소문자 구분 X, 키보드 취소 가능
+   2. keypress 이벤트  :  키보드를 누를 때   Ctrl, F1 인식 X, 대소문자 구분 O, 키보드 취소 가능
+   3. keyup 이벤트      :  키보드 놓을 때
+</pre>
+
+<!-- autofocus="autofocus" -->
+<input type="text"  id="txt01"  tabindex="1"  onkeyup="txt01_keyup();">
+<br>
+<input type="text"  id="txt02"  tabindex="2">
+
+<script>
+    // global scope
+    var txtbox01 ; 
+    let  txtbox02;
+
+     window.onload = function (){
+    	 // 초기화
+    	 // function scope
+    	 // var txtbox01 = document.getElementById("txt01");    	 
+    	 txtbox01 = document.getElementById("txt01");
+    	 txtbox02 = document.getElementById("txt02");
+    	 
+    	 txtbox01.focus();
+    	 
+    	 // focus  : 초점을 맞출 때 일어나는 이벤트 
+    	 // blur    : 초점을 잃을 때      "
+     }
+     
+     function txt01_keyup(){
+    	 /*
+		 // 이벤트 정보 :  event 객체 
+		 // event.srcElement 이벤트가 발생한 객체
+		 // console.log( event.type ); // "keyup"		 
+		 let uniCode = event.keyCode ;
+		 txtbox02.value = uniCode + "(" + String.fromCharCode(uniCode)  +")";
+		 */
+		 
+		 // 입력을 끝낸 후 엔터키를 누를 때....  
+		 if (  event.keyCode  == 13 ) {
+			 txtbox02.value =  txtbox01.value;
+		} // if
+	 
+	 } // txt01_keyup
+     
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오전 10:01:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>sample01.html</h3>
+
+<form action="sample01_ok.jsp" method="get">
+[ 과목 선택 ] <br>
+ <input type="radio" name="subject"   value="kor"><label>국어</label><br>
+ <input type="radio"  name="subject"  value="eng"><label>영어</label><br>
+ <input type="radio"  name="subject"  value="mat"><label>수학</label><br>
+ <input type="radio"  name="subject"  value="pe"><label>체육</label><br>
+</form> 
+ <!-- js -->
+<script>
+  /*
+  var rdbs =  document.querySelectorAll("[name=subject]");
+  for (var i = 0; i < rdbs.length; i++) {
+	   rdbs[i].onclick = function(){		 
+		   document.forms[0].submit();
+	   }
+  } // for
+  */
+</script>     
+
+<!-- jquery -->
+<script>
+   $(":radio").click(function() {
+   	    $("form").get(0).submit();
+   });
+</script>
+</body>
+</html>
+
+<!-- 
+function zipcodeCheck( zipcode ){
+    	var pattern = /(\d{3}-\d{3}|\d{5})/;
+    	return pattern.test(zipcode);
+}
+ -->

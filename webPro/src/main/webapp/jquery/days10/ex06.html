@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 12:38:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex06.html</h3>
+
+<a href="http://www.sist.co.kr">쌍용교육센터</a>
+
+ <!-- jquery 탐색 -->
+<script>
+   $("a").click(function (){
+	   // 기본 기능 X
+	   event.preventDefault();
+	   //  event.stopPropagation()  중지전파()             이벤트 버블링 X
+	   // 자식 클릭-> 부모 클릭 이벤트 발생( 버블링 )
+	   
+	   $("h3").hide();
+   });
+</script>
+</body>
+</html>

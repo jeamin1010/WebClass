@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 22. 오후 3:08:03</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+<!-- [object HTMLHeadingElement] -->
+<!-- 이때 this 는 이벤트를 받은 객체를 나타낸다. -->
+<h3 onclick="alert(this);">ex05.html - 엄격모드 선언 , this 의 사용처에 따른 의미, js 이벤트 처리</h3>
+
+<script>
+	//
+	//1)on 이벤트명=""
+	//2)document.getElementById("demo").on이벤트명 = function(){};
+	//2)document.getElementById("demo").addEventListener("click", function(e) {}
+	
+</script>
+
+
+<script>
+	//"use strict"; // 엄격 모드 선언
+	//[this 키워드]가 사용되는곳(방법)에 따라 다른 객체를 가리킨다.
+	
+	
+	//(1). [object window]  		BOM 최상위 객체 B= browser
+	//alert(this);
+	
+	//(2). 함수 안에서 				this 		[object window]
+	//				엄격모드			this 		[undefined]
+	/*
+	function test() {
+		alert(this);
+	}
+	test(); // 호출
+	*/
+	
+	//(3). 이벤트 핸들러(청취자, 수신기)에서 this
+	//[object HTMLHeadingElement]
+	//<h3 onclick="alert(this);">ex05.html</h3>
+	
+	//(4). person 객체 내의 this 
+	// 이때 this 는 person 객체의 자기 자신(object)
+	/*
+	var person ={
+			name : "admin"
+			,disInfo : function() {
+			//	return this.name;
+			alert(this); //[object Object]
+			}
+	}
+	person.disInfo(); //[object Object]
+	*/
+</script>
+
+
+<!-- js -->
+<script>
+	//"use strict";
+	//스크립트 또는 함수의 시작 부분에 선언
+	//변수는 꼭 선언하고 사용하겠다. - "엄격 모드 선언"
+	
+	//x=200;
+	//console.log(x);
+	//console.log(X);//Uncaught ReferenceError: X is not defined
+	
+	
+	
+	//var x; // js 호이스팅
+</script>
+
+<!-- jquery -->
+<script>
+	//
+	
+</script>
+</body>
+</html>

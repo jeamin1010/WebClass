@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 18. 오후 3:49:16</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex05.html</h3>
+
+<pre>
+  1.  option을 선택하게되면 일어나는 이벤트 - [ change 이벤트 ] 
+  2. 여러 option 들 중에 어떤 option이 선택 
+       - selectedIndex 속성
+  3. 선택된 option의 value, text 
+       select.options[selectedIndex].value,   .text 컬렉션     
+       
+    주의)    선택된 옵션을 다시 선택하면 chage 이벤트는 발생하지 않는다. 
+</pre>
+
+좋아하는 과목 선택 ? 
+<br>
+<!-- select>option*5 -->
+<!-- select 요소에서 text 속성만 설정하는 value 속성은 동일한 값. -->
+<select name="subject" id="subject">
+	<option value="">선택하세요.</option>
+	<option value="kor">국어</option>
+	<option value="eng">영어</option>
+	<option value="mat">수학</option>
+	<option value="pe">체육</option>
+</select>
+ 
+<br>
+
+<!-- 4:05 수업 시작 -->
+<p id="demo"></p>
+
+<!-- js -->
+<script>
+     /*
+    document.getElementById("subject").onchange= function (){
+    	// console.log( "change event ~");
+    	// console.log(  this.selectedIndex );
+    	var index = this.selectedIndex;
+    	var op = this.options[index];
+    	if( op.value == 0 ) {
+    		alert("선택하세요~~")
+    	}else{
+    		console.log(  op.value + " / " +  op.text );	
+    	}    	
+    }
+     */
+</script>
+<script>
+    /*
+    //                                      kor - undefined
+	document.getElementById("subject").onchange= function (){
+		 console.log(   this.value  + " - " + this.text  );
+	}
+    */
+</script>
+
+<!--  jquery -->
+<script>
+    // alert( $("#subject option").length );
+    // alert( $("#subject option").size() );  X
+
+    $("#subject").change(function() {
+    	// console.log(  $(this).val() +" // " + $(this).text()  );
+    	
+    	// jquery selector  -   :checked,         :selected
+    	// console.log(  $("#subject option:selected").text()  );
+    	
+    	// jquery method -  find()
+    	console.log(  $(this).val() +" // " + $(this).find(":selected").text()  );
+    	
+    	// http://erel.kr/bbs/board.php?bo_table=study&wr_id=275
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

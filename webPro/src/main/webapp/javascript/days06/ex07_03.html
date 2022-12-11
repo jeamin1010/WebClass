@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 24. 오후 4:48:38</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex07_02.html  -  js 제어문( for of)</h3>
+<pre>
+    [js 제어문( for of)]
+    - ES6(2015) 새로 추가된 문
+    - IE 지원되지 않아요.
+    - 반복 가능한 객체의 값을 반복하는 문
+      (Arrays, Strings, [ Maps, NodeLists ]X 반복가능한 데이터 구조.  )
+</pre>
+<script>
+    /*
+    var m = [3,5,2,4,1];
+    for ( var n of m) {
+		console.log( n );
+	}
+    */
+    
+    var msg = "hello world!";
+    
+    /*
+    for (var i = 0; i < msg.length; i++) {
+		console.log(  msg.charAt(i) );
+	} // for
+    */
+    
+    for (let ch of msg) {
+		console.log("["+ch + "]")
+	}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오후 12:33:20</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex03_03.html</h3>
+
+<table border="1" style="width:100%">
+   <tr>
+   	<td>절대위치</td>
+   	<td onclick="fn_moveto()">moveTo()</td>
+   </tr>
+   <tr>
+   	<td>상대위치</td>
+   	<td onclick="fn_moveby()">moveBy()</td>
+   </tr>
+   <tr>
+   	<td>절대크기</td>
+   	<td onclick="fn_resizeto()">resizeTo</td>
+   </tr>
+   <tr>
+   	<td>상대크기</td>
+   	<td onclick="fn_resizeby()">resizeBy</td>
+   </tr>
+   <tr>
+   	<td><button onclick="win_shake();">창 흔들기</button></td>
+   	<td><button onclick="win_close();">창 닫기</button></td>
+   </tr>
+</table>
+
+<script>
+   function fn_moveto(){
+	   window.moveTo(10,10); // 절대 위치
+   }
+   function fn_moveby(){
+	   window.moveBy(10,10); // 상대 위치
+   }
+   function fn_resizeto(){  // 절대크기
+	   window.resizeTo(300,300);
+   }
+   function fn_resizeby(){ // 상대크기
+	   window.resizeBy(10,10);
+   }
+   function win_shake(){
+	   // moveBy(??,??)
+   }
+   function win_close(){
+	   self.close();
+   }
+</script>
+</body>
+</html>

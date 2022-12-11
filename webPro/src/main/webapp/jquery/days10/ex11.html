@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 2:48:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex11.html </h3>
+
+<pre>
+  jQuery 프레임워크  사용 + 다른 프레임워크 함께 사용.
+   $ 기호                                    $ 기호                            [ 충돌 ]
+   jQuery("p")
+   작동 X
+   
+   => jquery method :   noConflict() 메서드를 사용해서 충돌 해결..
+</pre>
+
+<script>
+   $.noConflict();
+   jQuery(function (){
+	   jQuery("h3").css("color","red");
+   })
+</script>
+
+<script>
+     /*   
+     var jq = $.noConflict();
+     
+     jq(function (){
+    	 jq("h3").css("color","red");
+     });
+     */
+</script>
+    
+<script>
+	//noConflict() 메서드의 기능은 
+	//         다른 프레임워크( 스크립트 )에서 사용할 수 있도록 $식별자 해제.
+	/*
+	$.noConflict();
+	jQuery(function ($){
+		$("h3").css("color","red");
+	});
+	*/
+</script>
+</body>
+</html>
+
+
+
+
+
+

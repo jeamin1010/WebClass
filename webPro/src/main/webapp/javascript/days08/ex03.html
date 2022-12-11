@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 11. 28. 오후 12:23:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex03.html - js BOM</h3>
+
+<pre>
+   [ js  BOM]
+   1. Browser Object Model ( 브라우저 객체 모델 ) 약어
+   2. BOM 종류
+        - window 객체를 모든 브라우저에서 지원한다. 
+        - 최상위 부모 객체
+        - 전역변수, 함수 선언하면 자동으로 window 객체의 구성원이 된다. 
+        - 브라우저 창(윈도우)을 나타낸다. 
+        
+        
+        1) window        
+        // ex04.html, ex04_02.html  우편번호 검색.~ 
+        
+        2) screen
+        3) history
+        4) navigator
+        5) location
+        
+   3. BOM-    브라우저       상호 작용  / 정보 얻+설
+</pre>
+
+<script>
+   var msg = "";
+   
+   function test(){
+	   
+   }
+   // alert(   window.msg  );
+   // window.test();
+   
+   // 도구모음, 스크롤막대 등을 포함하지 않는 너비/높이
+  var ww = window.innerWidth;  // 창 너비
+  var wh =   window.innerHeight; // 창 높이
+   
+   console.log(  ww + " / "  + wh );
+   
+   var cw = document.body.clientWidth; // 창 높이
+   var ch = document.body.clientHeight; // 창 높이
+   
+   console.log(  cw + " / "  + ch );
+   
+   
+   // ex03_02.html, ex03_03.html
+   // 새창 열기   window.open()
+   // 현재창 닫기 window.close()
+   // 현재창 이동  window.moveTo(),    window.moveBy()
+   // 현재창 크기 조절  window.resizeTo(), window.resizeBy();
+   
+</script>
+</body>
+</html>

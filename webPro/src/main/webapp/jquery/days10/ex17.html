@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS17 2022. 12. 1. 오후 4:24:23</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h3>ex17.html</h3>
+선 색 :
+<select>
+  <option>black</option>
+  <option>red</option>
+  <option>green</option>
+  <option>blue</option>
+</select>
+<br>
+
+<canvas id="canvas" height="400" width="700" style="border: solid 3px black"></canvas>
+
+
+<script>
+
+$(document).ready(function (){
+	   
+	   var canvas = $("#canvas");  // 도화지
+	   // 그릴수 있는 도구 객체 context  ctx  graphic
+	   var context = canvas.get(0).getContext('2d');
+	   // strokeStyle 색 지정 속성
+	   context. strokeStyle= $("select").val();
+	   
+	   var sx, sy, ex, ey ;
+	   
+	   canvas.on({		   
+		   mousedown: function (event){
+			   /* event.button */
+			   if( event.which == 1){
+				   var position = $(this).offset();
+				   var sx = event.pageX - position.left;
+				   var sy = event.pageY - position.top;
+				   
+				   context.beginPath();  // 초기화
+				   context.moveTo(sx,sy);
+				   // console.log(  event.pageX +" / " +  position.left)
+			   }
+		   },
+		   mousemove: function (event){
+			   if( event.which == 1){
+				   var position = $(this).offset();
+				   var ex = event.pageX - position.left;
+				   var ey = event.pageY - position.top;
+				   
+				   context.lineTo(ex,ey);
+				   context.stroke();
+				   
+				   sx = ex; 
+				   sy = ey;
+				   
+			   } 
+		   },
+		   mouseup: function (event){
+			   if( event.which == 1){
+			   var position = $(this).offset();
+				   var ex = event.pageX - position.left;
+				   var ey = event.pageY - position.top;
+				   
+				   context.lineTo(ex,ey);
+				   context.stroke();
+			   }
+		   }
+	   });
+	   
+	   $("select").change(function (){ 
+		   context. strokeStyle= $(this).val();
+	   });
+});
+
+</script>
+</body>
+</html>
